@@ -4,6 +4,7 @@
   import { page } from "$app/state";
   import CoverImage from "$lib/components/background/CoverImage.svelte";
   import CoverProvider from "$lib/components/background/CoverProvider.svelte";
+  import RetroFilter from "$lib/components/filter/RetroFilter.svelte";
   import ListScrollHistoryProvider from "$lib/components/lists/section-list/ListScrollHistoryProvider.svelte";
   import AnalyticsProvider from "$lib/features/analytics/AnalyticsProvider.svelte";
   import PageView from "$lib/features/analytics/PageView.svelte";
@@ -108,6 +109,8 @@
     }
   </style>
 </svelte:head>
+
+<RetroFilter />
 
 <ErrorProvider>
   <QueryClientProvider client={data.queryClient} device={data.device}>
