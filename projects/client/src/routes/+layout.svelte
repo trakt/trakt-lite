@@ -5,6 +5,7 @@
   import ListScrollHistoryProvider from "$lib//components/lists/section-list/ListScrollHistoryProvider.svelte";
   import CoverImage from "$lib/components/background/CoverImage.svelte";
   import CoverProvider from "$lib/components/background/CoverProvider.svelte";
+  import RetroFilter from "$lib/components/filter/RetroFilter.svelte";
   import AnalyticsProvider from "$lib/features/analytics/AnalyticsProvider.svelte";
   import PageView from "$lib/features/analytics/PageView.svelte";
   import AuthProvider from "$lib/features/auth/components/AuthProvider.svelte";
@@ -56,6 +57,8 @@
     }
   </style>
 </svelte:head>
+
+<RetroFilter />
 
 <QueryClientProvider client={data.queryClient}>
   <AuthProvider isAuthorized={data.auth.isAuthorized} url={data.auth.url}>
