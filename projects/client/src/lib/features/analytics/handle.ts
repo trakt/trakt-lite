@@ -4,7 +4,7 @@ import type { Handle } from '@sveltejs/kit';
 import type { FirebaseEvent } from './_internal/FirebaseEvent';
 
 const FIREBASE_MEASUREMENT_ENDPOINT =
-  'https://www.google-analytics.com/mp/collect';
+  'https://www.google-analytics.com/collect';
 
 function sendToFirebase(event: FirebaseEvent) {
   const { name, params, userId, clientId } = event;
@@ -32,9 +32,9 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (event.url.pathname === ClientEnvironment.analytics) {
     if (event.request.method === 'POST') {
       try {
-        const body = await event.request.json();
-
-        if (!body?.eventName || !body?.clientId) {
+        const body = await event.request.json() as FirebaseEvent;
+        console.log('Logging event:', body);
+        if (!body?.name || !body?.clientId) {
           return new Response('Invalid event data', { status: 400 });
         }
 

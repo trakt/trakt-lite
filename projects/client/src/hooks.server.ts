@@ -1,3 +1,4 @@
+import { handle as handleAnalytics } from '$lib/features/analytics/handle.ts';
 import { handle as handleAuth } from '$lib/features/auth/handle.ts';
 import { handle as handleCacheBust } from '$lib/features/cache-bust/handle.ts';
 import { handle as handleGateway } from '$lib/features/gateway/handle.ts';
@@ -50,4 +51,5 @@ export const handle: Handle = sequence(
   handleCacheControl,
   handleMobileOperatingSystem,
   handleGateway,
+  handleAnalytics,
 );
