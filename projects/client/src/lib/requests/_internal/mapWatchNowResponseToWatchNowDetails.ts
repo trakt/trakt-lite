@@ -23,7 +23,7 @@ export function mapWatchNowResponseToWatchNowDetails(
       link: `https://${purchase.link}`,
       source: purchase.source,
       is4k: purchase.uhd,
-      currency: purchase.currency,
+      currency: purchase.curreny,
       prices: purchase.prices,
     };
   });

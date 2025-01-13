@@ -4,7 +4,8 @@ const sourceSchema = z.object({
   source: z.string(),
   link: z.string(),
   uhd: z.boolean(),
-  currency: z.string(),
+  //TODO: typo in response.....
+  curreny: z.string(),
   prices: z.object({
     rent: z.string().optional(),
     purchase: z.string().optional(),
