@@ -11,12 +11,25 @@ export function mapWatchNowResponseToWatchNowDetails(
   const subscriptions = subscriptionResponse.map((subscription) => {
     return {
       link: `https://${subscription.link}`,
-      source: `${country}-${subscription.source}`,
+      source: subscription.source,
       is4k: subscription.uhd,
+    };
+  });
+
+  const purchaseResponse = data?.purchase ?? [];
+
+  const purchases = purchaseResponse.map((purchase) => {
+    return {
+      link: `https://${purchase.link}`,
+      source: purchase.source,
+      is4k: purchase.uhd,
+      currency: purchase.currency,
+      prices: purchase.prices,
     };
   });
 
   return {
     subscriptions,
+    purchases,
   };
 }

@@ -57,6 +57,7 @@ export function useWatchNow({ type, id }: WatchNowStoreProps) {
         $watchNow.data && findFavoriteWatchNowService({
           services: $watchNow.data,
           favorites: watchNowSettings.favorites ?? [],
+          countryCode: country,
         }),
     ),
     isLoading: derived(

@@ -4,8 +4,9 @@ import { findFavoriteWatchNowService } from './findFavoriteWatchNowService.ts';
 describe('findFavoriteWatchNowService', () => {
   it('should return undefined if there are no subscription services', () => {
     expect(findFavoriteWatchNowService({
-      services: { subscriptions: [] },
-      favorites: ['nl-netflix'],
+      services: { subscriptions: [], purchases: [] },
+      favorites: ['netflix'],
+      countryCode: 'nl',
     })).toBe(undefined);
   });
 
@@ -13,8 +14,10 @@ describe('findFavoriteWatchNowService', () => {
     expect(findFavoriteWatchNowService({
       services: {
         subscriptions: [{ link: '', source: 'us-netflix', is4k: false }],
+        purchases: [],
       },
-      favorites: ['nl-netflix'],
+      favorites: ['netflix'],
+      countryCode: 'nl',
     })).toBe(undefined);
   });
 
@@ -24,8 +27,10 @@ describe('findFavoriteWatchNowService', () => {
     expect(findFavoriteWatchNowService({
       services: {
         subscriptions: [subscription],
+        purchases: [],
       },
       favorites: ['nl-netflix'],
+      countryCode: 'nl',
     })).toBe(subscription);
   });
 });
