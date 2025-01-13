@@ -25,13 +25,26 @@ const personSchema = z.object({
     imdb: z.string().nullable(),
     tmdb: z.number().nullable(),
   }),
+  /***
+   * Available if requesting extended `cloud9`.
+   */
+  images: z.object({
+    headshot: z.array(z.string()).optional(),
+    fanart: z.array(z.string()).optional(),
+  }),
 });
 
-const castSchema = z.object({
+export const castSchema = z.object({
   character: z.string(),
   characters: z.array(z.string()),
   episode_count: z.number().optional(),
   person: personSchema,
+  /***
+   * Available if requesting extended `cloud9`.
+   */
+  images: z.object({
+    headshot: z.array(z.string()).optional(),
+  }),
 });
 
 export const crewSchema = z.object({
