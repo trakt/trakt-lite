@@ -84,13 +84,18 @@
     onRemove: removeWatched,
   });
 
-  const { watchNow, isLoading } = useWatchNow({ type, id: media.slug });
+  const { watchNow, isLoading, sources } = useWatchNow({
+    type,
+    id: media.slug,
+  });
 </script>
 
 {#snippet mediaActions()}
   <WatchNowButton
     isLoading={$isLoading}
-    streamingLink={$watchNow?.link}
+    services={$watchNow?.subscriptions ?? []}
+    purchases={$watchNow?.purchases ?? []}
+    sources={$sources ?? []}
     mediaTitle={media.title}
   />
   <WatchlistButton {...watchlistProps} />

@@ -3,6 +3,7 @@ import { useUser } from '$lib/features/auth/stores/useUser.ts';
 import { getLanguageAndRegion } from '$lib/features/i18n/index.ts';
 import type { MediaType } from '$lib/models/MediaType.ts';
 import { showWatchNowQuery } from '$lib/requests/queries/shows/showWatchNowQuery.ts';
+import { watchNowSourcesQuery } from '$lib/requests/queries/watchnow/watchNowSourcesQuery.ts';
 import { findFavoriteWatchNowService } from '$lib/stores/_internal/findFavoriteWatchNowService.ts';
 import { createQuery, type CreateQueryOptions } from '@tanstack/svelte-query';
 import { derived, get, writable } from 'svelte/store';
@@ -47,18 +48,35 @@ export function useWatchNow({ type, id }: WatchNowStoreProps) {
   const watchNow = createQuery({
     ...typeToQuery(type, id, country),
     staleTime: Infinity,
-    enabled: watchNowSettings.showOnlyFavorites,
+  });
+
+  // TODO prefetch watchNowSources
+  const watchNowSources = createQuery({
+    ...watchNowSourcesQuery({ country }),
+    staleTime: Infinity,
   });
 
   return {
     watchNow: derived(
       watchNow,
-      ($watchNow) =>
-        $watchNow.data && findFavoriteWatchNowService({
-          services: $watchNow.data,
-          favorites: watchNowSettings.favorites ?? [],
-          countryCode: country,
-        }),
+      ($watchNow) => {
+        if (!$watchNow.data) {
+          return;
+        }
+
+        return {
+          ...$watchNow.data,
+          favorite: findFavoriteWatchNowService({
+            services: $watchNow.data,
+            favorites: watchNowSettings.favorites ?? [],
+            countryCode: country,
+          }),
+        };
+      },
+    ),
+    sources: derived(
+      watchNowSources,
+      ($watchNowSources) => $watchNowSources.data ?? [],
     ),
     isLoading: derived(
       watchNow,

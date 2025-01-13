@@ -1,10 +1,10 @@
-type WatchNowService = {
+export type WatchNowService = {
   link: string;
   source: string;
   is4k: boolean;
 };
 
-type WatchNowPurchase = WatchNowService & {
+export type WatchNowPurchase = WatchNowService & {
   currency: string;
   prices: {
     rent?: string;
