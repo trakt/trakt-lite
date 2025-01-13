@@ -1,9 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { browser } from '$app/environment';
+import { ClientEnvironment } from '$lib/requests/ClientEnvironment.ts';
 import { NOOP_FN } from '$lib/utils/constants.ts';
-import { getAnalytics, logEvent, setUserId } from 'firebase/analytics';
+import { getAnalytics, logEvent } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import type { AnalyticsEngine } from './AnalyticsEngine.ts';
+import type { FirebaseEvent } from './FirebaseEvent.ts';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -45,6 +47,18 @@ function firebaseDriver() {
   }
 }
 
+function sendFirebaseEvent(event: FirebaseEvent) {
+  return fetch(ClientEnvironment.analytics, {
+    method: 'POST',
+    body: JSON.stringify(event),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
+
+let userId: string | Nil = null;
+
 // Initialize Analytics
 export const initialize = (): AnalyticsEngine => {
   const driver = firebaseDriver();
@@ -56,8 +70,14 @@ export const initialize = (): AnalyticsEngine => {
   return {
     // TODO: better even type definitions
     record: (key: string, data: Record<string, string | number | Date>) => {
+      sendFirebaseEvent({
+        name: key,
+        clientId: driver.app.options.appId,
+        params: data,
+        userId,
+      });
       logEvent(driver, key, data);
     },
-    setUserId: (userId: string | Nil) => setUserId(driver, userId ?? null),
+    setUserId: (userId: string | Nil) => userId = userId,
   };
 };
