@@ -1,4 +1,5 @@
 import type { RatedEpisodesResponse, RatedMoviesResponse } from '$lib/api.ts';
+import { InvalidateAction } from '$lib/requests/models/InvalidateAction.ts';
 import { api, type ApiParams } from '../../../requests/_internal/api.ts';
 
 type RatedMedia = {
@@ -36,8 +37,6 @@ const ratedMoviesRequest = (
          */
         throw new Error('Error fetching user rated movies.');
       }
-
-      console.log('RATED MOVIES', response.body);
 
       return response.body;
     })
@@ -91,9 +90,10 @@ const ratedEpisodesRequest = (
         }, new Map<number, RatedMedia>())
     );
 
-//TODO invalidate actions
 export const currentUserRatingsQueryKey = [
   'currentUserRatings',
+  InvalidateAction.Rated('episode'),
+  InvalidateAction.Rated('movie'),
 ] as const;
 export const currentUserRatingsQuery = ({ fetch }: ApiParams = {}) => ({
   queryKey: currentUserRatingsQueryKey,

@@ -246,5 +246,9 @@
   "recently_watched_movies": "Recently Watched Movies",
   "person_headshot": "Headshot of {person}",
   "actors": "Actors",
-  "anticipated_count": "{count} eager"
+  "anticipated_count": "{count} eager",
+  "rate_now": "Rate now",
+  "rating_bad": "👎 this sucked",
+  "rating_good": "👍 this was good",
+  "rating_great": "❤️ I loved this"
 }
