@@ -1,4 +1,6 @@
 import type { MovieTrendingResponse } from '$lib/api.ts';
+import type { Paginatable } from '$lib/models/Paginatable.ts';
+import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import type { MovieSummary } from '$lib/requests/models/MovieSummary.ts';
 import { api, type ApiParams } from '../../_internal/api.ts';
 import {
@@ -26,7 +28,7 @@ export function mapResponseToTrendingMovies({
 
 function movieTrendingRequest(
   { fetch, page = 1, limit = 10 }: MovieTrendingParams,
-): Promise<TrendingMovie[]> {
+): Promise<Paginatable<TrendingMovie>> {
   return api({ fetch })
     .movies
     .trending({
@@ -36,12 +38,15 @@ function movieTrendingRequest(
         limit,
       },
     })
-    .then(({ status, body }) => {
+    .then(({ status, body, headers }) => {
       if (status !== 200) {
         throw new Error('Failed to fetch trending movies');
       }
 
-      return body.map(mapResponseToTrendingMovies);
+      return {
+        entries: body.map(mapResponseToTrendingMovies),
+        page: extractPageMeta(headers),
+      };
     });
 }
 

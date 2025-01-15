@@ -28,7 +28,8 @@
 
   .trakt-page-list-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--width-item), 1fr));
+    grid-template-columns: repeat(auto-fill, var(--width-item));
+    justify-content: center;
     gap: var(--ni-8);
   }
 </style>

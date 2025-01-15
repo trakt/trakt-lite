@@ -1,4 +1,6 @@
 import type { ShowTrendingResponse } from '$lib/api.ts';
+import type { Paginatable } from '$lib/models/Paginatable.ts';
+import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { type EpisodeCount } from '$lib/requests/models/EpisodeCount.ts';
 import type { ShowSummary } from '$lib/requests/models/ShowSummary.ts';
 import { api, type ApiParams } from '../../_internal/api.ts';
@@ -31,7 +33,7 @@ export function mapResponseToTrendingShows({
 
 function showTrendingRequest(
   { fetch, page = 1, limit = 10 }: ShowTrendingParams,
-): Promise<TrendingShow[]> {
+): Promise<Paginatable<TrendingShow>> {
   return api({ fetch })
     .shows
     .trending({
@@ -41,12 +43,15 @@ function showTrendingRequest(
         page,
       },
     })
-    .then(({ status, body }) => {
+    .then(({ status, body, headers }) => {
       if (status !== 200) {
         throw new Error('Failed to fetch trending shows');
       }
 
-      return body.map(mapResponseToTrendingShows);
+      return {
+        entries: body.map(mapResponseToTrendingShows),
+        page: extractPageMeta(headers),
+      };
     });
 }
 
