@@ -12,6 +12,14 @@ export const UrlBuilder = {
     }
   },
   show: (id: string) => `/shows/${id}`,
+  trending: (type: MediaType) => {
+    switch (type) {
+      case 'show':
+        return '/shows/trending';
+      case 'movie':
+        return '/movies/trending';
+    }
+  },
   movies: () => '/movies',
   movie: (id: string) => `/movies/${id}`,
   people: (id: string) => `/people/${id}`,
