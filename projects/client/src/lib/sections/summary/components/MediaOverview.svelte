@@ -11,15 +11,6 @@
   const { title, overview }: MediaOverviewProps = $props();
 </script>
 
-<ClampedText
-  classList="trakt-media-overview secondary"
-  label={m.expand_media_overview({ title })}
->
+<ClampedText classList="secondary" label={m.expand_media_overview({ title })}>
   {overview}
 </ClampedText>
-
-<style>
-  :global(.trakt-media-overview) {
-    line-height: 150%;
-  }
-</style>
