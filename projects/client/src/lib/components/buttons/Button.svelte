@@ -4,8 +4,11 @@
   import { disableTransitionOn } from "$lib/utils/actions/disableTransitionOn";
   import { mobileAppleDeviceTriggerHack } from "$lib/utils/actions/mobileAppleDeviceTriggerHack";
   import { triggerWithKeyboard } from "$lib/utils/actions/triggerWithKeyboard";
+  import { GlobalResizeObserver } from "$lib/utils/events/GlobalResizeObserver";
+  import { debounce } from "$lib/utils/timing/debounce";
+  import { time } from "$lib/utils/timing/time";
+  import { onMount } from "svelte";
   import type { TraktButtonProps } from "./TraktButtonProps";
-
   type TraktButtonAnchorProps = HTMLAnchorProps &
     TraktButtonProps & { onclickoutside?: (ev: CustomEvent) => void };
 
@@ -28,6 +31,34 @@
   const href = $derived((props as TraktButtonAnchorProps).href);
   const noscroll = $derived((props as TraktButtonAnchorProps).noscroll);
   const { isActive } = $derived(useActiveLink(href));
+
+  function snapshotWidth(node: HTMLElement) {
+    if (size === "normal" && style !== "ghost") {
+      return;
+    }
+
+    const snapshot = () => {
+      const computedStyle = getComputedStyle(node);
+      node.style.setProperty("--button-width", computedStyle.width);
+    };
+
+    onMount(() => {
+      snapshot();
+    });
+
+    const unobserve = GlobalResizeObserver.getInstance().observe(
+      node,
+      debounce<ResizeObserverEntry, void>(() => {
+        snapshot();
+      }, time.fps(60)),
+    );
+
+    return {
+      destroy: () => {
+        unobserve();
+      },
+    };
+  }
 </script>
 
 {#snippet contents()}
@@ -56,6 +87,7 @@
     use:clickOutside
     use:triggerWithKeyboard
     use:mobileAppleDeviceTriggerHack
+    use:snapshotWidth
     data-sveltekit-keepfocus
     data-sveltekit-noscroll={noscroll}
     class="trakt-button trakt-button-link"
@@ -74,6 +106,7 @@
   <button
     use:disableTransitionOn={"touch"}
     use:clickOutside
+    use:snapshotWidth
     class="trakt-button"
     aria-label={label}
     data-variant={variant}
@@ -136,7 +169,7 @@
     );
 
     --scale-factor-button: 1;
-    --button-height: var(--ni-52);
+    --button-height: var(--ni-48);
 
     --color-background-button-light: color-mix(
       in srgb,
@@ -170,6 +203,21 @@
     transition-property: box-shadow, outline, padding, transform, color,
       background;
 
+    margin: calc(
+        (
+            var(--button-height) *
+              var(--scale-factor-button) - var(--button-height)
+          ) /
+          2
+      )
+      calc(
+        (
+            var(--button-width) *
+              var(--scale-factor-button) - var(--button-width)
+          ) /
+          2
+      );
+
     &.trakt-button-link {
       &[data-style="ghost"] {
         &.trakt-link-active {
@@ -192,7 +240,6 @@
 
     &[data-size="small"] {
       --scale-factor-button: 0.75;
-      margin: var(--ni-neg-2) var(--ni-neg-8);
     }
 
     &[data-size="tag"] {
@@ -273,7 +320,6 @@
     }
 
     &[data-style="ghost"] {
-      margin: var(--ni-neg-2) var(--ni-neg-6);
       transform: scale(calc(var(--scale-factor-button) * 0.9));
       background: transparent;
 

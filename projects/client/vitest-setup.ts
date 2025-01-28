@@ -7,6 +7,7 @@ import './test/mocks/matchMedia.mock.ts';
 import './test/mocks/messages.mock.ts';
 import './test/mocks/navigation.mock.ts';
 import './test/mocks/navigator.mock.ts';
+import './test/mocks/ResizeObserver.mock.ts';
 import './test/mocks/variables.mock.ts';
 
 import { setAuthorization } from '$test/beds/store/renderStore.ts';
