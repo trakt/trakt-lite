@@ -51,7 +51,7 @@
 
 <section
   use:whenInViewport={() => isVisible.set(true)}
-  class="shadow-list-container"
+  class="trakt-shadow-list-container"
 >
   {#if $isVisible}
     <ListHeader {title} {actions} inset="title" />
@@ -86,13 +86,13 @@
   @use "$style/scss/mixins/index" as *;
   @use "../_internal/gap" as *;
 
-  .shadow-list-container,
+  .trakt-shadow-list-container,
   .shadow-list,
   .shadow-list-empty-state {
     min-height: var(--height-list);
   }
 
-  .shadow-list-container {
+  .trakt-shadow-list-container {
     display: flex;
     flex-direction: column;
     gap: var(--gap-xl);

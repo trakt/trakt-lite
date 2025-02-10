@@ -27,7 +27,7 @@
   });
 </script>
 
-<header>
+<header class="trakt-header">
   <nav class="trakt-navbar" class:trakt-navbar-scroll={isScrolled}>
     <div class="trakt-logo">
       <Link href={UrlBuilder.home()}>
@@ -107,7 +107,6 @@
   .trakt-navbar,
   .trakt-navbar-spacer {
     box-sizing: border-box;
-    margin: var(--ni-12) auto;
     margin-top: calc(var(--ni-12) + env(safe-area-inset-top));
     padding: var(--ni-12) var(--ni-16);
     height: var(--ni-64);
@@ -117,10 +116,9 @@
     z-index: var(--layer-overlay);
     position: fixed;
     top: 0;
-    left: var(--layout-distance-side);
+    left: 0;
 
     display: flex;
-    width: calc(100dvw - 2 * var(--layout-distance-side));
 
     align-items: center;
     gap: var(--gap-l);

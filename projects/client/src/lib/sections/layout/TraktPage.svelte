@@ -83,21 +83,19 @@
 </svelte:head>
 
 <RenderFor {audience}>
-  <div class="trakt-content">
+  <div class="trakt-page">
     {@render children()}
   </div>
 
   <style lang="scss">
     @use "$style/scss/mixins/index" as *;
 
-    .trakt-content {
+    .trakt-page {
       --content-gap: var(--gap-xl);
 
       transition: var(--transition-increment) ease-in-out;
       transition-property: gap, margin;
 
-      display: flex;
-      flex-direction: column;
       gap: var(--content-gap);
 
       &:first-child {

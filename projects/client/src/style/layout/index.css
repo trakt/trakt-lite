@@ -54,7 +54,46 @@
   /**
    * Structural variables
    */
-  --layout-distance-side: var(--ni-24);
   --layout-distance-scroll-card: var(--ni-24);
   --layout-scrollbar-width: var(--ni-8);
+}
+
+.trakt-layout-wrapper {
+  --layout-padding: var(--ni-8);
+  --layout-min: var(--ni-320);
+  --layout-max: calc(100vw - var(--layout-padding) * 2);
+  --layout-max-width: clamp(var(--layout-min), 1440px, var(--layout-max));
+  --layout-distance-side: calc((100dvw - var(--layout-max-width)) / 2);
+
+  .trakt-header {
+    .trakt-navbar {
+      width: var(--layout-max-width);
+      left: var(--layout-distance-side);
+    }
+  }
+
+  .trakt-footer {
+    width: var(--layout-max-width);
+    margin: 0 auto;
+  }
+
+  .trakt-page {
+    --page-margin: max(1rem, calc((100% - var(--layout-max-width)) / 2));
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--page-margin)
+      [content-start] minmax(0, var(--layout-max-width))
+      [content-end] var(--page-margin)
+      [full-end];
+
+    > *:not(svelte-css-wrapper):not(trakt-render-for) {
+      grid-column: content-start / content-end;
+    }
+
+    .trakt-grid-list-container,
+    .trakt-shadow-list-container {
+      grid-column: full-start / full-end;
+    }
+  }
 }
