@@ -5,7 +5,7 @@
   import ListHeader from "./ListHeader.svelte";
   import ListPosters from "./ListPosters.svelte";
 
-  const { list, type }: { list: MediaListSummary; type: MediaType } = $props();
+  const { list, type }: { list: MediaListSummary; type?: MediaType } = $props();
 </script>
 
 <Card

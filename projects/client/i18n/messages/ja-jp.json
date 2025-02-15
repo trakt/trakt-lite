@@ -300,5 +300,7 @@
   "position_visual_effects": "ビジュアルエフェクト",
   "position_editing": "編集",
   "position_creator": "クリエイター",
-  "position_created_by": "制作"
+  "position_created_by": "制作",
+  "personal_lists": "マイリスト",
+  "collaborations": "共同リスト"
 }

@@ -300,5 +300,7 @@
   "position_visual_effects": "Effets visuels",
   "position_editing": "Montage",
   "position_creator": "Créateur",
-  "position_created_by": "Créé par"
+  "position_created_by": "Créé par",
+  "personal_lists": "Listes personnelles",
+  "collaborations": "Collaborations"
 }

@@ -300,5 +300,7 @@
   "position_visual_effects": "Visuelle Effekte",
   "position_editing": "Schnitt",
   "position_creator": "Schöpfer",
-  "position_created_by": "Erstellt von"
+  "position_created_by": "Erstellt von",
+  "personal_lists": "Meine Listen",
+  "collaborations": "Zusammenarbeiten"
 }

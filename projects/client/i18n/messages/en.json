@@ -300,5 +300,7 @@
   "position_visual_effects": "Visual Effects",
   "position_editing": "Editing",
   "position_creator": "Creator",
-  "position_created_by": "Created By"
+  "position_created_by": "Created By",
+  "personal_lists": "Personal lists",
+  "collaborations": "Collaborations"
 }
