@@ -4,7 +4,7 @@
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import type { MediaType } from "$lib/requests/models/MediaType";
   import ListSummaryCard from "./_internal/ListSummaryCard.svelte";
-  import { useListSummary } from "./useListSummary.ts";
+  import { usePopularListSummary } from "./usePopularListSummary.ts";
 
   const MAX_MOBILE_LISTS = 3;
 
@@ -15,7 +15,7 @@
   }: { slug: string; type: MediaType; title: string } = $props();
 
   // Due to slow performance, we fetch the lists here instead of useMovie/useShow
-  const { isLoading, lists } = useListSummary({ slug, type });
+  const { isLoading, lists } = usePopularListSummary({ slug, type });
 </script>
 
 <RenderFor audience="all" device={["tablet-sm", "tablet-lg", "desktop"]}>

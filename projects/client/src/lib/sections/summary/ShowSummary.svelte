@@ -12,8 +12,8 @@
   import CastList from "../lists/CastList.svelte";
   import RelatedList from "../lists/RelatedList.svelte";
   import SeasonList from "../lists/SeasonList.svelte";
+  import PopularLists from "../lists/userlist/PopularLists.svelte";
   import Comments from "./components/comments/Comments.svelte";
-  import Lists from "./components/lists/Lists.svelte";
   import MediaSummary from "./components/media/MediaSummary.svelte";
   import type { MediaSummaryProps } from "./components/media/MediaSummaryProps";
 
@@ -68,4 +68,4 @@
 <RelatedList title={m.related_shows_title()} slug={media.slug} type="show" />
 
 <!-- TODO: move back to designed position when we have faster queries -->
-<Lists slug={media.slug} title={media.title} type="show" />
+<PopularLists slug={media.slug} title={media.title} type="show" />

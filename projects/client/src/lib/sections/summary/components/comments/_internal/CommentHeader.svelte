@@ -4,8 +4,8 @@
   import * as m from "$lib/features/i18n/messages.ts";
   import type { MediaComment } from "$lib/requests/models/MediaComment";
   import { toHumanDate } from "$lib/utils/formatting/date/toHumanDate";
-  import UserAvatar from "../../_internal/UserAvatar.svelte";
-  import UserProfileLink from "../../_internal/UserProfileLink.svelte";
+  import UserAvatar from "../../../../_internal/UserAvatar.svelte";
+  import UserProfileLink from "../../../../_internal/UserProfileLink.svelte";
   import { mapRatingToSimpleRating } from "../../rating/mapRatingToSimpleRating";
   import UserRatingIcon from "./UserRatingIcon.svelte";
 

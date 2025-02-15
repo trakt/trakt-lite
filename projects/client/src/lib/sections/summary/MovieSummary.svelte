@@ -7,8 +7,8 @@
   import type { MovieEntry } from "$lib/requests/models/MovieEntry";
   import CastList from "../lists/CastList.svelte";
   import RelatedList from "../lists/RelatedList.svelte";
+  import PopularLists from "../lists/userlist/PopularLists.svelte";
   import Comments from "./components/comments/Comments.svelte";
-  import Lists from "./components/lists/Lists.svelte";
   import MediaSummary from "./components/media/MediaSummary.svelte";
   import type { MediaSummaryProps } from "./components/media/MediaSummaryProps";
 
@@ -45,4 +45,4 @@
 <RelatedList title={m.related_movies_title()} slug={media.slug} type="movie" />
 
 <!-- TODO: move back to designed position when we have faster queries -->
-<Lists slug={media.slug} title={media.title} type="movie" />
+<PopularLists slug={media.slug} title={media.title} type="movie" />
