@@ -1,12 +1,11 @@
+import { useUser } from '$lib/features/auth/stores/useUser.ts';
 import type { MediaStatus } from '$lib/requests/models/MediaStatus.ts';
-import type { MediaType } from '$lib/requests/models/MediaType.ts';
 import {
   useWatchlistList,
-} from '$lib/sections/lists/watchlist/useWatchlistList';
-import { derived } from 'svelte/store';
-
-// TODO use drilledmedia list for this
-const COMING_SOON_LIMIT = 500;
+  type WatchListStoreProps,
+} from '$lib/sections/lists/watchlist/useWatchlistList.ts';
+import { derived, get } from 'svelte/store';
+import { genreCompareFactory } from './utils/genreCompareFactory.ts';
 
 const IN_PROGRESS_STATUSES: MediaStatus[] = [
   'planned',
@@ -15,12 +14,19 @@ const IN_PROGRESS_STATUSES: MediaStatus[] = [
   'upcoming',
 ] as const;
 
-export function useComingSoon(type: MediaType) {
-  const { list: watchlist, isLoading } = useWatchlistList({
-    type,
+export function useComingSoonList(params: Omit<WatchListStoreProps, 'sort'>) {
+  const { list: watchlist, isLoading, page } = useWatchlistList({
+    ...params,
     sort: 'unreleased',
-    limit: COMING_SOON_LIMIT,
   });
+
+  const { user } = useUser();
+
+  const { compare } = genreCompareFactory(
+    get(user)?.genres ?? [],
+    'asc',
+    'year',
+  );
 
   const list = derived(
     watchlist,
@@ -32,11 +38,12 @@ export function useComingSoon(type: MediaType) {
 
           return isUpcomingItem && isInProgressItem;
         })
-        .sort((a, b) => a.airDate.getTime() - b.airDate.getTime()),
+        .sort(compare),
   );
 
   return {
     list,
     isLoading,
+    page,
   };
 }
