@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Preview from "$lib/components/badge/Preview.svelte";
   import SectionList from "$lib/components/lists/section-list/SectionList.svelte";
   import * as m from "$lib/features/i18n/messages.ts";
   import RenderFor from "$lib/guards/RenderFor.svelte";
@@ -25,6 +26,10 @@
     title={m.popular_lists()}
     --height-list="var(--height-lists-list)"
   >
+    {#snippet badge()}
+      <Preview description="More list interactivity will be available soon" />
+    {/snippet}
+
     {#snippet item(list)}
       <ListSummaryCard {list} {type} />
     {/snippet}

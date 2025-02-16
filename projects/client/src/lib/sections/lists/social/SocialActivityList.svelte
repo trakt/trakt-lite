@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Preview from "$lib/components/badge/Preview.svelte";
   import * as m from "$lib/features/i18n/messages";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
 
@@ -21,6 +22,11 @@
     drilldownLabel={m.view_all_social_activity()}
     title={m.social_activity_title()}
   >
+    {#snippet badge()}
+      <Preview
+        description="Following/unfollowing other users will be available soon"
+      />
+    {/snippet}
     {#snippet item(activity)}
       <SocialActivityItem {activity} />
     {/snippet}

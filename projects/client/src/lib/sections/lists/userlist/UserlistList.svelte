@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Preview from "$lib/components/badge/Preview.svelte";
   import GridList from "$lib/components/lists/grid-list/GridList.svelte";
   import type { MediaType } from "$lib/requests/models/MediaType";
   import MediaCard from "../components/MediaCard.svelte";
@@ -27,6 +28,9 @@
   items={$list}
   --width-item="var(--width-poster-card)"
 >
+  {#snippet badge()}
+    <Preview description="You will be able to view more than 100 items soon" />
+  {/snippet}
   {#snippet empty()}
     {#if !$isLoading && emptyMessage}
       <p class="small secondary">

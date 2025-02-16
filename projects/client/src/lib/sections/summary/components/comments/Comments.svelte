@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Preview from "$lib/components/badge/Preview.svelte";
   import SectionList from "$lib/components/lists/section-list/SectionList.svelte";
   import * as m from "$lib/features/i18n/messages.ts";
   import type { MediaEntry } from "$lib/requests/models/MediaEntry";
@@ -25,6 +26,10 @@
   title={m.popular_comments()}
   --height-list="var(--height-comments-list)"
 >
+  {#snippet badge()}
+    <Preview description="Replying to comments will be available soon" />
+  {/snippet}
+
   {#snippet item(comment)}
     <CommentCard {comment} {media} />
   {/snippet}
