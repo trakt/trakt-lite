@@ -52,6 +52,7 @@
     "npm:svelte-check@4.1.4": "4.1.4_svelte@5.19.9__acorn@8.14.0_typescript@5.7.3",
     "npm:svelte-check@^4.1.4": "4.1.4_svelte@5.19.9__acorn@8.14.0_typescript@5.7.3",
     "npm:svelte@^5.19.9": "5.19.9_acorn@8.14.0",
+    "npm:tippy.js@^6.3.7": "6.3.7",
     "npm:typescript-eslint@^8.23.0": "8.23.0_eslint@9.19.0_typescript@5.7.3_@typescript-eslint+parser@8.23.0__eslint@9.19.0__typescript@5.7.3",
     "npm:typescript@^5.7.3": "5.7.3",
     "npm:vite-plugin-pwa@~0.21.1": "0.21.1_vite@6.1.0__sass-embedded@1.83.4_workbox-build@7.3.0__ajv@8.17.1__@babel+core@7.26.7__rollup@2.79.2_workbox-window@7.3.0_sass-embedded@1.83.4",
@@ -2406,6 +2407,9 @@
     },
     "@polka/url@1.0.0-next.28": {
       "integrity": "sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw=="
+    },
+    "@popperjs/core@2.11.8": {
+      "integrity": "sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A=="
     },
     "@protobufjs/aspromise@1.1.2": {
       "integrity": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ=="
@@ -6107,6 +6111,12 @@
     "tinyspy@3.0.2": {
       "integrity": "sha512-n1cw8k1k0x4pgA2+9XrOkFydTerNcJ1zWCO5Nn9scWHTD+5tp8dghT2x1uduQePZTZgd3Tupf+x9BxJjeJi77Q=="
     },
+    "tippy.js@6.3.7": {
+      "integrity": "sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==",
+      "dependencies": [
+        "@popperjs/core"
+      ]
+    },
     "tldts-core@6.1.74": {
       "integrity": "sha512-gTwtY6L2GfuxiL4CWpLknv9JDYYqBvKCk/BT5uAaAvCA0s6pzX7lr2IrkQZSUlnSjRHIjTl8ZwKCVXJ7XNRWYw=="
     },
@@ -6892,6 +6902,7 @@
             "npm:sass-embedded@^1.83.4",
             "npm:svelte-check@^4.1.4",
             "npm:svelte@^5.19.9",
+            "npm:tippy.js@^6.3.7",
             "npm:typescript-eslint@^8.23.0",
             "npm:typescript@^5.7.3",
             "npm:vite-plugin-pwa@~0.21.1",
