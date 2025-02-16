@@ -20,3 +20,5 @@ import './typography/index.css';
 import './animations/index.css';
 
 import './layers/index.css';
+
+import 'tippy.js/dist/tippy.css';
