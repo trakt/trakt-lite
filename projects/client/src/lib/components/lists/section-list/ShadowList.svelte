@@ -11,6 +11,7 @@
 
   type SectionListProps<T> = ListProps<T> & {
     empty?: Snippet;
+    badge?: Snippet;
     scrollContainer?: Writable<HTMLDivElement>;
     scrollX?: Writable<{ left: number; right: number }>;
   };
@@ -19,6 +20,7 @@
     id,
     items,
     title,
+    badge,
     scrollX = writable({ left: 0, right: 0 }),
     scrollContainer = writable(),
     item,
@@ -54,7 +56,7 @@
   class="shadow-list-container"
 >
   {#if $isVisible}
-    <ListHeader {title} {actions} inset="title" />
+    <ListHeader {title} {badge} {actions} inset="title" />
     <div
       class="shadow-list"
       class:shadow-list-left-shadow={isLeftShadowVisible}

@@ -11,12 +11,14 @@
   type SectionListProps<T> = ListProps<T> & {
     id: string;
     empty?: Snippet;
+    badge?: Snippet;
   };
 
   const {
     id,
     items,
     title,
+    badge,
     item,
     empty,
     dynamicActions,
@@ -57,7 +59,16 @@
   const isRightScrollDisabled = $derived($scrollX.right <= 0);
 </script>
 
-<ShadowList {id} {title} {items} {item} {empty} {scrollX} {scrollContainer}>
+<ShadowList
+  {id}
+  {title}
+  {badge}
+  {items}
+  {item}
+  {empty}
+  {scrollX}
+  {scrollContainer}
+>
   {#snippet actions()}
     {#if dynamicActions != null}
       {@render dynamicActions()}
