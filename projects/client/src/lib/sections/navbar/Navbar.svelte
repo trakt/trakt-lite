@@ -4,12 +4,14 @@
   import Link from "$lib/components/link/Link.svelte";
   import Logo from "$lib/components/logo/Logo.svelte";
   import LogoMark from "$lib/components/logo/LogoMark.svelte";
+  import Switch from "$lib/components/toggles/Switch.svelte";
   import * as m from "$lib/features/i18n/messages";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import BetaBadge from "$lib/sections/navbar/BetaBadge.svelte";
   import { GlobalEventBus } from "$lib/utils/events/GlobalEventBus";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import { onMount } from "svelte";
+  import { writable } from "svelte/store";
   import JoinTraktButton from "./components/JoinTraktButton.svelte";
   import SearchInput from "./components/search/SearchInput.svelte";
   import ProfileButton from "./ProfileButton.svelte";
@@ -20,6 +22,19 @@
   function handleScroll() {
     windowScrollY = window.scrollY;
   }
+
+  const isChecked = writable(true);
+  isChecked.subscribe((value) => {
+    if (value) {
+      return;
+    }
+
+    // TODO extract
+    // TODO verify all paths
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    window.location.assign(`https://trakt.tv${currentPath}${currentSearch}`);
+  });
 
   onMount(() => {
     handleScroll();
@@ -45,6 +60,8 @@
         <Logo />
       </div>
     </RenderFor>
+    <!-- TODO on mobile add to profile dropdown -->
+    <Switch label="Switch to OG" innerText="LITE" {isChecked} />
     <div class="trakt-navbar-content">
       <RenderFor audience="authenticated">
         <SearchInput />
