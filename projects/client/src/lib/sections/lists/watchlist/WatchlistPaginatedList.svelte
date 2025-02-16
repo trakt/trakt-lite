@@ -4,28 +4,34 @@
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import MediaCard from "../components/MediaCard.svelte";
   import DrilledMediaList from "../drilldown/DrilledMediaList.svelte";
-  import { useWatchlistList } from "./useWatchlistList";
+  import EmptyWatchlist from "./EmptyWatchlist.svelte";
+  import { statusToStore } from "./statusToStore";
+  import type { WatchlistStatus } from "./WatchlistStatus";
 
-  type WatchlistListProps = {
+  type WatchListProps = {
     title: string;
     type: MediaType;
-    emptyMessage: string;
+    status: WatchlistStatus;
   };
 
-  const { title, type, emptyMessage }: WatchlistListProps = $props();
+  const { title, type, status }: WatchListProps = $props();
   const isMobile = useMedia(WellKnownMediaQuery.mobile);
   const style = $derived($isMobile ? "summary" : "cover");
+  const useList = $derived.by(() => statusToStore(status));
 </script>
 
 <DrilledMediaList
   id="view-all-watchlist-${type}"
   {title}
   {type}
-  {emptyMessage}
-  useList={useWatchlistList}
+  {useList}
   urlBuilder={UrlBuilder.watchlistPage}
 >
   {#snippet item(media)}
     <MediaCard {type} {media} {style} />
+  {/snippet}
+
+  {#snippet empty()}
+    <EmptyWatchlist {type} {status} />
   {/snippet}
 </DrilledMediaList>

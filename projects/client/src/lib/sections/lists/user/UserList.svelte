@@ -2,22 +2,18 @@
   import GridList from "$lib/components/lists/grid-list/GridList.svelte";
   import type { MediaType } from "$lib/requests/models/MediaType";
   import MediaCard from "../components/MediaCard.svelte";
-  import { useUserlistList } from "./useUserlistList";
+  import { useUserList } from "./useUserList";
 
-  type UserlistListProps = {
+  type UserListProps = {
     title: string;
-    emptyMessage: string;
     userId: string;
     listId: string;
     type?: MediaType;
   };
 
-  const { title, emptyMessage, userId, listId, type }: UserlistListProps =
-    $props();
+  const { title, userId, listId, type }: UserListProps = $props();
 
-  const { isLoading, list } = $derived(
-    useUserlistList({ userId, listId, type }),
-  );
+  const { list } = $derived(useUserList({ userId, listId, type }));
 </script>
 
 <!-- TODO use drilled media list & fetch rest on scroll -->
@@ -27,13 +23,6 @@
   items={$list}
   --width-item="var(--width-poster-card)"
 >
-  {#snippet empty()}
-    {#if !$isLoading && emptyMessage}
-      <p class="small secondary">
-        {emptyMessage}
-      </p>
-    {/if}
-  {/snippet}
   {#snippet item(media)}
     <MediaCard type={media.type} {media} />
   {/snippet}

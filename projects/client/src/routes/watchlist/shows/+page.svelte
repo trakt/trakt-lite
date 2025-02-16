@@ -17,7 +17,7 @@
 
   <WatchlistPaginatedList
     title={m.your_watchlist_shows()}
-    emptyMessage={m.watchlist_shows_empty()}
+    status="all"
     type="show"
   />
 </TraktPage>

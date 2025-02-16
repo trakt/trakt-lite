@@ -3,7 +3,7 @@
 
   import TraktPage from "$lib/sections/layout/TraktPage.svelte";
   import TraktPageCoverSetter from "$lib/sections/layout/TraktPageCoverSetter.svelte";
-  import WatchlistList from "$lib/sections/lists/watchlist/WatchlistList.svelte";
+  import WatchList from "$lib/sections/lists/watchlist/WatchList.svelte";
   import { DEFAULT_SHARE_COVER } from "$lib/utils/constants";
 </script>
 
@@ -14,17 +14,17 @@
 >
   <TraktPageCoverSetter />
 
-  <WatchlistList
+  <WatchList
     title={m.watchlist_movies()}
     drilldownLabel={m.view_all_watchlist_movies()}
-    emptyMessage={m.watchlist_movies_empty()}
     type="movie"
+    status="all"
   />
 
-  <WatchlistList
+  <WatchList
     title={m.watchlist_shows()}
     drilldownLabel={m.view_all_watchlist_shows()}
-    emptyMessage={m.watchlist_shows_empty()}
     type="show"
+    status="all"
   />
 </TraktPage>

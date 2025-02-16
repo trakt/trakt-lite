@@ -2,6 +2,7 @@
   import { page as pageState } from "$app/state";
   import GridList from "$lib/components/lists/grid-list/GridList.svelte";
   import { DEFAULT_DRILL_SIZE, PAGE_UPPER_LIMIT } from "$lib/utils/constants";
+  import type { Snippet } from "svelte";
   import { writable } from "svelte/store";
   import { mediaCardWidthResolver } from "../utils/mediaCardWidthResolver";
   import type { DrillListProps } from "./DrillListProps";
@@ -9,16 +10,16 @@
 
   type DrilledMediaListProps = DrillListProps<T, M> & {
     useList: PaginatableStore<T, M>;
-    emptyMessage?: string;
+    empty?: Snippet;
   };
 
   const {
     id,
     title,
     type,
+    empty: externalEmpty,
     item,
     useList,
-    emptyMessage,
   }: DrilledMediaListProps = $props();
 
   const current = $derived(
@@ -50,10 +51,8 @@
   --width-item={mediaCardWidthResolver(type)}
 >
   {#snippet empty()}
-    {#if !$isLoading && emptyMessage}
-      <p class="small secondary">
-        {emptyMessage}
-      </p>
+    {#if !$isLoading}
+      {@render externalEmpty?.()}
     {/if}
   {/snippet}
 </GridList>
