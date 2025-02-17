@@ -18,30 +18,22 @@
   aria-label={label}
   onclick={() => isChecked.update((value) => !value)}
   data-color={color}
-  disabled={true}
   {...props}
 >
   <div class="trakt-switch-tick"><SwitchIcon /></div>
-  <p class="trakt-switch-text meta-info ellipsis">{innerText}</p>
+  {#if innerText}
+    <p class="trakt-switch-text meta-info ellipsis">
+      {innerText}
+    </p>
+  {/if}
 </button>
 
 <style lang="scss">
   @mixin color-styles($color) {
     &[data-color="#{$color}"] {
-      // TODO naming & extract + add support for custom & default
-
-      //icon, outline color, alternate switch text
-      --color-foreground: var(--#{$color}-50);
-      //default button background color
-      --color-background: var(--#{$color}-50);
-
-      //alternate button background color
-      --color-background-alternative: var(--#{$color}-800);
-
-      //default switch text
-      --color-foreground-alternative: var(--#{$color}-500);
-      //tick color
-      --color-tick: var(--#{$color}-500);
+      --color-button-foreground: var(--color-switch-foreground-#{$color});
+      --color-button-background: var(--color-switch-background-#{$color});
+      --color-tick: var(--color-tick-#{$color});
     }
   }
 
@@ -67,7 +59,7 @@
     width: var(--button-width);
     height: var(--button-height);
 
-    color: var(--color-foreground);
+    color: var(--color-button-foreground);
     box-shadow: var(--ni-0) var(--ni-4) var(--ni-4) var(--ni-0)
       color-mix(in srgb, var(--shade-940) 24%, transparent 76%) inset;
 
@@ -78,9 +70,9 @@
     transition: var(--transition-increment) ease-in-out;
     transition-property: background-color, outline;
 
-    background-color: var(--color-background);
+    background-color: var(--color-button-foreground);
 
-    @each $color in "purple", "red", "blue", "orange" {
+    @each $color in "purple", "red", "blue", "orange", "default", "custom" {
       @include color-styles($color);
     }
 
@@ -89,22 +81,17 @@
     }
 
     &[disabled] {
-      --color-foreground: var(--color-surface-button-disabled);
-      --color-background: var(--color-surface-button-disabled);
-
-      --color-background-alternative: var(--color-surface-button-disabled);
-
-      --color-tick: var(--color-foreground-button-disabled);
-      --color-foreground-alternative: var(--color-foreground-button-disabled);
+      --color-button-foreground: var(--color-surface-button-disabled);
+      --color-tick: var(--color-button-foreground-button-disabled);
 
       cursor: not-allowed;
     }
 
     &:hover:not([disabled]) {
-      background-color: var(--color-background-alternative);
+      background-color: var(--color-button-background);
 
       .trakt-switch-text {
-        color: var(--color-foreground);
+        color: var(--color-button-foreground);
       }
 
       .trakt-switch-tick {
@@ -122,7 +109,7 @@
       left: var(--text-offset);
       width: var(--text-width);
 
-      color: var(--color-foreground-alternative);
+      color: var(--color-tick);
       transform: translateX(
         calc(var(--button-width) - var(--text-width) - 2 * var(--text-offset))
       );
@@ -174,10 +161,10 @@
     &[aria-checked="true"] {
       &:not([disabled]) {
         // TODO extract as mixin, reuse in case false
-        background-color: var(--color-background-alternative);
+        background-color: var(--color-button-background);
 
         .trakt-switch-text {
-          color: var(--color-foreground);
+          color: var(--color-button-foreground);
         }
       }
 
@@ -196,10 +183,10 @@
       }
 
       &:hover:not([disabled]) {
-        background-color: var(--color-background);
+        background-color: var(--color-button-foreground);
 
         .trakt-switch-text {
-          color: var(--color-foreground-alternative);
+          color: var(--color-tick);
         }
 
         .trakt-switch-tick {
@@ -211,7 +198,7 @@
     }
 
     &:focus-visible {
-      outline: var(--border-thickness-xs) solid var(--color-foreground);
+      outline: var(--border-thickness-xs) solid var(--color-button-foreground);
     }
   }
 </style>
