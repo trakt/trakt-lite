@@ -1,9 +1,20 @@
 <script lang="ts">
   import { tooltip } from "$lib/utils/actions/tooltip";
+  import StemTag from "../tags/StemTag.svelte";
 
   const { description }: { description: string } = $props();
 </script>
 
+<div class="trakt-preview-badge" use:tooltip={description}>
+  <StemTag
+    --color-background-stem-tag={"var(--color-background-preview-tag)"}
+    --color-text-stem-tag={"var(--color-text-preview-tag)"}
+  >
+    Preview
+  </StemTag>
+</div>
+
+<!-- 
 <div class="trakt-preview-badge" use:tooltip={description}>
   <h6>Preview</h6>
 </div>
@@ -41,5 +52,11 @@
     100% {
       filter: hue-rotate(360deg);
     }
+  }
+</style> -->
+
+<style>
+  .trakt-preview-badge {
+    user-select: none;
   }
 </style>

@@ -55,6 +55,9 @@
   --color-text-plays-tag: var(--shade-900);
   --color-background-plays-tag: var(--shade-10);
 
+  --color-text-preview-tag: var(--shade-10);
+  --color-background-preview-tag: var(--orange-500);
+
   --color-border-avatar: var(--shade-50);
   --color-border-vip-avatar: var(--red-500);
 
