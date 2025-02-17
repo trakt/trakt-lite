@@ -33,7 +33,7 @@
     // TODO verify all paths
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
-    window.location.assign(`https://trakt.tv${currentPath}${currentSearch}`);
+    // window.location.assign(`https://trakt.tv${currentPath}${currentSearch}`);
   });
 
   onMount(() => {

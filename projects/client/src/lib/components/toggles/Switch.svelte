@@ -18,6 +18,7 @@
   aria-label={label}
   onclick={() => isChecked.update((value) => !value)}
   data-color={color}
+  disabled={true}
   {...props}
 >
   <div class="trakt-switch-tick"><SwitchIcon /></div>
@@ -28,12 +29,18 @@
   @mixin color-styles($color) {
     &[data-color="#{$color}"] {
       // TODO naming & extract + add support for custom & default
-      --color-foreground: var(--#{$color}-10);
+
+      //icon, outline color, alternate switch text
+      --color-foreground: var(--#{$color}-50);
+      //default button background color
       --color-background: var(--#{$color}-50);
 
-      --color-foreground-alternative: var(--#{$color}-500);
+      //alternate button background color
       --color-background-alternative: var(--#{$color}-800);
 
+      //default switch text
+      --color-foreground-alternative: var(--#{$color}-500);
+      //tick color
       --color-tick: var(--#{$color}-500);
     }
   }
@@ -82,13 +89,13 @@
     }
 
     &[disabled] {
-      --color-tick: var(--color-foreground-button-disabled);
-
-      --color-foreground: var(--color-foreground-button-disabled);
-      --color-foreground-alternative: var(--color-foreground-button-disabled);
-
+      --color-foreground: var(--color-surface-button-disabled);
       --color-background: var(--color-surface-button-disabled);
+
       --color-background-alternative: var(--color-surface-button-disabled);
+
+      --color-tick: var(--color-foreground-button-disabled);
+      --color-foreground-alternative: var(--color-foreground-button-disabled);
 
       cursor: not-allowed;
     }
@@ -165,11 +172,16 @@
     }
 
     &[aria-checked="true"] {
-      // TODO extract as mixin, reuse in case false
-      background-color: var(--color-background-alternative);
+      &:not([disabled]) {
+        // TODO extract as mixin, reuse in case false
+        background-color: var(--color-background-alternative);
+
+        .trakt-switch-text {
+          color: var(--color-foreground);
+        }
+      }
 
       .trakt-switch-text {
-        color: var(--color-foreground);
         transform: translateX(0);
       }
 
