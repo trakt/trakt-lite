@@ -13,6 +13,17 @@ function forceHttps(url: string | Nil): HttpsUrl | Nil {
 export function mapToMediaRating(
   ratings: RatingResponse,
 ): MediaRating {
+  const mapToVoteCount = (
+    votes: number | Nil,
+    rating: number | Nil,
+  ): number => {
+    if (!rating || !votes) {
+      return 0;
+    }
+
+    return votes;
+  };
+
   return {
     trakt: {
       rating: ratings.trakt.rating / 10,
@@ -21,7 +32,7 @@ export function mapToMediaRating(
     },
     tmdb: {
       rating: (ratings.tmdb?.rating ?? 0) / 10,
-      votes: ratings.tmdb?.votes ?? 0,
+      votes: mapToVoteCount(ratings.tmdb?.votes, ratings.tmdb?.rating),
       url: forceHttps(ratings.tmdb?.link),
     },
     rotten: {
@@ -31,7 +42,7 @@ export function mapToMediaRating(
     },
     imdb: {
       rating: ratings.imdb?.rating ?? 0,
-      votes: ratings.imdb?.votes ?? 0,
+      votes: mapToVoteCount(ratings.imdb?.votes, ratings.imdb?.rating),
       url: forceHttps(ratings.imdb?.link),
     },
     metacritic: {
