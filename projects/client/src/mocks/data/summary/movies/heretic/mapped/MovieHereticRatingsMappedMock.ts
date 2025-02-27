@@ -17,23 +17,10 @@ export const MovieHereticRatingsMappedMock: MediaRating = {
       '10': 262,
     },
   },
-  'tmdb': {
-    'rating': 0.714,
-    'votes': 563,
-    'url': 'https://www.themoviedb.org/movie/1138194',
-  },
-  'rotten': {
-    'critic': 0,
-    'audience': 0,
-    'url': 'https://www.rottentomatoes.com/m/heretic_2023',
-  },
+  'rotten': undefined,
   'imdb': {
     'rating': 7.1,
     'votes': 49905,
     'url': 'https://www.imdb.com/title/tt28015403',
-  },
-  'metacritic': {
-    'rating': 71,
-    'url': 'https://www.imdb.com/title/tt28015403/criticreviews',
   },
 };
