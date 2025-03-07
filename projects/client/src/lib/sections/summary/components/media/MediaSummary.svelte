@@ -13,6 +13,7 @@
   import type { MediaStudio } from "$lib/requests/models/MediaStudio";
   import type { MediaType } from "$lib/requests/models/MediaType";
   import MarkAsWatchedAction from "$lib/sections/media-actions/mark-as-watched/MarkAsWatchedAction.svelte";
+  import { useWatchCount } from "$lib/sections/media-actions/mark-as-watched/useWatchCount";
   import WatchlistAction from "$lib/sections/media-actions/watchlist/WatchlistAction.svelte";
   import type { Snippet } from "svelte";
   import MediaDetails from "../details/MediaDetails.svelte";
@@ -63,8 +64,14 @@
     type,
     media,
   });
+
+  // TODO duplication with MediaMetaInfo
+  const { watchCount } = useWatchCount({ media, type });
+  const isRewatching = $derived($watchCount > 0);
+  $inspect({ $watchCount, isRewatching });
 </script>
 
+<!-- TODO also for ep summary -->
 {#snippet mediaActions(device: "mobile" | "other" = "other")}
   <WatchlistAction
     {...watchlistProps}
@@ -72,6 +79,7 @@
   />
   <MarkAsWatchedAction
     {...markWasWatchedProps}
+    {isRewatching}
     size={device === "mobile" ? "small" : "normal"}
   />
 {/snippet}

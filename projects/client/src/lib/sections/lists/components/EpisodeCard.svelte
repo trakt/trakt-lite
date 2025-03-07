@@ -19,6 +19,7 @@
   const style = $derived(props.style ?? "cover");
 </script>
 
+<!-- TODO actual rewatch state? -->
 {#snippet action()}
   {#if !isFuture && !isActivity && !isHidden}
     <MarkAsWatchedAction

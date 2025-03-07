@@ -46,9 +46,9 @@
     }
   }
 
-  /* TODO: fixed width; reduce duplication with tag */
+  /* TODO: reduce duplication with tag */
   .trakt-watch-count {
-    min-width: var(--ni-12);
+    width: var(--ni-12);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -54,6 +54,7 @@
     {episode}
     {show}
     {size}
+    isRewatching={true}
   />
 {/snippet}
 
