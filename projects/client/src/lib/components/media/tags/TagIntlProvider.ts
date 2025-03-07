@@ -19,4 +19,5 @@ export const TagIntlProvider: TagIntl = {
   tbaLabel: () => m.tba_label(),
   toAnticipatedCount: (count) =>
     m.anticipated_count({ count: toHumanNumber(count, languageTag()) }),
+  watchCountLabel: () => m.watch_count_label(),
 };
