@@ -89,14 +89,22 @@
 
       .trakt-search-input {
         background: color-mix(in srgb, var(--shade-940) 90%, transparent 10%);
+        outline: var(--border-thickness-xs) solid var(--shade-700);
+
+        @include for-mobile {
+          &:not(:focus-within) {
+            opacity: 0;
+          }
+        }
       }
     }
   }
 
   .trakt-search {
-    --search-input-width: clamp(var(--ni-80), 100%, var(--ni-320));
+    --search-input-width: clamp(var(--ni-80), 100%, var(--ni-480));
     --mobile-search-focus-width: calc(100dvw - var(--layout-distance-side) * 2);
     --search-icon-size: var(--ni-24);
+    --search-icon-offset: calc(var(--search-icon-size) / 2);
 
     display: flex;
     height: var(--ni-48);
@@ -114,8 +122,8 @@
 
       position: absolute;
       z-index: calc(var(--layer-top) + var(--layer-overlay));
-      top: calc(var(--search-icon-size) / 2);
-      left: calc(var(--search-icon-size) / 2);
+      top: var(--search-icon-offset);
+      left: var(--search-icon-offset);
     }
 
     .trakt-search-input {
@@ -123,11 +131,12 @@
       height: 100%;
       width: 100%;
       padding: var(--ni-8) var(--ni-16);
-      padding-left: calc(var(--search-icon-size) + var(--ni-16));
+      padding-left: calc(
+        var(--search-icon-size) + var(--search-icon-offset) + var(--ni-16)
+      );
       box-sizing: border-box;
 
       border-radius: var(--border-radius-s);
-      outline: var(--border-thickness-xs) solid var(--shade-700);
       background: color-mix(
         in srgb,
         var(--color-background) 75%,
@@ -150,6 +159,10 @@
           outline: none;
           opacity: 0.75;
         }
+      }
+
+      &:placeholder-shown {
+        text-overflow: ellipsis;
       }
 
       &:focus-within {
