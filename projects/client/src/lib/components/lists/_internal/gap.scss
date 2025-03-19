@@ -13,9 +13,9 @@
 }
 
 @mixin adaptive-list-gap($property: gap) {
-  #{$property}: var(--gap-xl);
+  #{$property}: var(--gap-s);
 
   @include for-mobile {
-    #{$property}: var(--gap-m);
+    #{$property}: var(--gap-xs);
   }
 }

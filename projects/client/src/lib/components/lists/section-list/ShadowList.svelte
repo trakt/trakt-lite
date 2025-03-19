@@ -4,6 +4,7 @@
   import { onMount, type Snippet } from "svelte";
   import { writable, type Writable } from "svelte/store";
   import "../_internal/list.css";
+  import ListFilters from "../_internal/ListFilters.svelte";
   import ListHeader from "../_internal/ListHeader.svelte";
   import { useScrollHistoryAction } from "../_internal/useScrollHistoryAction";
   import type { ListProps } from "../ListProps";
@@ -13,6 +14,7 @@
     empty?: Snippet;
     scrollContainer?: Writable<HTMLDivElement>;
     scrollX?: Writable<{ left: number; right: number }>;
+    hasVisibleFilters?: boolean; //TODO merge with filters?
   };
 
   const {
@@ -25,6 +27,8 @@
     actions,
     badge,
     empty,
+    filters,
+    hasVisibleFilters = false,
   }: SectionListProps<T> = $props();
   const sideDistance = useVarToPixels("var(--layout-distance-side)");
   const windowShadowWidth = useVarToPixels("var(--ni-64)");
@@ -56,6 +60,7 @@
 >
   {#if $isVisible}
     <ListHeader {title} {actions} {badge} inset="title" />
+    <ListFilters {filters} isOpen={hasVisibleFilters} />
     <div
       class="shadow-list"
       class:shadow-list-left-shadow={isLeftShadowVisible}

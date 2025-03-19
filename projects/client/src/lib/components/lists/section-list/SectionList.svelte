@@ -2,6 +2,7 @@
   import ActionButton from "$lib/components/buttons/ActionButton.svelte";
   import CaretLeftIcon from "$lib/components/icons/CaretLeftIcon.svelte";
   import CaretRightIcon from "$lib/components/icons/CaretRightIcon.svelte";
+  import FilterIcon from "$lib/components/icons/FilterIcon.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import { type Snippet } from "svelte";
   import { writable } from "svelte/store";
@@ -22,10 +23,13 @@
     dynamicActions,
     actions: externalActions,
     badge,
+    filters,
   }: SectionListProps<T> = $props();
 
   const scrollContainer = writable<HTMLDivElement>();
   const scrollX = writable({ left: 0, right: 0 });
+
+  const hasOpenFilters = writable(false);
 
   function scrollToLeft() {
     const left = Math.max(
@@ -67,10 +71,22 @@
   {badge}
   {scrollX}
   {scrollContainer}
+  {filters}
+  hasVisibleFilters={$hasOpenFilters}
 >
   {#snippet actions()}
     {#if dynamicActions != null}
       {@render dynamicActions()}
+    {/if}
+
+    {#if filters}
+      <ActionButton
+        onclick={() => hasOpenFilters.set(!$hasOpenFilters)}
+        label=""
+        style="ghost"
+      >
+        <FilterIcon isActive={$hasOpenFilters} />
+      </ActionButton>
     {/if}
 
     <RenderFor audience="all" device={["tablet-sm", "tablet-lg", "desktop"]}>

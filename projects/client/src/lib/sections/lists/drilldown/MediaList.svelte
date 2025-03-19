@@ -13,6 +13,8 @@
     item,
     actions: externalActions,
     useList,
+    dynamicActions,
+    filters,
   }: MediaListProps<T, M> = $props();
 
   const { list, isLoading } = $derived(
@@ -32,6 +34,8 @@
   {badge}
   {item}
   {title}
+  {dynamicActions}
+  {filters}
   actions={externalActions ? actions : undefined}
   --height-list={mediaListHeightResolver(type)}
 >

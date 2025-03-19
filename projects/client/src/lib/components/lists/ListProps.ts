@@ -1,3 +1,4 @@
+import type { QuickFilters } from '$lib/features/filters/QuickFilters.ts';
 import type { Snippet } from 'svelte';
 
 export type ListProps<T> = {
@@ -8,4 +9,5 @@ export type ListProps<T> = {
   actions?: Snippet;
   dynamicActions?: Snippet;
   badge?: Snippet;
+  filters?: QuickFilters;
 };
