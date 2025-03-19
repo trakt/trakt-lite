@@ -14,10 +14,9 @@
     actions: externalActions,
     useList,
     dynamicActions,
-    filters,
   }: MediaListProps<T, M> = $props();
 
-  const { list, isLoading } = $derived(
+  const { list, isLoading, filters } = $derived(
     useList({ type, page: 1, limit: DEFAULT_PAGE_SIZE }),
   );
 </script>
