@@ -335,5 +335,9 @@
   "comment_likes": "{count} aprecieri",
   "close_label": "Închide",
   "comment_replies_label": "Răspunsuri comentarii",
-  "comment_replies_text": "{count} răspunsuri"
+  "comment_replies_text": "{count} răspunsuri",
+  "comment_reply_label": "Răspunde lui {user}",
+  "comment_reply_placeholder": "Răspunde...",
+  "comment_mark_as_spoiler": "Marchează ca spoiler",
+  "comment_spoiler": "Spoiler"
 }

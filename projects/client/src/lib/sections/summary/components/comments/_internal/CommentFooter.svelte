@@ -1,24 +1,9 @@
 <script lang="ts">
-  import type { MediaComment } from "$lib/requests/models/MediaComment";
-  import LikeCommentAction from "./comment-actions/LikeCommentAction.svelte";
-  import ViewRepliesAction from "./comment-actions/ViewRepliesAction.svelte";
-
-  type CommentFooterProps = {
-    comment: MediaComment;
-    onDrilldown?: (id: number) => void;
-  };
-
-  const { comment, onDrilldown }: CommentFooterProps = $props();
-
-  const isRootComment = $derived(comment.parentId === 0);
+  const { children }: ChildrenProps = $props();
 </script>
 
 <div class="trakt-comment-footer">
-  <LikeCommentAction {comment} />
-
-  {#if isRootComment}
-    <ViewRepliesAction {comment} {onDrilldown} />
-  {/if}
+  {@render children()}
 </div>
 
 <style>

@@ -1,19 +1,33 @@
 <script lang="ts">
   import Card from "$lib/components/card/Card.svelte";
+  import RenderFor from "$lib/guards/RenderFor.svelte";
   import type { MediaComment } from "$lib/requests/models/MediaComment";
   import type { MediaEntry } from "$lib/requests/models/MediaEntry";
+  import LikeCommentAction from "../comment-actions/LikeCommentAction.svelte";
+  import ReplyButton from "../comment-actions/ReplyButton.svelte";
+  import ViewRepliesAction from "../comment-actions/ViewRepliesAction.svelte";
   import CommentBody from "../CommentBody.svelte";
   import CommentFooter from "../CommentFooter.svelte";
   import CommentHeader from "../CommentHeader.svelte";
   import ShadowScroller from "../ShadowScroller.svelte";
+  import CommentInput from "./CommentInput.svelte";
   import { useCommentReplies } from "./useCommentReplies";
 
   type CommentThreadCardProps = {
     comment: MediaComment;
     media: MediaEntry;
+    reset: () => void;
+    isReplying: boolean;
+    setReplying: (comment: MediaComment, isReplying: boolean) => void;
   };
 
-  const { comment, media }: CommentThreadCardProps = $props();
+  const {
+    comment,
+    media,
+    isReplying,
+    setReplying,
+    reset,
+  }: CommentThreadCardProps = $props();
   const { list } = $derived(useCommentReplies({ id: comment.id }));
 </script>
 
@@ -33,14 +47,29 @@
             <div class="trakt-comment-container">
               <CommentHeader comment={reply} />
               <CommentBody comment={reply} {media} />
-              <CommentFooter comment={reply} />
+              <CommentFooter>
+                <LikeCommentAction {comment} />
+              </CommentFooter>
             </div>
           {/each}
         {/if}
       </div>
     </ShadowScroller>
 
-    <CommentFooter {comment} />
+    <CommentFooter>
+      <LikeCommentAction {comment} />
+      <ViewRepliesAction {comment} />
+      <RenderFor audience="authenticated">
+        <ReplyButton
+          {comment}
+          onClick={() => setReplying(comment, !isReplying)}
+        />
+      </RenderFor>
+    </CommentFooter>
+
+    {#if isReplying}
+      <CommentInput {comment} onCommentPost={reset} />
+    {/if}
   </div>
 </Card>
 
@@ -70,9 +99,14 @@
   }
 
   .trakt-comment-container {
-    :global(.trakt-shadow-wrapper),
+    --comment-reply-offset: calc(var(--ni-32) + var(--gap-s));
+
+    :global(.trakt-shadow-wrapper) {
+      margin-left: var(--comment-reply-offset);
+    }
+
     :global(.trakt-comment-footer) {
-      margin-left: calc(var(--ni-32) + var(--gap-s));
+      margin-left: calc(var(--comment-reply-offset) + var(--ni-neg-18));
     }
 
     display: flex;

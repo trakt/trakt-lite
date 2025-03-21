@@ -335,5 +335,9 @@
   "comment_likes": "{count} харесвания",
   "close_label": "Затвори",
   "comment_replies_label": "Отговори на коментари",
-  "comment_replies_text": "{count} отговора"
+  "comment_replies_text": "{count} отговора",
+  "comment_reply_label": "Отговор на {user}",
+  "comment_reply_placeholder": "Отговор...",
+  "comment_mark_as_spoiler": "Маркирай като спойлер",
+  "comment_spoiler": "Спойлер"
 }

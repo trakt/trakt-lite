@@ -3,27 +3,29 @@
   import CommentIcon from "$lib/components/icons/CommentIcon.svelte";
   import * as m from "$lib/features/i18n/messages.ts";
   import type { MediaComment } from "$lib/requests/models/MediaComment";
+  import { usePermissions } from "$lib/stores/usePermissions";
   import type { ActiveComment } from "../models/ActiveComment";
 
-  type ViewRepliesActionProps = {
+  type ReplyButtonProps = {
     comment: MediaComment;
-    onDrilldown?: (comment: ActiveComment) => void;
+    onClick: (comment: ActiveComment) => void;
   };
 
-  const { comment, onDrilldown }: ViewRepliesActionProps = $props();
-
-  const iconStyle = $derived(comment.replyCount > 0 ? "filled" : "open");
+  const { comment, onClick }: ReplyButtonProps = $props();
+  const { isPermitted } = usePermissions("comment");
 </script>
 
 <Button
-  label={m.comment_replies_label()}
-  onclick={() => onDrilldown?.({ id: comment.id, isReplying: false })}
+  label={m.comment_reply_label({ user: comment.user.username })}
+  onclick={() => {
+    onClick({ id: comment.id, isReplying: true });
+  }}
   style="ghost"
   color="purple"
-  disabled={!onDrilldown}
+  disabled={!$isPermitted}
 >
   {#snippet icon()}
-    <CommentIcon style={iconStyle} />
+    <CommentIcon />
   {/snippet}
-  {m.comment_replies_text({ count: comment.replyCount })}
+  Reply
 </Button>

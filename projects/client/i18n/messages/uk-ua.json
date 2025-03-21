@@ -335,5 +335,9 @@
   "comment_likes": "{count} вподобайок",
   "close_label": "Закрити",
   "comment_replies_label": "Відповіді на коментарі",
-  "comment_replies_text": "{count} відповідей"
+  "comment_replies_text": "{count} відповідей",
+  "comment_reply_label": "Відповісти {user}",
+  "comment_reply_placeholder": "Відповідь...",
+  "comment_mark_as_spoiler": "Позначити як спойлер",
+  "comment_spoiler": "Спойлер"
 }

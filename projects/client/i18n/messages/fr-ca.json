@@ -335,5 +335,9 @@
   "comment_likes": "{count} j'aime ça",
   "close_label": "Fermer",
   "comment_replies_label": "Réponses aux commentaires",
-  "comment_replies_text": "{count} réponses"
+  "comment_replies_text": "{count} réponses",
+  "comment_reply_label": "Répondre à {user}",
+  "comment_reply_placeholder": "Réponse...",
+  "comment_mark_as_spoiler": "Marquer comme divulgâcheur",
+  "comment_spoiler": "Divulgâcheur"
 }

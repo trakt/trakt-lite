@@ -335,5 +335,9 @@
   "comment_likes": "{count} likes",
   "close_label": "Sluiten",
   "comment_replies_label": "Reacties",
-  "comment_replies_text": "{count} reacties"
+  "comment_replies_text": "{count} reacties",
+  "comment_reply_label": "Reageer op {user}",
+  "comment_reply_placeholder": "Reageren...",
+  "comment_mark_as_spoiler": "Markeren als spoiler",
+  "comment_spoiler": "Spoiler"
 }

@@ -335,5 +335,9 @@
   "comment_likes": "{count} 件のいいね",
   "close_label": "閉じる",
   "comment_replies_label": "コメント返信",
-  "comment_replies_text": "{count} 件の返信"
+  "comment_replies_text": "{count} 件の返信",
+  "comment_reply_label": "{user} に返信する",
+  "comment_reply_placeholder": "返信...",
+  "comment_mark_as_spoiler": "ネタバレとしてマーク",
+  "comment_spoiler": "ネタバレ"
 }

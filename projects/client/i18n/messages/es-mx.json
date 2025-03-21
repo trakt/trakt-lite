@@ -335,5 +335,9 @@
   "comment_likes": "{count} me gusta(n)",
   "close_label": "Cerrar",
   "comment_replies_label": "Respuestas",
-  "comment_replies_text": "{count} respuestas"
+  "comment_replies_text": "{count} respuestas",
+  "comment_reply_label": "Responder a {user}",
+  "comment_reply_placeholder": "Respuesta...",
+  "comment_mark_as_spoiler": "Marcar como spoiler",
+  "comment_spoiler": "¡Spoiler!"
 }
