@@ -1,8 +1,4 @@
 <script lang="ts" generics="T extends { id: unknown }">
-  import ActionButton from "$lib/components/buttons/ActionButton.svelte";
-  import CaretLeftIcon from "$lib/components/icons/CaretLeftIcon.svelte";
-  import CaretRightIcon from "$lib/components/icons/CaretRightIcon.svelte";
-  import RenderFor from "$lib/guards/RenderFor.svelte";
   import { type Snippet } from "svelte";
   import { writable } from "svelte/store";
   import type { ListProps } from "../ListProps";
@@ -70,10 +66,10 @@
 >
   {#snippet actions()}
     {#if dynamicActions != null}
-      {@render dynamicActions()}
+      <!-- {@render dynamicActions()} -->
     {/if}
 
-    <RenderFor audience="all" device={["tablet-sm", "tablet-lg", "desktop"]}>
+    <!-- <RenderFor audience="all" device={["tablet-sm", "tablet-lg", "desktop"]}>
       <ActionButton
         onclick={scrollToLeft}
         label={`Scroll ${title} to the left`}
@@ -90,10 +86,10 @@
       >
         <CaretRightIcon />
       </ActionButton>
-    </RenderFor>
+    </RenderFor> -->
 
     {#if externalActions != null}
-      {@render externalActions()}
+      <!-- {@render externalActions()} -->
     {/if}
   {/snippet}
 </ShadowList>

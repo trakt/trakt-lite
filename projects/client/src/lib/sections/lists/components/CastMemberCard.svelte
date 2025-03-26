@@ -3,6 +3,7 @@
   import Link from "$lib/components/link/Link.svelte";
   import PersonCard from "$lib/components/people/card/PersonCard.svelte";
   import * as m from "$lib/features/i18n/messages";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import type { CastMember } from "$lib/requests/models/MediaCrew";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
 
@@ -14,7 +15,11 @@
 </script>
 
 <trakt-cast-member>
-  <Link focusable={false} href={UrlBuilder.people(castMember.id)}>
+  <Link
+    focusable={false}
+    href={UrlBuilder.people(castMember.id)}
+    navigationType={KbNavigationType.Item}
+  >
     <div class="trakt-cast-member">
       <PersonCard>
         <CardCover

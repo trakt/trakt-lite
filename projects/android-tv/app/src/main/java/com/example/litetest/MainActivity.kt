@@ -17,14 +17,20 @@ class MainActivity : ComponentActivity() {
         webView.settings.apply {
             javaScriptEnabled = true  // Enable JavaScript
             domStorageEnabled = true  // Enable local storage
-            cacheMode = WebSettings.LOAD_NO_CACHE
-            useWideViewPort = true
-            loadWithOverviewMode = true
+            // cacheMode = WebSettings.LOAD_NO_CACHE // TODO decide cache mode
+            useWideViewPort = true //enable support for viewport meta tags
+            loadWithOverviewMode = true // load webpage scaled to fit the webview
         }
 
+        //https://developer.android.com/develop/ui/views/layout/webapps/webview
+        //TODO add javascript interfaces?
+        webView.setInitialScale(0)
+
         webView.webViewClient = WebViewClient()
-        // TODO: change url based on env (dev, preview, prod)
-        webView.loadUrl("https://app.trakt.tv/")  // Replace with your actual URL
+
+        // TODO: change url based on env (dev, preview, prod
+        // 10.0.2.2 is the alias to host machine's loopback interface
+        webView.loadUrl("http://10.0.2.2:5173/")  // Replace with your actual URL
 
         setContentView(webView)
     }

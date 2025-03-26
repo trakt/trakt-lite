@@ -1,4 +1,5 @@
 <script lang="ts" generics="T extends { id: unknown }">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useVarToPixels } from "$lib/stores/css/useVarToPixels";
   import { whenInViewport } from "$lib/utils/actions/whenInViewport";
   import { onMount, type Snippet } from "svelte";
@@ -73,6 +74,7 @@
           class="trakt-list-item-container"
           class:shadow-list-horizontal-scroll-centered={variant === "centered"}
           class:shadow-list-horizontal-scroll={variant === "normal"}
+          data-kb-navigation={KbNavigationType.List}
         >
           {#each items as i (i.id)}
             {@render item(i)}

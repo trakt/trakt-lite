@@ -34,9 +34,16 @@
     <meta name="application-name" content="Trakt Lite" />
 
     <!-- Viewport -->
+    <!-- TODO
+     -proper fix for scaling, should be handled on android side (i.e. also needs to work for the sign in page on og )
+     -detect webview client side; (hide certain elements in that case, use different api, etc).
+     -keyboard handling to deal with android tv remote?
+     -section list tab behavior: tabbing should auto scroll
+     -back button handling
+     -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+      content="width=device-width, initial-scale=0.75, viewport-fit=cover, interactive-widget=resizes-content"
     />
 
     <!-- Icons -->

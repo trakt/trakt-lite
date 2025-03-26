@@ -2,6 +2,7 @@
   import Button from "$lib/components/buttons/Button.svelte";
   import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
   import WatchlistIcon from "$lib/components/icons/WatchlistIcon.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import ActionButton from "../ActionButton.svelte";
   import { useDangerButton } from "../_internal/useDangerButton";
   import { WatchlistButtonIntlProvider } from "./WatchlistButtonIntlProvider";
@@ -35,7 +36,7 @@
 </script>
 
 {#if type === "normal"}
-  <Button {...commonProps} {...props}>
+  <Button {...commonProps} {...props} navigationType={KbNavigationType.Item}>
     {i18n.text({ isWatchlisted, title })}
     {#snippet icon()}
       <WatchlistIcon size="small" {state} />

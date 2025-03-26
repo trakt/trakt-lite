@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useActiveLink } from "$lib/stores/useActiveLink";
   import { clickOutside } from "$lib/utils/actions/clickOutside";
   import { disableTransitionOn } from "$lib/utils/actions/disableTransitionOn";
@@ -7,7 +8,9 @@
   import type { TraktButtonProps } from "./TraktButtonProps";
 
   type TraktButtonAnchorProps = HTMLAnchorProps &
-    TraktButtonProps & { onclickoutside?: (ev: CustomEvent) => void };
+    TraktButtonProps & {
+      onclickoutside?: (ev: CustomEvent) => void;
+    };
 
   const {
     label,
@@ -19,8 +22,11 @@
     subtitle,
     size = "normal",
     text = "uppercase",
+    navigationType,
     ...props
-  }: TraktButtonProps | TraktButtonAnchorProps = $props();
+  }: (TraktButtonProps | TraktButtonAnchorProps) & {
+    navigationType?: KbNavigationType;
+  } = $props();
 
   const hasIcon = $state(icon != null);
   const isDefaultAlignment = $derived(hasIcon);
@@ -78,6 +84,7 @@
     data-style={style}
     data-color={color}
     data-size={size}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render contents()}
@@ -94,6 +101,7 @@
     data-style={style}
     data-color={color}
     data-size={size}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render contents()}

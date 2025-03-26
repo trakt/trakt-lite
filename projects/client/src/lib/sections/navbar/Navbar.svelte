@@ -4,13 +4,11 @@
   import Link from "$lib/components/link/Link.svelte";
   import Logo from "$lib/components/logo/Logo.svelte";
   import LogoMark from "$lib/components/logo/LogoMark.svelte";
-  import Switch from "$lib/components/toggles/Switch.svelte";
   import { AnalyticsEvent } from "$lib/features/analytics/events/AnalyticsEvent";
   import { useTrack } from "$lib/features/analytics/useTrack";
   import * as m from "$lib/features/i18n/messages";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import { GlobalEventBus } from "$lib/utils/events/GlobalEventBus";
-  import { navigateToTraktOg } from "$lib/utils/url/navigateToTraktOg";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import { onMount } from "svelte";
   import JoinTraktButton from "./components/JoinTraktButton.svelte";
@@ -33,7 +31,7 @@
 </script>
 
 {#snippet traktSwitch()}
-  <Switch
+  <!-- <Switch
     label={m.switch_to_og()}
     checked={true}
     innerText="Lite"
@@ -41,7 +39,7 @@
       track();
       navigateToTraktOg();
     }}
-  />
+  /> -->
 {/snippet}
 
 <header>

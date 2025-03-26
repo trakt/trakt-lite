@@ -1,10 +1,8 @@
 <script lang="ts">
-  import * as m from "$lib/features/i18n/messages";
-
   import CoverImageSetter from "$lib/components/background/CoverImageSetter.svelte";
-  import ShareButton from "$lib/components/buttons/share/ShareButton.svelte";
   import GenreList from "$lib/components/summary/GenreList.svelte";
   import SummaryPoster from "$lib/components/summary/SummaryPoster.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import Spoiler from "$lib/features/spoilers/components/Spoiler.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import type { MediaCrew } from "$lib/requests/models/MediaCrew";
@@ -16,7 +14,6 @@
   import WatchlistAction from "$lib/sections/media-actions/watchlist/WatchlistAction.svelte";
   import { useWatchCount } from "$lib/stores/useWatchCount";
   import type { Snippet } from "svelte";
-  import MediaDetails from "../details/MediaDetails.svelte";
   import MediaStreamingServices from "../details/MediaStreamingServices.svelte";
   import MediaMetaInfo from "../media/MediaMetaInfo.svelte";
   import StreamOnOverlay from "../overlay/StreamOnOverlay.svelte";
@@ -68,6 +65,7 @@
   });
 </script>
 
+<!-- TODO up/down navigation for vertical content -->
 {#snippet mediaActions(device: "mobile" | "other" = "other")}
   <WatchlistAction
     {...watchlistProps}
@@ -81,7 +79,7 @@
 
 <CoverImageSetter src={media.cover.url.medium} {type} />
 
-<SummaryContainer {contextualContent}>
+<SummaryContainer {contextualContent} navigationType={KbNavigationType.List}>
   {#snippet poster()}
     <SummaryPoster
       src={media.poster.url.medium}
@@ -108,7 +106,8 @@
       {#if "trailer" in media}
         <YoutubeButton trailer={media.trailer} />
       {/if}
-      <ShareButton
+      <!-- TODO hide on androidtv -->
+      <!-- <ShareButton
         {title}
         textFactory={({ title }) => {
           switch (type) {
@@ -118,7 +117,7 @@
               return m.share_show({ title });
           }
         }}
-      />
+      /> -->
     {/snippet}
 
     <SummaryTitle {title} />
@@ -159,7 +158,8 @@
 </SummaryContainer>
 
 <SummaryContainer>
-  <MediaDetails {media} {studios} {crew} {type} />
+  <!-- TODO add toggle on androidtv -->
+  <!-- <MediaDetails {media} {studios} {crew} {type} /> -->
 
   {#if streamOn}
     <MediaStreamingServices

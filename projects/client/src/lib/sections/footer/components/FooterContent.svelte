@@ -3,7 +3,6 @@
   import ThemePicker from "$lib/features/theme/components/ThemePicker.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import CopyRight from "./CopyRight.svelte";
-  import ExternalLinks from "./ExternalLinks.svelte";
 
   import FooterBar from "./FooterBar.svelte";
   import FooterLogo from "./FooterLogo.svelte";
@@ -26,7 +25,7 @@
       <ThemePicker />
     </div>
     <div class="trakt-footer-right">
-      <ExternalLinks />
+      <!-- <ExternalLinks /> -->
     </div>
   </FooterBar>
 </div>
