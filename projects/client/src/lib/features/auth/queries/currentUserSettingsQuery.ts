@@ -49,6 +49,9 @@ export const UserSettingsSchema = z.object({
     showOnlyFavorites: z.boolean().optional(),
   }),
   permissions: permissionSchema.array(),
+  limits: z.object({
+    listItems: z.number(),
+  }),
 });
 
 export type UserSettings = z.infer<typeof UserSettingsSchema>;
@@ -63,7 +66,7 @@ const PERMISSIONS_MAP: Record<
 };
 
 function mapUserSettingsResponse(response: SettingsResponse): UserSettings {
-  const { user, account, browsing } = response;
+  const { user, account, browsing, limits } = response;
 
   return {
     id: user.ids.trakt,
@@ -112,6 +115,9 @@ function mapUserSettingsResponse(response: SettingsResponse): UserSettings {
     permissions: Object.entries(response.permissions)
       .filter(([_, value]) => value)
       .map(([key]) => PERMISSIONS_MAP[key as keyof typeof PERMISSIONS_MAP]),
+    limits: {
+      listItems: limits?.list.item_count ?? 0,
+    },
   };
 }
 

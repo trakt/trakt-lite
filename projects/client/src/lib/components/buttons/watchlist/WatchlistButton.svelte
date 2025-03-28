@@ -50,6 +50,7 @@
 {/if}
 
 {#if type === "dropdown-item"}
+  <!-- TODO variant for dropdown items -->
   <DropdownItem {...commonProps} style="flat">
     {i18n.text({ isWatchlisted, title })}
     {#snippet icon()}

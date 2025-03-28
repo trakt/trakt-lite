@@ -3,7 +3,6 @@
   import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import Button from "../buttons/Button.svelte";
-  import DropdownIcon from "./DropdownCaretIcon.svelte";
   import type { TraktDropdownListProps } from "./TraktDropdownListProps.ts";
 
   const {
@@ -50,7 +49,8 @@
         {#if _icon != null}
           {@render _icon()}
         {/if}
-        <DropdownIcon open={$isDropdownOpen} disabled={props.disabled} />
+        <!-- TODO -->
+        <!-- <DropdownIcon open={$isDropdownOpen} disabled={props.disabled} /> -->
       </div>
     {/snippet}
   </Button>
@@ -135,8 +135,12 @@
       all: unset;
 
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
       max-height: var(--ni-220);
       overflow-y: auto;
+
+      // TODO not for all lists?
+      gap: var(--gap-xxs);
 
       @include for-mouse {
         &::-webkit-scrollbar {

@@ -1,4 +1,5 @@
 import { currentUserLikesQuery } from '$lib/features/auth/queries/currentUserLikesQuery.ts';
+import { currentUserListsQuery } from '$lib/features/auth/queries/currentUserListsQuery.ts';
 import { useQuery } from '$lib/features/query/useQuery.ts';
 import { assertDefined } from '$lib/utils/assert/assertDefined.ts';
 import { derived, get } from 'svelte/store';
@@ -13,6 +14,7 @@ export function useUser() {
   const watchlistQueryResponse = useQuery(currentUserWatchlistQuery());
   const ratingsQueryResponse = useQuery(currentUserRatingsQuery());
   const likesQueryResponse = useQuery(currentUserLikesQuery());
+  const listsQueryResponse = useQuery(currentUserListsQuery());
 
   const user = derived(userQueryResponse, ($query) => $query.data);
   const history = derived(historyQueryResponse, ($query) => $query.data);
@@ -22,11 +24,13 @@ export function useUser() {
   );
   const ratings = derived(ratingsQueryResponse, ($ratings) => $ratings.data);
   const likes = derived(likesQueryResponse, ($likes) => $likes.data);
+  const lists = derived(listsQueryResponse, ($lists) => $lists.data);
 
   return {
     user,
     history,
     watchlist,
+    lists,
     ratings,
     likes,
     current: () =>

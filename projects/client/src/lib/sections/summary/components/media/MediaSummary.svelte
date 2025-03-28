@@ -12,6 +12,7 @@
   import type { MediaStats } from "$lib/requests/models/MediaStats";
   import type { MediaStudio } from "$lib/requests/models/MediaStudio";
   import type { MediaType } from "$lib/requests/models/MediaType";
+  import ListAction from "$lib/sections/media-actions/list/ListAction.svelte";
   import MarkAsWatchedAction from "$lib/sections/media-actions/mark-as-watched/MarkAsWatchedAction.svelte";
   import WatchlistAction from "$lib/sections/media-actions/watchlist/WatchlistAction.svelte";
   import { useWatchCount } from "$lib/stores/useWatchCount";
@@ -52,6 +53,12 @@
   const title = $derived(intl.title ?? media.title);
   const { watchCount } = useWatchCount({ media, type });
 
+  // TODO title & style?
+  const listProps = $derived({
+    type,
+    media,
+  });
+
   const watchlistProps = $derived({
     style: "normal" as const,
     title,
@@ -69,6 +76,7 @@
 </script>
 
 {#snippet mediaActions(device: "mobile" | "other" = "other")}
+  <ListAction {...listProps} />
   <WatchlistAction
     {...watchlistProps}
     style={device === "mobile" ? "action" : "normal"}
