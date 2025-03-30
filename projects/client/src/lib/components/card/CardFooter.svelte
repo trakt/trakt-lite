@@ -12,9 +12,10 @@
   {/if}
 
   {#if action}
-    <div class="trakt-card-footer-action">
+    <!-- TODO no actions on androidtv -->
+    <!-- <div class="trakt-card-footer-action">
       {@render action()}
-    </div>
+    </div> -->
   {/if}
 </div>
 

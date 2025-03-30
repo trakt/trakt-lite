@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import type { Snippet } from "svelte";
 
   type SummaryContainerProps = {
     poster?: Snippet;
     contextualContent?: Snippet;
     topActions?: Snippet;
+    navigationType?: KbNavigationType;
   } & ChildrenProps;
 
   const {
@@ -12,10 +14,11 @@
     contextualContent: content,
     children,
     topActions: actions,
+    navigationType,
   }: SummaryContainerProps = $props();
 </script>
 
-<div class="trakt-summary-container">
+<div class="trakt-summary-container" data-kb-navigation={navigationType}>
   {#if poster}
     <div class="trakt-summary-poster">
       {@render poster()}

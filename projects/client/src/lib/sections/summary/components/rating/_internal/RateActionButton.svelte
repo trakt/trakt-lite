@@ -1,6 +1,7 @@
 <script lang="ts">
   import ActionButton from "$lib/components/buttons/ActionButton.svelte";
   import RateIcon from "$lib/components/icons/RateIcon.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { SimpleRating } from "$lib/models/SimpleRating";
   import { toTranslatedValue } from "$lib/utils/formatting/string/toTranslatedValue";
 
@@ -45,6 +46,7 @@
   color="default"
   {style}
   {variant}
+  navigationType={KbNavigationType.Item}
   --color-background-default={colorMap[rating].backgroundColor}
   --color-foreground-default={colorMap[rating].foregroundColor}
 >

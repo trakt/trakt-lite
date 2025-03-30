@@ -1,10 +1,9 @@
 <script lang="ts">
   import Card from "$lib/components/card/Card.svelte";
-  import RenderFor from "$lib/guards/RenderFor.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import type { MediaComment } from "$lib/requests/models/MediaComment";
   import type { MediaEntry } from "$lib/requests/models/MediaEntry";
   import LikeCommentAction from "./comment-actions/LikeCommentAction.svelte";
-  import ReplyButton from "./comment-actions/ReplyButton.svelte";
   import ViewRepliesAction from "./comment-actions/ViewRepliesAction.svelte";
   import CommentBody from "./CommentBody.svelte";
   import CommentFooter from "./CommentFooter.svelte";
@@ -24,21 +23,42 @@
   --width-card="min(var(--width-comment-card), 85vw)"
   --height-card="var(--height-comment-card)"
 >
-  <div class="trakt-comment-container">
-    <CommentHeader {comment} />
-    <CommentBody {comment} {media} />
-    <CommentFooter>
-      <LikeCommentAction {comment} />
-      <ViewRepliesAction {comment} {onDrilldown} />
-      <RenderFor audience="authenticated">
+  <!-- TODO only clickable as a card on android tv -->
+  <!-- TODO same logic for list summary cards -->
+  <button
+    onclick={() => onDrilldown({ id: comment.id, isReplying: false })}
+    data-kb-navigation={KbNavigationType.Item}
+  >
+    <div class="trakt-comment-container">
+      <CommentHeader {comment} />
+      <CommentBody {comment} {media} />
+      <CommentFooter>
+        <LikeCommentAction {comment} />
+        <ViewRepliesAction {comment} {onDrilldown} />
+        <!-- TODO no reply on androidtv; other actions read only -->
+        <!-- <RenderFor audience="authenticated">
         <ReplyButton {comment} onClick={onDrilldown} />
-      </RenderFor>
-    </CommentFooter>
-  </div>
+      </RenderFor> -->
+      </CommentFooter>
+    </div>
+  </button>
 </Card>
 
 <style lang="scss">
   @use "$style/scss/mixins/index" as *;
+
+  button {
+    all: unset;
+    height: 100%;
+    width: 100%;
+
+    &:focus-within {
+      .trakt-comment-container {
+        border: 2px solid var(--purple-500);
+        border-radius: var(--border-radius-m);
+      }
+    }
+  }
 
   .trakt-comment-container {
     display: flex;

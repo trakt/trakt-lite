@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { whenInViewport } from "$lib/utils/actions/whenInViewport";
   import { writable } from "svelte/store";
 
   const { children }: ChildrenProps = $props();
 
-  const isVisible = writable(false);
+  const isVisible = writable(true);
 </script>
 
-<div use:whenInViewport={() => isVisible.set(true)} class="trakt-card">
+<!-- TODO smarter system for TV; make content interactable, only block loading data -->
+<!-- <div use:whenInViewport={() => isVisible.set(true)} class="trakt-card"> -->
+<div class="trakt-card">
   <div class="trakt-card-content">
     {#if $isVisible}
       {@render children()}

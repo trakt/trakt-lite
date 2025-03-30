@@ -1,11 +1,15 @@
 <script lang="ts">
+  import type { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useActiveLink } from "$lib/stores/useActiveLink";
   import { disableTransitionOn } from "$lib/utils/actions/disableTransitionOn";
   import { mobileAppleDeviceTriggerHack } from "$lib/utils/actions/mobileAppleDeviceTriggerHack";
   import { triggerWithKeyboard } from "$lib/utils/actions/triggerWithKeyboard";
   import type { TraktActionButtonProps } from "./TraktActionButtonProps";
 
-  type TraktActionButtonAnchorProps = HTMLAnchorProps & TraktActionButtonProps;
+  type TraktActionButtonAnchorProps = HTMLAnchorProps &
+    TraktActionButtonProps & {
+      navigationType?: KbNavigationType;
+    };
 
   const {
     children,
@@ -14,6 +18,7 @@
     color = "default",
     size = "normal",
     style = "flat",
+    navigationType,
     ...props
   }: TraktActionButtonProps | TraktActionButtonAnchorProps = $props();
 
@@ -35,6 +40,7 @@
     data-color={color}
     data-variant={variant}
     data-style={style}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render children()}
@@ -48,6 +54,7 @@
     data-variant={variant}
     data-size={size}
     data-style={style}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render children()}

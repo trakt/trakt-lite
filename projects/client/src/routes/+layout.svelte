@@ -21,6 +21,7 @@
   import { workerRequest } from "$worker/workerRequest";
   import { SvelteQueryDevtools } from "@tanstack/svelte-query-devtools";
   import { onMount } from "svelte";
+  import { keyboardController } from "../lib/features/kb-navigation/keyboardController.ts";
 
   const { data, children } = $props();
 
@@ -90,7 +91,7 @@
 
             <ThemeProvider theme={data.theme}>
               <ListScrollHistoryProvider>
-                <div class="trakt-layout-wrapper">
+                <div class="trakt-layout-wrapper" use:keyboardController>
                   <Navbar />
                   <div class="trakt-layout-content">
                     {@render children()}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import ShareButton from "$lib/components/buttons/share/ShareButton.svelte";
   import SummaryPoster from "$lib/components/summary/SummaryPoster.svelte";
   import * as m from "$lib/features/i18n/messages.ts";
   import type { PersonSummary } from "$lib/requests/models/PersonSummary";
@@ -23,10 +22,11 @@
 
   <SummaryHeader>
     {#snippet headerActions()}
-      <ShareButton
+      <!-- TODO not on androidtv -->
+      <!-- <ShareButton
         title={person.name}
         textFactory={({ title: name }) => m.share_person({ name })}
-      />
+      /> -->
     {/snippet}
     <SummaryTitle title={person.name} />
   </SummaryHeader>

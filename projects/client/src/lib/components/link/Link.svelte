@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useActiveLink } from "$lib/stores/useActiveLink";
   import { mobileAppleDeviceTriggerHack } from "$lib/utils/actions/mobileAppleDeviceTriggerHack";
   import { triggerWithKeyboard } from "$lib/utils/actions/triggerWithKeyboard";
@@ -11,12 +12,14 @@
     focusable = true,
     noscroll,
     label,
+    navigationType,
     ...props
   }: ChildrenProps &
     HTMLAnchorProps &
     HTMLElementProps & {
       color?: "default" | "classic" | "inherit";
       focusable?: boolean;
+      navigationType?: KbNavigationType;
     } = $props();
 
   const { isActive } = $derived(useActiveLink(href));
@@ -33,6 +36,7 @@
     tabindex={focusable ? 0 : -1}
     data-color={color}
     aria-label={label}
+    data-kb-navigation={navigationType}
     class="trakt-link"
     class:trakt-link-active={$isActive}
     {...props}
@@ -51,7 +55,7 @@
     color: inherit;
     cursor: pointer;
     transition: var(--transition-increment) ease-in-out;
-    transition-property: color, text-decoration;
+    transition-property: transform, color, text-decoration;
     display: inherit;
 
     :global(p),
@@ -65,7 +69,20 @@
 
     &:focus-visible {
       outline: none;
+      transform: scale(0.9);
       position: relative;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: var(--border-thickness-xs) solid var(--purple-500);
+        box-sizing: border-box;
+        border-radius: var(--border-radius-m);
+      }
 
       &:not(:has(p, span))::after {
         position: absolute;

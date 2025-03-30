@@ -4,6 +4,7 @@
   import Button from "$lib/components/buttons/Button.svelte";
   import TrollIcon from "$lib/components/icons/TrollIcon.svelte";
   import YouTubeIcon from "$lib/components/icons/YouTubeIcon.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { DEFAULT_TRAILER } from "$lib/utils/constants";
 
   const { trailer = DEFAULT_TRAILER }: { trailer: string | Nil } = $props();
@@ -16,6 +17,7 @@
   label={"Trailer"}
   color="default"
   size="small"
+  navigationType={KbNavigationType.Item}
 >
   {m.watch_the_trailer()}
   {#snippet icon()}

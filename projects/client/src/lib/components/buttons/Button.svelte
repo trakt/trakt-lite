@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useActiveLink } from "$lib/stores/useActiveLink";
   import { clickOutside } from "$lib/utils/actions/clickOutside";
   import { disableTransitionOn } from "$lib/utils/actions/disableTransitionOn";
@@ -7,7 +8,9 @@
   import type { TraktButtonProps } from "./TraktButtonProps";
 
   type TraktButtonAnchorProps = HTMLAnchorProps &
-    TraktButtonProps & { onclickoutside?: (ev: CustomEvent) => void };
+    TraktButtonProps & {
+      onclickoutside?: (ev: CustomEvent) => void;
+    };
 
   const {
     label,
@@ -19,8 +22,11 @@
     subtitle,
     size = "normal",
     text = "uppercase",
+    navigationType,
     ...props
-  }: TraktButtonProps | TraktButtonAnchorProps = $props();
+  }: (TraktButtonProps | TraktButtonAnchorProps) & {
+    navigationType?: KbNavigationType;
+  } = $props();
 
   const hasIcon = $state(icon != null);
   const isDefaultAlignment = $derived(hasIcon);
@@ -78,6 +84,7 @@
     data-style={style}
     data-color={color}
     data-size={size}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render contents()}
@@ -94,6 +101,7 @@
     data-style={style}
     data-color={color}
     data-size={size}
+    data-kb-navigation={navigationType}
     {...props}
   >
     {@render contents()}
@@ -178,8 +186,9 @@
     overflow: hidden;
 
     transition: var(--transition-increment) ease-in-out;
-    transition-property: box-shadow, outline, padding, transform, color,
-      background, text-decoration;
+    transition-property:
+      box-shadow, outline, padding, transform, color, background,
+      text-decoration;
 
     &:not([data-style="underlined"]) p:not(.meta-info) {
       font-size: 1rem;
@@ -379,7 +388,7 @@
       }
 
       &[data-size="tag"] {
-        outline: var(--border-thickness-xxs) solid var(--color-foreground);
+        border: var(--border-thickness-xxs) solid var(--color-foreground);
       }
     }
 

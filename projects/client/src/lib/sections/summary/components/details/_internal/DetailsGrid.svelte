@@ -3,6 +3,7 @@
 
   import MoreButton from "$lib/components/buttons/more/MoreButton.svelte";
   import { MoreButtonIntlProvider } from "$lib/components/buttons/more/MoreButtonIntlProvider";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { writable } from "svelte/store";
 
   type DetailsGridProps = {
@@ -15,7 +16,10 @@
   const expanded = writable(!isCollapsable);
 </script>
 
-<div class="trakt-summary-details-grid">
+<div
+  class="trakt-summary-details-grid"
+  data-kb-navigation={KbNavigationType.List}
+>
   <div class="trakt-summary-details-grid-header">
     <h5>{title}</h5>
     {#if isCollapsable}

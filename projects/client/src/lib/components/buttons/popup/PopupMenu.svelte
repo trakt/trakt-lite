@@ -15,6 +15,7 @@
   use:portalTrigger
   aria-haspopup="true"
   class="trakt-popup-menu-button"
+  tabindex="-1"
   {...props}
 >
   <MoreIcon shadowColor="var(--purple-900)" />
@@ -66,6 +67,10 @@
     position: relative;
 
     @include popup-button-style();
+
+    &:focus-visible {
+      outline: var(--border-thickness-xs) solid var(--purple-500);
+    }
 
     &:hover {
       background-color: var(--shade-10);

@@ -6,7 +6,6 @@
   import ProfileAbout from "./components/ProfileAbout.svelte";
   import ProfileContainer from "./components/ProfileContainer.svelte";
   import ProfileHistorySummary from "./components/ProfileHistorySummary.svelte";
-  import YearToDateLink from "./components/YearToDateLink.svelte";
   import type { DisplayableProfileProps } from "./DisplayableProfileProps";
   import { useHistory } from "./stores/useHistory";
 
@@ -23,7 +22,8 @@
   <ProfileAbout about={profile.about} />
 
   {#snippet contextualContent()}
-    <YearToDateLink isVip={profile.isVip} {slug} />
+    <!-- TODO no external links on androidtv -->
+    <!-- <YearToDateLink isVip={profile.isVip} {slug} /> -->
   {/snippet}
 </ProfileContainer>
 

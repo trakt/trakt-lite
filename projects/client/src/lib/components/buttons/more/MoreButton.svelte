@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { writable } from "svelte/store";
   import Button from "../Button.svelte";
   import type { MoreButtonIntl } from "./MoreButtonIntl";
@@ -36,6 +37,7 @@
   style="ghost"
   size="tag"
   color="purple"
+  navigationType={KbNavigationType.Item}
 >
   {$expanded ? "-" : "+"}
   {i18n.more(count)}

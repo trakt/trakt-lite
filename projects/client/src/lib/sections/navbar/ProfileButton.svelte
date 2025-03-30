@@ -1,9 +1,9 @@
 <script lang="ts">
-  import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
-  import DropdownList from "$lib/components/dropdown/DropdownList.svelte";
+  import Button from "$lib/components/buttons/Button.svelte";
   import { useAuth } from "$lib/features/auth/stores/useAuth";
   import { useUser } from "$lib/features/auth/stores/useUser";
-  import * as m from "$lib/features/i18n/messages";
+  import * as m from "$lib/features/i18n/messages.ts";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import ProfileImage from "../profile-banner/ProfileImage.svelte";
@@ -21,7 +21,42 @@
   <GetVIPLink />
 {/if}
 
-<DropdownList
+<!-- TODO non dropdown for androidtv -->
+<Button
+  href={UrlBuilder.profile.me()}
+  label={m.user_menu_toggle_label()}
+  variant="primary"
+  text="capitalize"
+  size="small"
+  {style}
+  {color}
+  navigationType={KbNavigationType.Item}
+>
+  <RenderFor audience="authenticated" device={["desktop"]}>
+    {$user?.name?.first}
+  </RenderFor>
+  {#snippet icon()}
+    <div class="profile-icon">
+      <ProfileImage
+        --width="var(--ni-16)"
+        --height="var(--ni-16)"
+        --border-width="var(--border-thickness-xs)"
+        name={$user?.name?.first ?? ""}
+        src={$user?.avatar?.url ?? ""}
+      />
+      <RenderFor
+        audience="authenticated"
+        device={["tablet-sm", "tablet-lg", "desktop"]}
+      >
+        {#if isVip}
+          <VipBadge />
+        {/if}
+      </RenderFor>
+    </div>
+  {/snippet}
+</Button>
+
+<!-- <DropdownList
   label={m.user_menu_toggle_label()}
   variant="primary"
   text="capitalize"
@@ -59,7 +94,7 @@
       {m.logout()}
     </DropdownItem>
   {/snippet}
-</DropdownList>
+</DropdownList> -->
 
 <style>
   :global(.trakt-navbar .trakt-profile-button) {

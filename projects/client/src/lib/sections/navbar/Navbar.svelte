@@ -4,13 +4,12 @@
   import Link from "$lib/components/link/Link.svelte";
   import Logo from "$lib/components/logo/Logo.svelte";
   import LogoMark from "$lib/components/logo/LogoMark.svelte";
-  import Switch from "$lib/components/toggles/Switch.svelte";
   import { AnalyticsEvent } from "$lib/features/analytics/events/AnalyticsEvent";
   import { useTrack } from "$lib/features/analytics/useTrack";
   import * as m from "$lib/features/i18n/messages";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import { GlobalEventBus } from "$lib/utils/events/GlobalEventBus";
-  import { navigateToTraktOg } from "$lib/utils/url/navigateToTraktOg";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import { onMount } from "svelte";
   import JoinTraktButton from "./components/JoinTraktButton.svelte";
@@ -33,7 +32,7 @@
 </script>
 
 {#snippet traktSwitch()}
-  <Switch
+  <!-- <Switch
     label={m.switch_to_og()}
     checked={true}
     innerText="Lite"
@@ -41,11 +40,16 @@
       track();
       navigateToTraktOg();
     }}
-  />
+  /> -->
 {/snippet}
 
+<!-- TODO preserve focus state on nav -->
 <header>
-  <nav class="trakt-navbar" class:trakt-navbar-scroll={isScrolled}>
+  <nav
+    class="trakt-navbar"
+    class:trakt-navbar-scroll={isScrolled}
+    data-kb-navigation={KbNavigationType.List}
+  >
     <RenderFor
       audience="authenticated"
       device={["tablet-sm", "tablet-lg", "desktop"]}
@@ -86,6 +90,7 @@
           variant="primary"
           color="purple"
           data-testid={TestId.NavBarHomeButton}
+          navigationType={KbNavigationType.Item}
         >
           {m.navbar_link_home()}
         </Button>
@@ -96,6 +101,7 @@
           variant="primary"
           color="purple"
           data-testid={TestId.NavBarShowsButton}
+          navigationType={KbNavigationType.Item}
         >
           {m.navbar_link_shows()}
         </Button>
@@ -106,6 +112,7 @@
           variant="primary"
           color="purple"
           data-testid={TestId.NavBarMoviesButton}
+          navigationType={KbNavigationType.Item}
         >
           {m.navbar_link_movies()}
         </Button>
@@ -117,6 +124,7 @@
           style="underlined"
           variant="primary"
           color="purple"
+          navigationType={KbNavigationType.Item}
         >
           {m.navbar_link_watchlist()}
         </Button>

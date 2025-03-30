@@ -1,4 +1,5 @@
 <script lang="ts" generics="T extends { id: unknown }">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { useVarToPixels } from "$lib/stores/css/useVarToPixels";
   import { whenInViewport } from "$lib/utils/actions/whenInViewport";
   import { onMount, type Snippet } from "svelte";
@@ -56,35 +57,37 @@
   use:whenInViewport={() => isVisible.set(true)}
   class="shadow-list-container"
 >
-  {#if $isVisible}
-    <ListHeader {title} {actions} {badge} inset="title" />
-    <div
-      class="shadow-list"
-      class:shadow-list-left-shadow={isLeftShadowVisible}
-      class:shadow-list-right-shadow={isRightShadowVisible}
-      style:--left-shadow-opacity={leftShadowIntensity}
-      style:--right-shadow-opacity={rightShadowIntensity}
-    >
-      {#if items.length > 0}
-        <div
-          bind:this={$scrollContainer}
-          use:scrollTracking={scrollX}
-          use:scrollHistory={id}
-          class="trakt-list-item-container"
-          class:shadow-list-horizontal-scroll-centered={variant === "centered"}
-          class:shadow-list-horizontal-scroll={variant === "normal"}
-        >
-          {#each items as i (i.id)}
-            {@render item(i)}
-          {/each}
-        </div>
-      {:else if empty != null && $isMounted}
-        <div class="shadow-list-empty-state">
-          {@render empty()}
-        </div>
-      {/if}
-    </div>
-  {/if}
+  <!-- TODO always render on tv? -->
+  <!-- {#if $isVisible} -->
+  <ListHeader {title} {actions} {badge} inset="title" />
+  <div
+    class="shadow-list"
+    class:shadow-list-left-shadow={isLeftShadowVisible}
+    class:shadow-list-right-shadow={isRightShadowVisible}
+    style:--left-shadow-opacity={leftShadowIntensity}
+    style:--right-shadow-opacity={rightShadowIntensity}
+  >
+    {#if items.length > 0}
+      <div
+        bind:this={$scrollContainer}
+        use:scrollTracking={scrollX}
+        use:scrollHistory={id}
+        class="trakt-list-item-container"
+        class:shadow-list-horizontal-scroll-centered={variant === "centered"}
+        class:shadow-list-horizontal-scroll={variant === "normal"}
+        data-kb-navigation={KbNavigationType.List}
+      >
+        {#each items as i (i.id)}
+          {@render item(i)}
+        {/each}
+      </div>
+    {:else if empty != null && $isMounted}
+      <div class="shadow-list-empty-state">
+        {@render empty()}
+      </div>
+    {/if}
+  </div>
+  <!-- {/if} -->
 </section>
 
 <style lang="scss">

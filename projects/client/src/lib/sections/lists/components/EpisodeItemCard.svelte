@@ -7,6 +7,7 @@
   import { EpisodeIntlProvider } from "$lib/components/episode/EpisodeIntlProvider";
   import Link from "$lib/components/link/Link.svelte";
   import * as m from "$lib/features/i18n/messages.ts";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import Spoiler from "$lib/features/spoilers/components/Spoiler.svelte";
   import { useEpisodeSpoilerImage } from "$lib/features/spoilers/useEpisodeSpoilerImage";
   import { EPISODE_COVER_PLACEHOLDER } from "$lib/utils/constants";
@@ -36,7 +37,8 @@
   --height-card="var(--height-episode-card)"
   --height-card-cover="var(--height-episode-card-cover)"
 >
-  {#if popupActions}
+  <!-- TODO only hide on androidtv -->
+  {#if false}
     <CardActionBar>
       {#snippet actions()}
         <PopupMenu label={m.media_popup_label({ title: episode.title })}>
@@ -51,6 +53,7 @@
   <Link
     focusable={false}
     href={UrlBuilder.episode(show.slug, episode.season, episode.number)}
+    navigationType={KbNavigationType.Item}
   >
     <CardCover
       src={$src ?? EPISODE_COVER_PLACEHOLDER}

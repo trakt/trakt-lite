@@ -13,6 +13,7 @@
   import { TagIntlProvider } from "$lib/components/media/tags/TagIntlProvider";
   import { getLocale } from "$lib/features/i18n";
   import * as m from "$lib/features/i18n/messages.ts";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { toHumanDate } from "$lib/utils/formatting/date/toHumanDate";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import CardActionBar from "../../../components/card/CardActionBar.svelte";
@@ -46,7 +47,8 @@
 {/snippet}
 
 {#snippet content(mediaCoverImageUrl: string)}
-  {#if popupActions}
+  <!-- TODO only hide on androidtv -->
+  {#if false}
     <CardActionBar>
       {#snippet actions()}
         <PopupMenu label={m.media_popup_label({ title: media.title })}>
@@ -58,7 +60,10 @@
     </CardActionBar>
   {/if}
 
-  <Link focusable={false} href={UrlBuilder.media(type, media.slug)}>
+  <Link
+    href={UrlBuilder.media(type, media.slug)}
+    navigationType={KbNavigationType.Item}
+  >
     <CardCover
       src={mediaCoverImageUrl}
       alt={m.media_poster({ title: media.title })}
@@ -78,7 +83,7 @@
   </Link>
 
   <CardFooter {action}>
-    <Link href={UrlBuilder.media(type, media.slug)}>
+    <Link focusable={false} href={UrlBuilder.media(type, media.slug)}>
       <p
         class="trakt-card-title small ellipsis"
         class:small={rest.variant !== "activity"}

@@ -1,4 +1,5 @@
 <script lang="ts" generics="T extends { id: unknown }">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { onMount, type Snippet } from "svelte";
   import { writable } from "svelte/store";
   import "../_internal/list.css";
@@ -23,7 +24,10 @@
   <ListHeader {title} {actions} {badge} inset="all" />
 
   {#if items.length > 0}
-    <div class="trakt-list-item-container trakt-list-items">
+    <div
+      class="trakt-list-item-container trakt-list-items"
+      data-kb-navigation={KbNavigationType.Grid}
+    >
       {#each items as i (i.id)}
         {@render item(i)}
       {/each}

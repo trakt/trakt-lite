@@ -2,6 +2,7 @@
   import Button from "$lib/components/buttons/Button.svelte";
   import { useAuth } from "$lib/features/auth/stores/useAuth";
   import * as m from "$lib/features/i18n/messages";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
 
   const { url } = useAuth();
 </script>
@@ -13,6 +14,7 @@
   size="small"
   color="purple"
   variant="primary"
+  navigationType={KbNavigationType.Item}
 >
   {m.join_trakt_button()}
 </Button>

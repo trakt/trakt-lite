@@ -2,6 +2,7 @@
   import * as m from "$lib/features/i18n/messages.ts";
 
   import Link from "$lib/components/link/Link.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import CollapsableValues from "./_internal/CollapsableValues.svelte";
   import DetailsGrid from "./_internal/DetailsGrid.svelte";
   import { useMediaDetails } from "./_internal/useMediaDetails";
@@ -19,7 +20,7 @@
         <p class="meta-info secondary">{title}</p>
         {#snippet value(value)}
           {#if typeof value === "object"}
-            <Link href={value.link}>
+            <Link href={value.link} navigationType={KbNavigationType.Item}>
               <p class="small capitalize ellipsis">{value.label}</p>
             </Link>
           {:else}

@@ -1,5 +1,6 @@
 <script lang="ts">
   import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import MarkAsWatchedIcon from "../../icons/MarkAsWatchedIcon.svelte";
   import ActionButton from "../ActionButton.svelte";
   import Button from "../Button.svelte";
@@ -38,7 +39,7 @@
 </script>
 
 {#if style === "normal"}
-  <Button {...commonProps} {...props}>
+  <Button {...commonProps} {...props} navigationType={KbNavigationType.Item}>
     {i18n.text({ title, isWatched, isRewatching })}
     {#snippet icon()}
       <MarkAsWatchedIcon {state} size="small" />

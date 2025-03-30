@@ -1,8 +1,6 @@
 <script lang="ts">
   import * as m from "$lib/features/i18n/messages";
 
-  import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
-  import DropdownList from "$lib/components/dropdown/DropdownList.svelte";
   import ShadowList from "$lib/components/lists/section-list/ShadowList.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import type { MediaEntry } from "$lib/requests/models/MediaEntry";
@@ -44,7 +42,8 @@
   {/snippet}
   {#snippet actions()}
     {#if seasons.length > 1}
-      <DropdownList
+      <!-- TODO kb accessible dropdowns or different solution -->
+      <!-- <DropdownList
         label="Seasons"
         style="flat"
         variant="primary"
@@ -60,7 +59,7 @@
             </DropdownItem>
           {/each}
         {/snippet}
-      </DropdownList>
+      </DropdownList> -->
     {/if}
     <RenderFor audience="authenticated">
       <MarkAsWatchedAction

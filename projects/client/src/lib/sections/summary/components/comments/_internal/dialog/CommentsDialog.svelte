@@ -36,6 +36,7 @@
     $activeComment?.id === id && $activeComment?.isReplying;
 </script>
 
+<!-- TODO: d-pad navigation -->
 <Dialog title={m.comments()} {dialog} onClose={reset}>
   <div class="trakt-comment-threads">
     <CommentList

@@ -8,7 +8,6 @@
   import { useStablePaginated } from "../stores/useStablePaginated";
   import { mediaListHeightResolver } from "../utils/mediaListHeightResolver";
   import EpisodeProgressItem from "./EpisodeProgressItem.svelte";
-  import UpNextLabSwitch from "./UpNextLabSwitch.svelte";
   import { useHiddenShows } from "./useHiddenShows";
   import { useUpNextExperiment } from "./useUpNextExperiment";
   import { useUpNextList } from "./useUpNextList";
@@ -37,7 +36,8 @@
   --height-list={mediaListHeightResolver("episode")}
 >
   {#snippet badge()}
-    <UpNextLabSwitch />
+    <!-- TODO: not on androidtv -->
+    <!-- <UpNextLabSwitch /> -->
   {/snippet}
   {#snippet item(episode)}
     <EpisodeProgressItem

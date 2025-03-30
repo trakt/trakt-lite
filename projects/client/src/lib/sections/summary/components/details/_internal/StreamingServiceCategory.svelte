@@ -1,5 +1,6 @@
 <script lang="ts" generics="T extends StreamingServiceOption">
   import Link from "$lib/components/link/Link.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import type {
     StreamingServiceOption,
     StreamOnDemand,
@@ -40,7 +41,11 @@
   <CollapsableValues category="streaming" values={services}>
     <p class="meta-info secondary">{title}</p>
     {#snippet value(service)}
-      <Link href={service.link} target="_blank">
+      <Link
+        href={service.link}
+        target="_blank"
+        navigationType={KbNavigationType.Item}
+      >
         <p class="small ellipsis">
           {getServiceName(service)}
           {#if hasPrice(service)}

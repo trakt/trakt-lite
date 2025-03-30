@@ -32,7 +32,8 @@
     --height-card={summaryCardHeightResolver(variant)}
     --width-card="var(--width-summary-card)"
   >
-    {#if popupActions}
+    <!-- TODO only hide on androidtv -->
+    {#if false}
       <CardActionBar>
         {#snippet actions()}
           <PopupMenu label={m.media_popup_label({ title: rest.media.title })}>

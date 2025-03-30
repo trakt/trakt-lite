@@ -1,5 +1,6 @@
 <script lang="ts">
   import CrossOriginImage from "$lib/features/image/components/CrossOriginImage.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import type { Snippet } from "svelte";
   import Link from "../link/Link.svelte";
 
@@ -26,7 +27,7 @@
 
 <div class="trakt-summary-poster-container">
   <div class="trakt-summary-poster" class:has-active-overlay={activeOverlay}>
-    <Link {href} {target}>
+    <Link {href} {target} navigationType={KbNavigationType.Item}>
       <CrossOriginImage {src} {alt} />
     </Link>
   </div>
@@ -83,6 +84,24 @@
     pointer-events: none;
 
     border: var(--overlay-border-size) solid var(--color-foreground);
+  }
+
+  .trakt-summary-poster-container {
+    :global(&:has(.trakt-link)) {
+      &:focus-within {
+        /* TODO duplication */
+        .has-active-overlay {
+          :global(img) {
+            filter: saturate(30%);
+            border: var(--overlay-border-size) solid transparent;
+          }
+
+          & + .trakt-summary-poster-overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 
   .has-active-overlay:hover {

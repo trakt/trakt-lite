@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import { writable } from "svelte/store";
   import { Theme } from "../models/Theme";
 
@@ -23,6 +24,7 @@
   class:toggle-transition-disabled={$isTransitionDisabled}
   ontransitionend={() => isTransitionDisabled.set(true)}
   onclick={() => isTransitionDisabled.set(false)}
+  data-kb-navigation={KbNavigationType.Item}
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

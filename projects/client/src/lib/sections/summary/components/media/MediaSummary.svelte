@@ -1,10 +1,8 @@
 <script lang="ts">
-  import * as m from "$lib/features/i18n/messages";
-
   import CoverImageSetter from "$lib/components/background/CoverImageSetter.svelte";
-  import ShareButton from "$lib/components/buttons/share/ShareButton.svelte";
   import GenreList from "$lib/components/summary/GenreList.svelte";
   import SummaryPoster from "$lib/components/summary/SummaryPoster.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import Spoiler from "$lib/features/spoilers/components/Spoiler.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import type { MediaCrew } from "$lib/requests/models/MediaCrew";
@@ -68,6 +66,7 @@
   });
 </script>
 
+<!-- TODO up/down navigation for vertical content -->
 {#snippet mediaActions(device: "mobile" | "other" = "other")}
   <WatchlistAction
     {...watchlistProps}
@@ -81,7 +80,7 @@
 
 <CoverImageSetter src={media.cover.url.medium} {type} />
 
-<SummaryContainer {contextualContent}>
+<SummaryContainer {contextualContent} navigationType={KbNavigationType.List}>
   {#snippet poster()}
     <SummaryPoster
       src={media.poster.url.medium}
@@ -108,7 +107,8 @@
       {#if "trailer" in media}
         <YoutubeButton trailer={media.trailer} />
       {/if}
-      <ShareButton
+      <!-- TODO hide on androidtv -->
+      <!-- <ShareButton
         {title}
         textFactory={({ title }) => {
           switch (type) {
@@ -118,7 +118,7 @@
               return m.share_show({ title });
           }
         }}
-      />
+      /> -->
     {/snippet}
 
     <SummaryTitle {title} />

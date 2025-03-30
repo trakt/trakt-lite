@@ -1,9 +1,9 @@
 <script>
   import LocalePicker from "$lib/features/i18n/components/LocalePicker.svelte";
+  import { KbNavigationType } from "$lib/features/kb-navigation/models/KbNavigationType";
   import ThemePicker from "$lib/features/theme/components/ThemePicker.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import CopyRight from "./CopyRight.svelte";
-  import ExternalLinks from "./ExternalLinks.svelte";
 
   import FooterBar from "./FooterBar.svelte";
   import FooterLogo from "./FooterLogo.svelte";
@@ -18,7 +18,7 @@
 
   <FooterBar>
     <!-- TODO: different layout for smaller (or different component for only theme/lang pickers) -->
-    <div class="trakt-footer-left">
+    <div class="trakt-footer-left" data-kb-navigation={KbNavigationType.List}>
       <RenderFor device={["tablet-lg", "desktop"]} audience="all">
         <CopyRight />
       </RenderFor>
@@ -26,7 +26,7 @@
       <ThemePicker />
     </div>
     <div class="trakt-footer-right">
-      <ExternalLinks />
+      <!-- <ExternalLinks /> -->
     </div>
   </FooterBar>
 </div>
