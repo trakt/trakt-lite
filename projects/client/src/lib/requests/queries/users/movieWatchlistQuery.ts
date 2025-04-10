@@ -36,6 +36,7 @@ const watchlistRequest = (
         extended: 'full,images',
         page,
         limit,
+        genres: 'horror',
       },
     });
 

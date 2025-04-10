@@ -39,6 +39,7 @@ const movieTrendingRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 

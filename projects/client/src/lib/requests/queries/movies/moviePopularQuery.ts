@@ -23,6 +23,7 @@ const moviePopularRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 

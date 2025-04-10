@@ -44,6 +44,7 @@ const showTrendingRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 

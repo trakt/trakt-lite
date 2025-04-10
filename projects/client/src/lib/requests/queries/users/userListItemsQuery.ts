@@ -56,6 +56,7 @@ const userListItemsRequest = (
         extended: 'full,images',
         page,
         limit,
+        genres: 'horror',
       },
     });
 

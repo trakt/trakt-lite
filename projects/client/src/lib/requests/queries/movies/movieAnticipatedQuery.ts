@@ -40,6 +40,7 @@ const movieAnticipatedRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 

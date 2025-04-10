@@ -47,6 +47,7 @@ const movieStreamingRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 

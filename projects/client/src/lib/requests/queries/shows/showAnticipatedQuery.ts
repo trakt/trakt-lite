@@ -49,6 +49,7 @@ const showAnticipatedRequest = (
         ignore_watched: true,
         page,
         limit,
+        genres: 'horror',
       },
     });
 
