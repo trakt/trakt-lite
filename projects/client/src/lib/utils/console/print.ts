@@ -37,6 +37,7 @@ export function print(
   method: 'log' | 'info' | 'warn' | 'error' | 'debug' | 'group' | 'groupEnd',
   ...args: unknown[]
 ) {
+  return;
   // Skip if we're in production
   if (IS_PROD) {
     return;

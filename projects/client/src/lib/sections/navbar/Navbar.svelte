@@ -13,6 +13,7 @@
   import { navigateToTraktOg } from "$lib/utils/url/navigateToTraktOg";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import { onMount } from "svelte";
+  import FilterButton from "./components/filter/FilterButton.svelte";
   import JoinTraktButton from "./components/JoinTraktButton.svelte";
   import SearchInput from "./components/search/SearchInput.svelte";
   import ProfileButton from "./ProfileButton.svelte";
@@ -125,6 +126,7 @@
         <JoinTraktButton />
       </RenderFor>
       <RenderFor audience="authenticated">
+        <FilterButton />
         <ProfileButton />
       </RenderFor>
     </div>

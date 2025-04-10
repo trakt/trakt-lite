@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { api, type ApiParams } from '$lib/requests/api.ts';
 import { InvalidateAction } from '$lib/requests/models/InvalidateAction.ts';
@@ -25,6 +26,7 @@ const recommendedMoviesRequest = (
         ignore_watchlisted: true,
         ignore_watched: true,
         limit,
+        ...getFilterParams(),
       },
     });
 
@@ -33,6 +35,7 @@ export const recommendedMoviesQuery = defineQuery({
   invalidations: [
     InvalidateAction.Watchlisted('movie'),
     InvalidateAction.MarkAsWatched('movie'),
+    InvalidateAction.Filter,
   ],
   dependencies: (params) => [params.limit],
   request: recommendedMoviesRequest,

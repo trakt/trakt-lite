@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { api, type ApiParams } from '$lib/requests/api.ts';
@@ -34,8 +35,11 @@ function mapToTrendingShow({
 
 const showTrendingRequest = (
   { fetch, limit, page }: ShowTrendingParams,
-) =>
-  api({ fetch })
+) => {
+  // TODO more generic way of adding filter queries
+  // TODO without losing typing
+
+  return api({ fetch })
     .shows
     .trending({
       query: {
@@ -44,9 +48,10 @@ const showTrendingRequest = (
         ignore_watched: true,
         page,
         limit,
-        genres: 'horror',
+        ...getFilterParams(),
       },
     });
+};
 
 export const showTrendingQuery = defineQuery({
   key: 'showTrending',
@@ -54,6 +59,7 @@ export const showTrendingQuery = defineQuery({
     InvalidateAction.MarkAsWatched('show'),
     InvalidateAction.Watchlisted('show'),
     InvalidateAction.MarkAsWatched('episode'),
+    InvalidateAction.Filter,
   ],
   dependencies: (params) => [params.limit, params.page],
   request: showTrendingRequest,

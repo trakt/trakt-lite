@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { mapToEpisodeCount } from '$lib/requests/_internal/mapToEpisodeCount.ts';
 import { api, type ApiParams } from '$lib/requests/api.ts';
@@ -28,6 +29,7 @@ const recommendedShowsRequest = (
         ignore_watchlisted: true,
         ignore_watched: true,
         limit,
+        ...getFilterParams(),
       },
     });
 
@@ -37,6 +39,7 @@ export const recommendedShowsQuery = defineQuery({
     InvalidateAction.MarkAsWatched('show'),
     InvalidateAction.Watchlisted('show'),
     InvalidateAction.MarkAsWatched('episode'),
+    InvalidateAction.Filter,
   ],
   dependencies: (params) => [params.limit],
   request: recommendedShowsRequest,

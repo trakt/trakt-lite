@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { mapToShowListItem } from '$lib/requests/_internal/mapToListItem.ts';
@@ -43,13 +44,16 @@ const watchlistRequest = (
         extended: 'full,images',
         page,
         limit,
-        genres: 'horror',
+        ...getFilterParams(),
       },
     });
 
 export const showWatchlistQuery = defineQuery({
   key: 'showWatchlist',
-  invalidations: [InvalidateAction.Watchlisted('show')],
+  invalidations: [
+    InvalidateAction.Watchlisted('show'),
+    InvalidateAction.Filter,
+  ],
   dependencies: (
     params: ShowWatchlistParams,
   ) => [params.sort, params.limit, params.page],

@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { mapToMovieListItem } from '$lib/requests/_internal/mapToListItem.ts';
@@ -36,7 +37,7 @@ const watchlistRequest = (
         extended: 'full,images',
         page,
         limit,
-        genres: 'horror',
+        ...getFilterParams(),
       },
     });
 
@@ -45,6 +46,7 @@ export const movieWatchlistQuery = defineQuery({
   invalidations: [
     InvalidateAction.Watchlisted('movie'),
     InvalidateAction.MarkAsWatched('movie'),
+    InvalidateAction.Filter,
   ],
   dependencies: (
     params: MovieWatchlistParams,

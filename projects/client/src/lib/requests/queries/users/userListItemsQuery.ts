@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { mapToListItem } from '$lib/requests/_internal/mapToListItem.ts';
@@ -56,7 +57,7 @@ const userListItemsRequest = (
         extended: 'full,images',
         page,
         limit,
-        genres: 'horror',
+        ...getFilterParams(),
       },
     });
 
@@ -65,6 +66,7 @@ export const userListItemsQuery = defineQuery({
   invalidations: [
     InvalidateAction.Listed('movie'),
     InvalidateAction.Listed('show'),
+    InvalidateAction.Filter,
   ],
   dependencies: (
     params,

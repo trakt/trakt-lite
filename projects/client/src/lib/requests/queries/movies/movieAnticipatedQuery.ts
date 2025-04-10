@@ -1,3 +1,4 @@
+import { getFilterParams } from '$lib/features/filters/getLocalFilters.ts';
 import { defineQuery } from '$lib/features/query/defineQuery.ts';
 import { extractPageMeta } from '$lib/requests/_internal/extractPageMeta.ts';
 import { api, type ApiParams } from '$lib/requests/api.ts';
@@ -40,7 +41,7 @@ const movieAnticipatedRequest = (
         ignore_watched: true,
         page,
         limit,
-        genres: 'horror',
+        ...getFilterParams(),
       },
     });
 
@@ -49,6 +50,7 @@ export const movieAnticipatedQuery = defineQuery({
   invalidations: [
     InvalidateAction.Watchlisted('movie'),
     InvalidateAction.MarkAsWatched('movie'),
+    InvalidateAction.Filter,
   ],
   dependencies: (params) => [params.limit, params.page],
   request: movieAnticipatedRequest,
