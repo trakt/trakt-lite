@@ -50,11 +50,22 @@ export async function verifyAuth({
     });
 
   if (tokenResponse.status !== 200) {
-    print(PrintTarget.Worker, 'log', { unauthorizedResponse: tokenResponse });
+    print(PrintTarget.Worker, 'log', {
+      unauthorizedResponse: tokenResponse,
+      hasClientSecret: client_secret !== '',
+      hasClientId: client_id !== '',
+      redirect_uri,
+      grantType: getGrantTypeAndCode(token).grant_type,
+    });
 
     throw new DeviceUnauthorizedError(
       'Access denied. The code holds no sway in this domain.',
     );
+  } else {
+    print(PrintTarget.Worker, 'log', {
+      redirect_uri,
+      grantType: getGrantTypeAndCode(token).grant_type,
+    });
   }
 
   return {
