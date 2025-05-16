@@ -22,6 +22,7 @@ export const isWebOs = (userAgent: string): boolean => {
 };
 
 export function isTV(userAgent: string | Nil) {
+  console.log('=======================', userAgent);
   if (!userAgent) {
     return false;
   }
