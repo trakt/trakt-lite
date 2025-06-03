@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <script type="text/javascript" src="webOSTVjs-1.2.10/webOSTV.js"></script>
+  </head>
   <body>
+    <a href="netflix://www.netflix.com/watch/80013762"> NETFLIX TEST 2 </a>
+
+    <a href="https://www.netflix.com/watch/80013762"> NETFLIX TEST </a>
+    <a href="https://www.youtube.com/watch?v=o-YBDTqX_ZU"> YOUTUBE TEST </a>
+    <button onclick="testFunction()">CLICK ME</button>
+    <div style="color: white" id="debug">Debug:<br /></div>
+
     <script>
-      window.location.href = 'http://192.168.2.252:5173/';
+      // window.location.href = 'http://192.168.2.252:5173/';
+
+      function log(message) {
+        document.getElementById('debug').innerHTML += message + '<br/>';
+      }
+
+      function streamOnWebOs(name, url) {
+        log(`opening ${name} at ${url} <br/>`);
+
+        webOS.service.request('luna://com.webos.applicationManager', {
+          method: 'launch',
+          parameters: {
+            id: 'netflix',
+            params: {
+              contentTarget: url,
+            },
+          },
+          onSuccess: (res) => {
+            log('Open success. ', res);
+          },
+          onFailure: (res) => {
+            log('Open fail. ', res);
+          },
+        });
+      }
+
+      function testFunction() {
+        streamOnWebOs(
+          'netflix',
+          'https://www.netflix.com/watch/80013762',
+        );
+      }
     </script>
   </body>
 </html>
