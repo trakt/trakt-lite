@@ -8,13 +8,18 @@
   import ProfileAbout from "./components/ProfileAbout.svelte";
   import ProfileContainer from "./components/ProfileContainer.svelte";
   import ProfileHistorySummary from "./components/ProfileHistorySummary.svelte";
+  import ProfilesList from "./components/ProfilesList.svelte";
   import YearToDateLink from "./components/YearToDateLink.svelte";
   import type { DisplayableProfileProps } from "./DisplayableProfileProps";
+  import { useFollowing } from "./stores/useFollowing";
   import { useHistory } from "./stores/useHistory";
 
   const { profile, slug }: DisplayableProfileProps = $props();
 
   const { historyMovies, historyShows } = $derived(useHistory(slug));
+  const { following, followers } = $derived(useFollowing(slug));
+
+  $inspect($following);
 </script>
 
 <ProfileContainer>
@@ -34,6 +39,9 @@
 <ProfileContainer>
   <ProfileHistorySummary movies={$historyMovies} shows={$historyShows} />
 </ProfileContainer>
+
+<ProfilesList title="Following" profiles={$following} />
+<ProfilesList title="Followers" profiles={$followers} />
 
 <FavoritesList
   type="movie"
