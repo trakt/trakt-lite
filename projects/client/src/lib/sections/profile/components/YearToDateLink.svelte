@@ -18,9 +18,9 @@
   );
 
   // FIXME: always use iframe route when the kinks are ironed out
-  const target = $derived($user.isDirector ? "_self" : "_blank");
+  const target = $derived(true ? "_self" : "_blank");
   const href = $derived(
-    $user.isDirector ? UrlBuilder.users(slug).yearToDate(currentYear) : ogHref,
+    true ? UrlBuilder.users(slug).yearToDate(currentYear) : ogHref,
   );
 </script>
 

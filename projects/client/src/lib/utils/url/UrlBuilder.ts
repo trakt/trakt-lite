@@ -65,7 +65,7 @@ const categoryDrilldownFactory =
 
 const ogIframeFactory = (url: HttpsUrl, token: string | Nil): HttpsUrl => {
   const tokenParam = token ? `&slurm=${token}` : '';
-  return `${url}/?standalone_mode=true${tokenParam}`;
+  return `${url}/?embedded_mode=true${tokenParam}`;
 };
 
 export const UrlBuilder = {
@@ -162,7 +162,10 @@ export const UrlBuilder = {
     support: () => 'mailto:support@trakt.tv',
     frame: {
       yearToDate: (slug: string, year: string, token: string | Nil) =>
-        ogIframeFactory(`https://trakt.tv/users/${slug}/year/${year}`, token),
+        ogIframeFactory(
+          `http://localhost:3000/users/sean/year/${year}`,
+          token,
+        ),
       monthInReview: (
         slug: string,
         year: string,
@@ -170,7 +173,7 @@ export const UrlBuilder = {
         token: string | Nil,
       ) =>
         ogIframeFactory(
-          `https://trakt.tv/users/${slug}/mir/${year}/${month}`,
+          `http://localhost:3000/users/sean/mir/${year}/${month}`,
           token,
         ),
     },
