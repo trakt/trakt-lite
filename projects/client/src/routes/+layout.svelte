@@ -8,6 +8,7 @@
   import AnalyticsProvider from "$lib/features/analytics/AnalyticsProvider.svelte";
   import PageView from "$lib/features/analytics/PageView.svelte";
   import AuthProvider from "$lib/features/auth/components/AuthProvider.svelte";
+  import { getToken } from "$lib/features/auth/token/index";
   import AutoSigninProvider from "$lib/features/auto-signin/AutoSigninProvider.svelte";
   import CookieConsentProvider from "$lib/features/cookie-consent/CookieConsentProvider.svelte";
   import { DeploymentEndpoint } from "$lib/features/deployment/DeploymentEndpoint.js";
@@ -26,6 +27,7 @@
   import SideNavbar from "$lib/sections/navbar/SideNavbar.svelte";
   import NowPlaying from "$lib/sections/now-playing/NowPlaying.svelte";
   import { isPWA } from "$lib/utils/devices/isPWA.ts";
+  import { ServerEvent } from "$lib/utils/events/ServerEvent.js";
   import { WorkerMessage } from "$worker/WorkerMessage";
   import { workerRequest } from "$worker/workerRequest";
   import { SvelteQueryDevtools } from "@tanstack/svelte-query-devtools";
@@ -35,6 +37,28 @@
   const { data, children } = $props();
 
   onMount(async () => {
+    const { value: token } = getToken();
+    // FIXME: move somewhere else 😛
+    const eventSource = new ServerEvent(
+      "https://api-millennium.trakt.tv/sync/last_activities/stream",
+      {
+        Accept: "text/event-stream",
+        Authorization: token ?? "",
+        "trakt-api-version": "2",
+        "trakt-api-key": TRAKT_CLIENT_ID,
+      },
+    );
+
+    eventSource.addEventListener("message", (data) => {
+      console.log("Received SSE message:", data);
+    });
+
+    eventSource.addEventListener("error", (error) => {
+      console.error("SSE connection error:", error);
+    });
+
+    eventSource.connect();
+
     if (isPWA()) {
       document.body.classList.add("trakt-pwa");
     }
