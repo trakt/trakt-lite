@@ -18,6 +18,7 @@
 
 <MediaList {...props}>
   {#snippet actions(items, type)}
+    {@render props.actions?.(items, type)}
     <ViewAllButton
       href={urlBuilder({ type, ...props.filter })}
       label={drilldownLabel}
