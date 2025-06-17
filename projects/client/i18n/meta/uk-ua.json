@@ -1,0 +1,1773 @@
+{
+  "$schema": "../schema/meta-messages.schema.json",
+  "meta": {
+    "locale": "uk-ua",
+    "direction": "ltr",
+    "generator": {
+      "inlang": {
+        "enabled": true,
+        "outputPath": "./messages/{locale}.json"
+      },
+      "android": {
+        "enabled": true,
+        "outputPath": "./android/values-{locale}/strings.xml",
+        "resourceName": "strings"
+      },
+      "ios": {
+        "enabled": true,
+        "outputPath": "./ios/Localizable.xcstrings"
+      }
+    }
+  },
+  "messages": {
+    "upcoming_schedule_title": {
+      "default": "Наступний розклад"
+    },
+    "season_premiere": {
+      "default": "Прем'єра сезону"
+    },
+    "series_premiere": {
+      "default": "Прем'єра серіалу"
+    },
+    "mid_season_premiere": {
+      "default": "Прем'єра середини сезону"
+    },
+    "season_finale": {
+      "default": "Фінал сезону"
+    },
+    "series_finale": {
+      "default": "Фінал серіалу"
+    },
+    "mid_season_finale": {
+      "default": "Фінал середини сезону"
+    },
+    "profile_banner_greeting": {
+      "default": "Привіт, {name}",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "up_next_title": {
+      "default": "Наступне"
+    },
+    "remaining_episodes": {
+      "default": "{count} епізодів",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "recommended_movies": {
+      "default": "Рекомендовані фільми"
+    },
+    "recommended_shows": {
+      "default": "Рекомендовані серіали"
+    },
+    "number_of_episodes": {
+      "default": "{count} епізодів",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "error_404_title": {
+      "default": "404: Ніщо. Пустота."
+    },
+    "error_404_message": {
+      "default": "(Не хвилюйтесь, буває! Навіть Сила іноді виходить з ладу.)"
+    },
+    "error_404_action": {
+      "default": "Повернутися до безпеки..."
+    },
+    "mark_as_watched_ask_prompt": {
+      "default": "Коли ви подивилися це? (РРРР-ММ-ДД ГГ:ХХ)"
+    },
+    "watchlist_action_label": {
+      "default": "До перегляду"
+    },
+    "mark_as_watched": {
+      "default": "Позначити як переглянуте"
+    },
+    "mark_as_watched_until": {
+      "default": "Переглянуто до цього місця"
+    },
+    "watch_again": {
+      "default": "Дивитися знову"
+    },
+    "add_to_watchlist_label": {
+      "default": "Додати {title} до вашого списку перегляду",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_label": {
+      "default": "Позначити {title} як переглянуте",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_until_label": {
+      "default": "Відмітити {title} як переглянуте до цього місця",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "genre_horror": {
+      "default": "Жахи"
+    },
+    "genre_comedy": {
+      "default": "Комедія"
+    },
+    "genre_action": {
+      "default": "Бойовик"
+    },
+    "genre_adventure": {
+      "default": "Пригоди"
+    },
+    "genre_animation": {
+      "default": "Анімація"
+    },
+    "genre_biography": {
+      "default": "Біографія"
+    },
+    "genre_children": {
+      "default": "Для дітей"
+    },
+    "genre_crime": {
+      "default": "Кримінал"
+    },
+    "genre_documentary": {
+      "default": "Документальний фільм"
+    },
+    "genre_drama": {
+      "default": "Драма"
+    },
+    "genre_family": {
+      "default": "Сімейний"
+    },
+    "genre_fantasy": {
+      "default": "Фантастика"
+    },
+    "genre_game_show": {
+      "default": "Ігри"
+    },
+    "genre_history": {
+      "default": "Історія"
+    },
+    "genre_home_and_garden": {
+      "default": "Будинок і сад"
+    },
+    "genre_holiday": {
+      "default": "Свята"
+    },
+    "genre_music": {
+      "default": "Музика"
+    },
+    "genre_musical": {
+      "default": "Мюзикл"
+    },
+    "genre_mystery": {
+      "default": "Таємниця"
+    },
+    "genre_news": {
+      "default": "Новини"
+    },
+    "genre_none": {
+      "default": "Немає"
+    },
+    "genre_reality": {
+      "default": "Реаліті-шоу"
+    },
+    "genre_romance": {
+      "default": "Ромео і Джульєтта"
+    },
+    "genre_short": {
+      "default": "Короткометражний"
+    },
+    "genre_soap": {
+      "default": "Мильна опера"
+    },
+    "genre_special_interest": {
+      "default": "Спеціальний інтерес"
+    },
+    "genre_sporting_event": {
+      "default": "Спортивна подія"
+    },
+    "genre_suspense": {
+      "default": "Напруга"
+    },
+    "genre_talk_show": {
+      "default": "Ток-шоу"
+    },
+    "genre_thriller": {
+      "default": "Трилер"
+    },
+    "genre_war": {
+      "default": "Війна"
+    },
+    "genre_western": {
+      "default": "Вестерн"
+    },
+    "genre_anime": {
+      "default": "Аніме"
+    },
+    "genre_superhero": {
+      "default": "Супергерой"
+    },
+    "genre_donghua": {
+      "default": "Доонгуа"
+    },
+    "genre_mini_series": {
+      "default": "Міні-серіал"
+    },
+    "genre_science_fiction": {
+      "default": "Наукова фантастика"
+    },
+    "remove_from_watchlist_label": {
+      "default": "Прибрати {title} зі списку перегляду",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "search_placeholder": {
+      "default": "Пошук серіалів та фільмів..."
+    },
+    "join_trakt_button": {
+      "default": "Приєднатися до Trakt"
+    },
+    "join_trakt_button_label": {
+      "default": "Приєднайтеся до trakt.tv, щоб відстежувати те, що ви дивитеся"
+    },
+    "copyright_notice": {
+      "default": "Всі права захищені."
+    },
+    "copyright_crafted_by": {
+      "default": "Створено по всьому світу"
+    },
+    "join_trakt_for_free_button": {
+      "default": "Приєднатися до Trakt безкоштовно"
+    },
+    "landing_discover_label": {
+      "default": "Відкрити"
+    },
+    "landing_discover_description": {
+      "default": "що популярне і де це можна переглянути."
+    },
+    "landing_track_label": {
+      "default": "Відстежувати"
+    },
+    "landing_track_description": {
+      "default": "усі серіали та фільми, які ви коли-небудь дивились."
+    },
+    "landing_share_label": {
+      "default": "Поділитися"
+    },
+    "landing_share_description": {
+      "default": "коментарі, оцінки та рекомендації."
+    },
+    "trending": {
+      "default": "Тренди"
+    },
+    "recommendations": {
+      "default": "Рекомендації"
+    },
+    "most_anticipated": {
+      "default": "Найбільш очікувані"
+    },
+    "get": {
+      "default": "Отримати"
+    },
+    "get_vip_label": {
+      "default": "Відкрийте VIP-функції"
+    },
+    "user_profile_label": {
+      "default": "Профіль користувача"
+    },
+    "most_popular": {
+      "default": "Найпопулярніші"
+    },
+    "navbar_link_movies": {
+      "default": "Фільми"
+    },
+    "navbar_link_movies_label": {
+      "default": "Переглянути фільми"
+    },
+    "navbar_link_shows": {
+      "default": "Серіали"
+    },
+    "navbar_link_shows_label": {
+      "default": "Переглянути серіали"
+    },
+    "navbar_link_home": {
+      "default": "Головна"
+    },
+    "navbar_link_home_label": {
+      "default": "Повернутися на головну сторінку"
+    },
+    "watchers": {
+      "default": "Спостерігачі"
+    },
+    "plays": {
+      "default": "{number} переглядів",
+      "variables": {
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "lists": {
+      "default": "Списки"
+    },
+    "favorited": {
+      "default": "Улюблене"
+    },
+    "profile": {
+      "default": "Профіль"
+    },
+    "logout": {
+      "default": "Вийти"
+    },
+    "unreleased_movies_title": {
+      "default": "Скоро з'явиться"
+    },
+    "tba_label": {
+      "default": "Наразі невідомо"
+    },
+    "related_movies_title": {
+      "default": "Пов'язані фільми"
+    },
+    "related_shows_title": {
+      "default": "Пов'язані серіали"
+    },
+    "about_placeholder_1": {
+      "default": "Ця користувач — таємниця, окутана загадкою... (а може, просто лінивий? Хто знає, це ж інтернет.)"
+    },
+    "about_placeholder_2": {
+      "default": "Мабуть, ця користувач занадто захоплений переглядом фільмів, щоб писати про себе. (Добре, я теж це розумію.)"
+    },
+    "about_placeholder_3": {
+      "default": "Профіль цієї користувача — чистий аркуш, порожнеча інформації... (так само, як і моє соціальне життя. Схлик!)"
+    },
+    "about_placeholder_4": {
+      "default": "Розгадайте таємниці особистості цієї користувача... (якщо наважитеся)"
+    },
+    "about_placeholder_5": {
+      "default": "Які таємні глибини ховаються за цим порожнім профілем? (Правда десь поруч...)"
+    },
+    "about_placeholder_6": {
+      "default": "Ця користувач — привид у машині, цифровий привид... (або можливо, вони просто забули це заповнити?)"
+    },
+    "about_placeholder_7": {
+      "default": "Допоможіть цій користувачу! Нагадайте їм заповнити свій профіль. (Можливо, вони навіть винагородять вас віртуальним п'ятикратним привітанням!)"
+    },
+    "about_placeholder_8": {
+      "default": "Цей профіль благає про увагу. Надайте йому трохи любові та нагадайте користувачеві заповнити його."
+    },
+    "about_placeholder_9": {
+      "default": "Не соромтеся! Заохочуйте цю користувача поділитися своєю історією. (У кожного є історія, навіть якщо це просто про улюблене телешоу.)"
+    },
+    "about_placeholder_10": {
+      "default": "Ця користувач — як персонаж з фільму Девіда Лінча: загадковий, таємничий і, можливо, уявний продукт власної уяви."
+    },
+    "about_placeholder_11": {
+      "default": "Цей профіль такий порожній, як магазин відеопрокату \"Блокбастер\" у п'ятницю ввечері. (Ви пам'ятаєте такі? Хороші часи.)"
+    },
+    "about_placeholder_12": {
+      "default": "Ця користувач надихається своїм внутрішнім Тайлером Дурденом: відкидає споживацтво та обіймає порожнечу. (Або, можливо, вони просто ще не дойшли до цього.)"
+    },
+    "about_placeholder_13": {
+      "default": "Стилізоване зображення: Смішна ілюстрація детектива, що почухує голову у здивуванні, або куля, що котиться по порожній сторінці профілю."
+    },
+    "about_placeholder_14": {
+      "default": "Інтерактивний елемент: кнопка, що дозволяє користувачам надіслати доброзичливий сигнал профілю власнику, заохочуючи заповнити свій профіль."
+    },
+    "about_placeholder_15": {
+      "default": "Персоналізоване повідомлення: Якщо у вас є будь-яка інформація про користувача (наприклад, їхня історія переглядів), ви можете використовувати її для створення більш персоналізованого заповнювача, наприклад: \"Ця користувач любить жахи, але ненавидить писати біографії. (Можливо, вони занадто зайняті, щоб ховатися від зомбі?)\""
+    },
+    "watchlist_movies_empty": {
+      "default": "Ваш список перегляду порожній. Додайте фільми, щоб створити свій кіношедевр!"
+    },
+    "watchlist_shows_empty": {
+      "default": "Ваш список перегляду порожній. Додайте серіали, щоб розпалити уяву."
+    },
+    "upcoming_schedule_empty": {
+      "default": "Досліджуйте телесеріали та персоналізуйте свій розклад."
+    },
+    "up_next_empty": {
+      "default": "Почніть перегляд та додайте серіали до свого списку переглядів."
+    },
+    "released_movies_empty": {
+      "default": "Додайте фільми до свого списку переглядів і ніколи не пропустіть прем'єри."
+    },
+    "unreleased_movies_empty": {
+      "default": "Додайте майбутні фільми до свого списку переглядів та залишайтеся в курсі."
+    },
+    "find_movies_link": {
+      "default": "Знайти фільми"
+    },
+    "find_shows_link": {
+      "default": "Знайти серіали"
+    },
+    "active_watchers": {
+      "default": "{count} дивляться",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "shows": {
+      "default": "Серіали"
+    },
+    "episodes_watched": {
+      "default": "{count} серій переглянуто",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "movies": {
+      "default": "Фільми"
+    },
+    "movies_watched": {
+      "default": "{count} фільмів переглянуто",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "details": {
+      "default": "Деталі"
+    },
+    "expand_category": {
+      "default": "Розгорнути {category}",
+      "variables": {
+        "category": {
+          "type": "string",
+          "description": "Category name"
+        }
+      }
+    },
+    "and_more": {
+      "default": "{count} ще",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "premiered": {
+      "default": "Прем'єра"
+    },
+    "runtime": {
+      "default": "Тривалість"
+    },
+    "country": {
+      "default": "Країна"
+    },
+    "language": {
+      "default": "Мова"
+    },
+    "studio": {
+      "default": "Студія"
+    },
+    "genre": {
+      "default": "Жанр"
+    },
+    "navbar_link_lists": {
+      "default": "Списки"
+    },
+    "navbar_link_lists_label": {
+      "default": "Переглянути списки"
+    },
+    "watchlist_shows": {
+      "default": "Ваші серіали"
+    },
+    "watchlist_movies": {
+      "default": "Ваші фільми"
+    },
+    "watch_title_now": {
+      "default": "Дивитися {title} зараз",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "streaming_service_logo": {
+      "default": "Логотип {service}",
+      "variables": {
+        "service": {
+          "type": "string",
+          "description": "Service name"
+        }
+      }
+    },
+    "director": {
+      "default": "Режисер"
+    },
+    "writer": {
+      "default": "Сценарист"
+    },
+    "creator": {
+      "default": "Створитель"
+    },
+    "job_action_director": {
+      "default": "Режисер бойових сцен"
+    },
+    "job_additional_second_assistant_director": {
+      "default": "Додатковий другий помічник режисера"
+    },
+    "job_additional_third_assistant_director": {
+      "default": "Додатковий третій помічник режисера"
+    },
+    "job_assistant_director": {
+      "default": "Помічник режисера"
+    },
+    "job_assistant_director_trainee": {
+      "default": "Стажер помічника режисера"
+    },
+    "job_co_director": {
+      "default": "Корежисер"
+    },
+    "job_continuity": {
+      "default": "Монтажування"
+    },
+    "job_crowd_assistant_director": {
+      "default": "Помічник режисера з масовими сценами"
+    },
+    "job_director": {
+      "default": "Режисер"
+    },
+    "job_field_director": {
+      "default": "Режисер на зйомках"
+    },
+    "job_first_assistant_director": {
+      "default": "Перший помічник режисера"
+    },
+    "job_first_assistant_director_trainee_prep": {
+      "default": "Перший помічник режисера (підготовка)"
+    },
+    "job_first_assistant_director_trainee": {
+      "default": "Стажер першого помічника режисера"
+    },
+    "job_insert_unit_director": {
+      "default": "Режисер вставних сцен"
+    },
+    "job_insert_unit_first_assistant_director": {
+      "default": "Перший помічник режисера вставних сцен"
+    },
+    "job_layout": {
+      "default": "Композиція"
+    },
+    "job_other": {
+      "default": "Інше"
+    },
+    "job_script_coordinator": {
+      "default": "Координатор сценарію"
+    },
+    "job_script_supervisor": {
+      "default": "Наглядач за сценарієм"
+    },
+    "job_second_assistant_director": {
+      "default": "Другий помічник режисера"
+    },
+    "job_second_assistant_director_trainee": {
+      "default": "Стажер другого помічника режисера"
+    },
+    "job_second_second_assistant_director": {
+      "default": "Другий другий помічник режисера"
+    },
+    "job_second_unit_director": {
+      "default": "Режисер другої групи"
+    },
+    "job_second_unit_first_assistant_director": {
+      "default": "Перший помічник режисера другої групи"
+    },
+    "job_series_director": {
+      "default": "Режисер серіалу"
+    },
+    "job_series_guest_director": {
+      "default": "Гостьовий режисер серіалу"
+    },
+    "job_stage_director": {
+      "default": "Режисер сценічних дій"
+    },
+    "job_third_assistant_director": {
+      "default": "Третій помічник режисера"
+    },
+    "job_adaptation": {
+      "default": "Адаптація"
+    },
+    "job_author": {
+      "default": "Автор"
+    },
+    "job_book": {
+      "default": "Книга"
+    },
+    "job_characters": {
+      "default": "Персонажі"
+    },
+    "job_co_writer": {
+      "default": "Співсценарист"
+    },
+    "job_comic_book": {
+      "default": "Комікс"
+    },
+    "job_creative_producer": {
+      "default": "Творчий продюсер"
+    },
+    "job_dialogue": {
+      "default": "Діалоги"
+    },
+    "job_executive_story_editor": {
+      "default": "Виконавчий редактор історії"
+    },
+    "job_graphic_novel": {
+      "default": "Графічний роман"
+    },
+    "job_head_of_story": {
+      "default": "Голова відділу історії"
+    },
+    "job_idea": {
+      "default": "Ідея"
+    },
+    "job_junior_story_editor": {
+      "default": "Молодший редактор історії"
+    },
+    "job_lyricist": {
+      "default": "Ліричний поет"
+    },
+    "job_musical": {
+      "default": "Музичний твір"
+    },
+    "job_novel": {
+      "default": "Роман"
+    },
+    "job_opera": {
+      "default": "Опера"
+    },
+    "job_original_concept": {
+      "default": "Оригінальна концепція"
+    },
+    "job_original_film_writer": {
+      "default": "Автор оригінального фільму"
+    },
+    "job_original_series_creator": {
+      "default": "Автор оригінального серіалу"
+    },
+    "job_original_original_story": {
+      "default": "Оригінальна історія"
+    },
+    "job_scenario_writer": {
+      "default": "Сценарист"
+    },
+    "job_screenplay": {
+      "default": "Сценарій"
+    },
+    "job_screenstory": {
+      "default": "Сюжет фільму"
+    },
+    "job_script_consultant": {
+      "default": "Консультант сценарію"
+    },
+    "job_script_editor": {
+      "default": "Редактор сценарію"
+    },
+    "job_senior_story_editor": {
+      "default": "Старший редактор історії"
+    },
+    "job_series_composition": {
+      "default": "Композиція серіалу"
+    },
+    "job_short_story": {
+      "default": "Коротке оповідання"
+    },
+    "job_staff_writer": {
+      "default": "Співробітник-письменник"
+    },
+    "job_story": {
+      "default": "Історія"
+    },
+    "job_story_story_artist": {
+      "default": "Художник-ілюстратор історії"
+    },
+    "job_story_story_consultant": {
+      "default": "Консультант історії"
+    },
+    "job_story_story_coordinator": {
+      "default": "Координатор історії"
+    },
+    "job_story_story_developer": {
+      "default": "Розробник історії"
+    },
+    "job_story_story_editor": {
+      "default": "Редактор історії"
+    },
+    "job_story_story_manager": {
+      "default": "Менеджер історії"
+    },
+    "job_story_story_supervisor": {
+      "default": "Наглядач за історією"
+    },
+    "job_storyboard": {
+      "default": "Скетч-сценарій"
+    },
+    "job_teleplay": {
+      "default": "Телеп'єса"
+    },
+    "job_texte": {
+      "default": "Текст"
+    },
+    "job_theatre_play": {
+      "default": "Театральна п'єса"
+    },
+    "job_writer": {
+      "default": "Письменник"
+    },
+    "job_writers_assistant": {
+      "default": "Помічник письменника"
+    },
+    "job_writers_production": {
+      "default": "Виробництво письменників"
+    },
+    "job_creator": {
+      "default": "Створець"
+    },
+    "remove_from_watched": {
+      "default": "Видалити з Переглянутого"
+    },
+    "remove_from_watched_label": {
+      "default": "Видалити {title} зі списку Переглянутого",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_watched_warning": {
+      "default": "Ви впевнені, що хочете видалити {title} зі списку Переглянутого? Усі перегляди буде видалено.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_single_watched_label": {
+      "default": "Видалити цей перегляд {title} зі списку Переглянуто",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_single_watched_warning": {
+      "default": "Ви впевнені, що хочете видалити це відтворення {title} зі списку Переглянуто?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "seasons_label": {
+      "default": "Сезони"
+    },
+    "season_number_label": {
+      "default": "Сезон {number}",
+      "variables": {
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "season_specials": {
+      "default": "Спецвипуски"
+    },
+    "expand_media_overview": {
+      "default": "Розгорнути огляд {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "season_episode_number_label": {
+      "default": "Сезон {season} • Епізод {number}",
+      "variables": {
+        "season": {
+          "type": "string",
+          "description": "Season number"
+        },
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "share_title": {
+      "default": "Поділитись {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "status": {
+      "default": "Статус"
+    },
+    "status_released": {
+      "default": "Випущено"
+    },
+    "status_planned": {
+      "default": "Заплановано"
+    },
+    "status_post_production": {
+      "default": "Пост-продакшн"
+    },
+    "status_canceled": {
+      "default": "Скасовано"
+    },
+    "status_in_production": {
+      "default": "У виробництві"
+    },
+    "status_rumored": {
+      "default": "Чутки"
+    },
+    "status_ended": {
+      "default": "Завершено"
+    },
+    "status_returning_series": {
+      "default": "Повертається"
+    },
+    "status_pilot": {
+      "default": "Пілот"
+    },
+    "status_continuing": {
+      "default": "Триває"
+    },
+    "status_upcoming": {
+      "default": "Скоро"
+    },
+    "status_unknown": {
+      "default": "Невідомо"
+    },
+    "expected_premiere": {
+      "default": "Очікувана прем'єра"
+    },
+    "person_headshot": {
+      "default": "Фото {person}",
+      "variables": {
+        "person": {
+          "type": "string",
+          "description": "Person name"
+        }
+      }
+    },
+    "actors": {
+      "default": "Актори"
+    },
+    "anticipated_count": {
+      "default": "{count} в очікуванні",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "view_all_trending_movies": {
+      "default": "Дивитись всі популярні фільми"
+    },
+    "view_all_trending_shows": {
+      "default": "Дивитись всі популярні серіали"
+    },
+    "trending_shows": {
+      "default": "Популярні серіали"
+    },
+    "trending_movies": {
+      "default": "Популярні фільми"
+    },
+    "view_all": {
+      "default": "Дивитись все"
+    },
+    "full_season": {
+      "default": "Повний сезон"
+    },
+    "remove_from_watchlist_warning": {
+      "default": "Ви впевнені, що хочете видалити {title} зі свого списку перегляду?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "view_all_recommended_movies": {
+      "default": "Дивитись всі рекомендовані фільми"
+    },
+    "view_all_recommended_shows": {
+      "default": "Дивитись всі рекомендовані серіали"
+    },
+    "view_all_anticipated_movies": {
+      "default": "Переглянути всі очікувані фільми"
+    },
+    "view_all_anticipated_shows": {
+      "default": "Переглянути всі очікувані серіали"
+    },
+    "anticipated_movies": {
+      "default": "Очікувані фільми"
+    },
+    "anticipated_shows": {
+      "default": "Очікувані серіали"
+    },
+    "view_all_popular_movies": {
+      "default": "Переглянути всі популярні фільми"
+    },
+    "view_all_popular_shows": {
+      "default": "Переглянути всі популярні серіали"
+    },
+    "popular_movies": {
+      "default": "Популярні фільми"
+    },
+    "popular_shows": {
+      "default": "Популярні серіали"
+    },
+    "rate_now": {
+      "default": "Оцінити зараз"
+    },
+    "add_to_favorites": {
+      "default": "Додати до Улюблених"
+    },
+    "remove_from_favorites": {
+      "default": "Видалити з Улюблених"
+    },
+    "add_to_favorites_label": {
+      "default": "Додати {title} до улюблених",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_favorites_label": {
+      "default": "Видалити {title} з улюблених",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_favorites_warning": {
+      "default": "Ви впевнені, що хочете видалити {title} з улюблених?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "favorite_movies": {
+      "default": "Улюблені фільми"
+    },
+    "favorite_shows": {
+      "default": "Улюблені серіали"
+    },
+    "favorite_movies_empty": {
+      "default": "Ваш список улюблених фільмів порожній."
+    },
+    "favorite_shows_empty": {
+      "default": "Ваш список улюблених серіалів порожній."
+    },
+    "stream_on": {
+      "default": "Дивись на"
+    },
+    "your_watchlist_shows": {
+      "default": "Ваш список перегляду"
+    },
+    "your_watchlist_movies": {
+      "default": "Ваш список перегляду"
+    },
+    "view_all_watchlist_movies": {
+      "default": "Усі зі списку до перегляду"
+    },
+    "view_all_watchlist_shows": {
+      "default": "Усі зі списку до перегляду"
+    },
+    "streaming": {
+      "default": "Онлайн"
+    },
+    "on_demand": {
+      "default": "На вимогу"
+    },
+    "media_popup_label": {
+      "default": "Меню для {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "popular_lists": {
+      "default": "Популярні списки"
+    },
+    "no_popular_lists": {
+      "default": "{title} не з'являється в жодному популярному списку.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "by": {
+      "default": "від"
+    },
+    "users_avatar": {
+      "default": "Аватар {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "media_poster": {
+      "default": "Постер {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "no_comments": {
+      "default": "Ще немає коментарів."
+    },
+    "review_by": {
+      "default": "Огляд від"
+    },
+    "shout_by": {
+      "default": "Вигук від"
+    },
+    "deleted_user": {
+      "default": "Видалено"
+    },
+    "social_activity_title": {
+      "default": "Соціальна активність"
+    },
+    "view_all_social_activity": {
+      "default": "Переглянути всю соціальну активність"
+    },
+    "position_dropwdown_label": {
+      "default": "Посада"
+    },
+    "position_acting": {
+      "default": "Акторська гра"
+    },
+    "position_production": {
+      "default": "Виробництво"
+    },
+    "position_art": {
+      "default": "Образотворче мистецтво"
+    },
+    "position_crew": {
+      "default": "Команда"
+    },
+    "position_costume___make_up": {
+      "default": "Костюми та грим"
+    },
+    "position_directing": {
+      "default": "Режисура"
+    },
+    "position_writing": {
+      "default": "Написання"
+    },
+    "position_sound": {
+      "default": "Звук"
+    },
+    "position_camera": {
+      "default": "Камера"
+    },
+    "position_lighting": {
+      "default": "Освітлення"
+    },
+    "position_visual_effects": {
+      "default": "Візуальні ефекти"
+    },
+    "position_editing": {
+      "default": "Монтаж"
+    },
+    "position_creator": {
+      "default": "Створено"
+    },
+    "position_created_by": {
+      "default": "Створено"
+    },
+    "personal_lists": {
+      "default": "Особисті"
+    },
+    "collaborative_lists": {
+      "default": "Співпраця"
+    },
+    "liked_lists": {
+      "default": "Сподобалося"
+    },
+    "share_movie": {
+      "default": "Щойно знайшов {title} – обов'язково подивіться! 🎬",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_show": {
+      "default": "Знайшов/Знайшла цей чудовий серіал: {title}! 📺",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_episode": {
+      "default": "Ось що я щойно подивився/подивилася {show} S{season}E{episode} - {title}! 🔥",
+      "variables": {
+        "show": {
+          "type": "string",
+          "description": "Show title"
+        },
+        "season": {
+          "type": "string",
+          "description": "Season number"
+        },
+        "episode": {
+          "type": "string",
+          "description": "Episode number"
+        },
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_person": {
+      "default": "Перегляньте {name} на Trakt! 🎭",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "recently_watched": {
+      "default": "Нещодавно переглянуті"
+    },
+    "view_all_recently_watched": {
+      "default": "Переглянути всі нещодавно переглянуті"
+    },
+    "released_movies_title": {
+      "default": "Доступно зараз"
+    },
+    "view_all_released_movies": {
+      "default": "Переглянути всі доступні фільми"
+    },
+    "view_all_unreleased_movies": {
+      "default": "Переглянути всі фільми, що виходять скоро"
+    },
+    "switch_to_og": {
+      "default": "Перейти на Trakt.tv"
+    },
+    "preview": {
+      "default": "Перегляд"
+    },
+    "preview_description": {
+      "default": "Ця функція ще набуває свіжого вигляду, громадяни. Ми наполегливо працюємо над UX, щоб вона працювала гладко, як хор янголів (або принаймні, без виникнення існувального жаху)."
+    },
+    "airs": {
+      "default": "Виходить"
+    },
+    "aired": {
+      "default": "Виходило"
+    },
+    "drop_show_warning": {
+      "default": "Ви впевнені, що хочете відмовитися від {title} серіалу? Це видалить його з вашого списку наступного перегляду.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "drop_show_label": {
+      "default": "Позначити серіал {title} як відхилений",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "drop_show": {
+      "default": "Відхилити серіал"
+    },
+    "enable_up_next_nitro_label": {
+      "default": "Увімкнути Nitro «Наступне», найшвидший спосіб перегляду ваших серіалів"
+    },
+    "lab_up_next_nitro_label": {
+      "default": "Увімкнути Nitro для «Наступного»"
+    },
+    "lab_up_next_nitro_message": {
+      "default": "Цей експеримент — це покращення продуктивності, яке покращує досвід для всіх користувачів."
+    },
+    "lab_up_next_nitro_hidden_message": {
+      "default": "Через зміни в інтерфейсі, раніше приховані контент будуть тепер видимі у вашому списку з чорно-білою мініатюрою, щоб ви могли швидко їх знайти, та з можливістю або приховати їх знову, або видалити з списку."
+    },
+    "restore_show_warning": {
+      "default": "Ви впевнені, що хочете відновити медіа-контент {title}? Це відновить його у вашому прогресі та календарі.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "restore_show_label": {
+      "default": "Відновити медіа-контент {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "restore_show": {
+      "default": "Відновити"
+    },
+    "mark_as_watched_show_warning": {
+      "default": "Впевнені, що хочете відмітити {title} як переглянуте? Це відмітить всі серії.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_show_until_warning": {
+      "default": "Ви впевнені, що хочете відмітити {title} як переглянуте до епізоду {episode}? Це відмітить {count} епізодів як переглянуті.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "episode": {
+          "type": "string",
+          "description": "Episode number"
+        },
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "mark_as_watched_multiple_episodes_warning": {
+      "default": "Впевнені, що хочете відмітити {count} серій як переглянуті?",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "watch_count_label": {
+      "default": "Кількість переглядів"
+    },
+    "watched_episodes_count_label": {
+      "default": "Переглянуто епізодів"
+    },
+    "empty_media_history_label": {
+      "default": "Ви ще не дивилися {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "like_comment_label": {
+      "default": "Вподобати коментар"
+    },
+    "unlike_comment_label": {
+      "default": "Не подобається коментар"
+    },
+    "comment_likes": {
+      "default": "{count} вподобайок",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "close_label": {
+      "default": "Закрити"
+    },
+    "comment_replies_label": {
+      "default": "Відповіді на коментарі"
+    },
+    "comment_replies_text": {
+      "default": "{count} відповідей",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "comments": {
+      "default": "Коментарі"
+    },
+    "comment": {
+      "default": "Коментар"
+    },
+    "comment_reply": {
+      "default": "Відповісти"
+    },
+    "comment_reply_label": {
+      "default": "Відповісти {user}",
+      "variables": {
+        "user": {
+          "type": "string",
+          "description": "User reference"
+        }
+      }
+    },
+    "comment_reply_placeholder": {
+      "default": "Відповідь..."
+    },
+    "comment_post_label": {
+      "default": "Додати коментар"
+    },
+    "comment_post_placeholder": {
+      "default": "Коментар..."
+    },
+    "comment_mark_as_spoiler": {
+      "default": "Позначити як спойлер"
+    },
+    "comment_spoiler": {
+      "default": "Спойлер"
+    },
+    "comment_close_error_label": {
+      "default": "Закрити помилку"
+    },
+    "comment_post_reply_label": {
+      "default": "Надіслати відповідь"
+    },
+    "error_comment_invalid_content": {
+      "default": "Коментарі повинні містити не менше 5 слів і бути англійською."
+    },
+    "error_comment_unknown": {
+      "default": "Виникла помилка під час публікації вашого коментаря. Спробуйте пізніше."
+    },
+    "profile_page_title": {
+      "default": "Профіль {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "private_profile": {
+      "default": "Цей профіль є приватним"
+    },
+    "private_profile_description": {
+      "default": "Ніби й так забагато прихованого. Секрети {username} залишаються їхніми.",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "original_title": {
+      "default": "Оригінальна назва"
+    },
+    "view_all_comments": {
+      "default": "Переглянути всі коментарі"
+    },
+    "remove_from_list": {
+      "default": "Видалити зі списку"
+    },
+    "remove_from_list_label": {
+      "default": "Видалити {title} зі списку",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "error_page_service_title": {
+      "default": "Сервіс Trakt недоступний"
+    },
+    "error_page_service_message": {
+      "default": "З'єднання... відсутнє. Як спогад, що забули."
+    },
+    "error_page_service_status": {
+      "default": "Статус сервісу Trakt"
+    },
+    "retry": {
+      "default": "Спробувати знову"
+    },
+    "community_sentiment": {
+      "default": "Думка спільноти"
+    },
+    "lists_action_label": {
+      "default": "Списки"
+    },
+    "listed": {
+      "default": "В списку"
+    },
+    "add_remove_from_lists": {
+      "default": "Додати або видалити {title} зі списків",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "add_to_personal_list_label": {
+      "default": "Додати {title} до {list}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "remove_from_personal_list_label": {
+      "default": "Видалити {title} з {list}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "remove_from_personal_list_warning": {
+      "default": "Ви впевнені, що хочете видалити {title} з {list}?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "theme_light": {
+      "default": "Світла"
+    },
+    "theme_dark": {
+      "default": "Темна"
+    },
+    "theme_system": {
+      "default": "Системна"
+    },
+    "filter_label": {
+      "default": "Фільтр"
+    },
+    "filter_reset": {
+      "default": "Скинути"
+    },
+    "results_for_title": {
+      "default": "Результати для {query}",
+      "variables": {
+        "query": {
+          "type": "string",
+          "description": "Search query"
+        }
+      }
+    },
+    "type_movie": {
+      "default": "Фільм"
+    },
+    "type_show": {
+      "default": "Серіал"
+    },
+    "sign_in": {
+      "default": "Увійти"
+    },
+    "code_retry_title": {
+      "default": "Щось пішло не так"
+    },
+    "code_retry_message": {
+      "default": "Активацію відхилено, термін дії закінчився або трапилося щось непередбачуване. Спробуйте ще раз."
+    },
+    "code_instruction": {
+      "default": "Відскануйте QR-код або увійдіть на сайті:"
+    },
+    "code_label": {
+      "default": "та введіть наступний код:"
+    },
+    "filter_all": {
+      "default": "Всі"
+    },
+    "filters_title": {
+      "default": "Фільтри"
+    },
+    "ignore_watched": {
+      "default": "Ігнорувати переглянуте"
+    },
+    "ignore_watchlisted": {
+      "default": "Ігнорувати у списку"
+    },
+    "watchnow_filter_label": {
+      "default": "Доступність"
+    },
+    "watchnow_favorites_only": {
+      "default": "Тільки улюблене"
+    },
+    "watchnow_digital_release": {
+      "default": "Усі цифрові релізи"
+    },
+    "watchnow_streaming": {
+      "default": "Транслюється зараз"
+    },
+    "decade": {
+      "default": "Десятиліття"
+    },
+    "ratings": {
+      "default": "Оцінки"
+    },
+    "view_all_items_in": {
+      "default": "Переглянути все у {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "filter_reset_all": {
+      "default": "Скинути все"
+    },
+    "filter_reset_all_label": {
+      "default": "Скинути всі фільтри"
+    },
+    "video_type_trailer": {
+      "default": "Трейлер"
+    },
+    "video_type_clip": {
+      "default": "Кліп"
+    },
+    "video_type_teaser": {
+      "default": "Тизер"
+    },
+    "video_type_featurette": {
+      "default": "Спеціальне відео"
+    },
+    "video_type_recap": {
+      "default": "Підсумок"
+    },
+    "video_type_behind_the_scenes": {
+      "default": "За лаштунками"
+    },
+    "now_playing": {
+      "default": "Зараз в ефірі"
+    },
+    "remaining": {
+      "default": "залишилось"
+    },
+    "checkin": {
+      "default": "Відмітитися"
+    },
+    "checkin_label": {
+      "default": "Відмітитися {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "cookie_notice": {
+      "default": "Trakt використовує C🍪🍪KIES, щоб покращити ваш загальний досвід. Ви можете <a>прочитати більше інформації</a> тут."
+    },
+    "cookie_accept": {
+      "default": "Зрозуміло, поїхали!"
+    },
+    "year_to_date_label": {
+      "default": "З початку року"
+    },
+    "month_in_review_label": {
+      "default": "Огляд місяця"
+    },
+    "settings": {
+      "default": "Налаштування"
+    },
+    "settings_spoilers_title": {
+      "default": "Спойлери"
+    },
+    "settings_spoilers_label": {
+      "default": "Показати спойлери"
+    },
+    "filter_save": {
+      "default": "Зберегти"
+    },
+    "filter_save_label": {
+      "default": "Зберегти фільтри"
+    },
+    "error_page_locked_account_title": {
+      "default": "Обліковий запис заблоковано"
+    },
+    "error_page_locked_account_message": {
+      "default": "Ваш обліковий запис заблоковано, <a>зв’яжіться з підтримкою</a>, щоб вирішити цю проблему."
+    },
+    "first_play_this_month": {
+      "default": "Перший показ цього місяця"
+    },
+    "shows_watched": {
+      "default": "{count} переглянуто серіалів",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "follow": {
+      "default": "Слідкувати"
+    },
+    "follow_label": {
+      "default": "Слідкувати за {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "unfollow": {
+      "default": "Відписатися"
+    },
+    "unfollow_label": {
+      "default": "Відписатися від {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "unfollow_warning": {
+      "default": "Ви впевнені, що хочете відписатися від {username}?",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "vip_upsell_title": {
+      "default": "Розблокуйте VIP-функції, щоб покращити свій досвід Trakt"
+    },
+    "vip_upsell_description": {
+      "default": "Хочете побачити свій місячний та річний огляд? Та отримати доступ до багатьох інших функцій? Підпишіться на Trakt VIP."
+    },
+    "following": {
+      "default": "Підписки"
+    },
+    "followers": {
+      "default": "Підписники"
+    },
+    "not_following_anyone": {
+      "default": "Тут нікого немає (поки що)."
+    },
+    "read_more": {
+      "default": "Читати далі"
+    },
+    "add_comment": {
+      "default": "Додати"
+    },
+    "rename_list": {
+      "default": "Перейменувати ваш список"
+    },
+    "rename_list_label": {
+      "default": "Перейменувати ваш список {name}",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "hot": {
+      "default": "Гаряче цього місяця"
+    },
+    "hot_movies": {
+      "default": "Найкращі фільми цього місяця"
+    },
+    "hot_shows": {
+      "default": "Найкращі серіали цього місяця"
+    },
+    "view_all_hot_shows": {
+      "default": "Переглянути всі гарячі серіали"
+    },
+    "view_all_hot_movies": {
+      "default": "Переглянути всі гарячі фільми"
+    },
+    "popular_comments": {
+      "default": "Популярні коментарі"
+    }
+  }
+}

@@ -1,0 +1,1773 @@
+{
+  "$schema": "../schema/meta-messages.schema.json",
+  "meta": {
+    "locale": "nb-no",
+    "direction": "ltr",
+    "generator": {
+      "inlang": {
+        "enabled": true,
+        "outputPath": "./messages/{locale}.json"
+      },
+      "android": {
+        "enabled": true,
+        "outputPath": "./android/values-{locale}/strings.xml",
+        "resourceName": "strings"
+      },
+      "ios": {
+        "enabled": true,
+        "outputPath": "./ios/Localizable.xcstrings"
+      }
+    }
+  },
+  "messages": {
+    "upcoming_schedule_title": {
+      "default": "Kommende"
+    },
+    "season_premiere": {
+      "default": "Sesongpremiere"
+    },
+    "series_premiere": {
+      "default": "Seriepremiere"
+    },
+    "mid_season_premiere": {
+      "default": "Midt-Sesongpremiere"
+    },
+    "season_finale": {
+      "default": "Sesongavslutning"
+    },
+    "series_finale": {
+      "default": "Serieavslutning"
+    },
+    "mid_season_finale": {
+      "default": "Midt-Sesongavslutning"
+    },
+    "profile_banner_greeting": {
+      "default": "Hallo, {name}",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "up_next_title": {
+      "default": "Neste"
+    },
+    "remaining_episodes": {
+      "default": "{count} igjen",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "recommended_movies": {
+      "default": "Anbefalte Filmer"
+    },
+    "recommended_shows": {
+      "default": "Anbefalte Serier"
+    },
+    "number_of_episodes": {
+      "default": "{count} episoder",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "error_404_title": {
+      "default": "404: Intet. Tomrommet."
+    },
+    "error_404_message": {
+      "default": "(Ikke bekymre deg, det skjer! Selv Kraften er noen ganger ute av balanse.)"
+    },
+    "error_404_action": {
+      "default": "Tilbake til sikkerhet..."
+    },
+    "mark_as_watched_ask_prompt": {
+      "default": "Når fullførte du å se dette? (YYYY-MM-DD HH:MM)"
+    },
+    "watchlist_action_label": {
+      "default": "Å se"
+    },
+    "mark_as_watched": {
+      "default": "Merk som sett"
+    },
+    "mark_as_watched_until": {
+      "default": "Sett hit"
+    },
+    "watch_again": {
+      "default": "Se igjen"
+    },
+    "add_to_watchlist_label": {
+      "default": "Legg {title} til i din Watchlist",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_label": {
+      "default": "Merk {title} som sett",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_until_label": {
+      "default": "Merk {title} som sett hit",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "genre_horror": {
+      "default": "Skrekk"
+    },
+    "genre_comedy": {
+      "default": "Komedie"
+    },
+    "genre_action": {
+      "default": "Action"
+    },
+    "genre_adventure": {
+      "default": "Eventyr"
+    },
+    "genre_animation": {
+      "default": "Animasjon"
+    },
+    "genre_biography": {
+      "default": "Biografi"
+    },
+    "genre_children": {
+      "default": "Barn"
+    },
+    "genre_crime": {
+      "default": "Krim"
+    },
+    "genre_documentary": {
+      "default": "Dokumentar"
+    },
+    "genre_drama": {
+      "default": "Drama"
+    },
+    "genre_family": {
+      "default": "Familie"
+    },
+    "genre_fantasy": {
+      "default": "Fantasy"
+    },
+    "genre_game_show": {
+      "default": "Gameshow"
+    },
+    "genre_history": {
+      "default": "Historie"
+    },
+    "genre_home_and_garden": {
+      "default": "Hjem og Hage"
+    },
+    "genre_holiday": {
+      "default": "Høytid"
+    },
+    "genre_music": {
+      "default": "Musikk"
+    },
+    "genre_musical": {
+      "default": "Musikal"
+    },
+    "genre_mystery": {
+      "default": "Mysterium"
+    },
+    "genre_news": {
+      "default": "Nyheter"
+    },
+    "genre_none": {
+      "default": "Ingen"
+    },
+    "genre_reality": {
+      "default": "Reality"
+    },
+    "genre_romance": {
+      "default": "Romantikk"
+    },
+    "genre_short": {
+      "default": "Kortfilm"
+    },
+    "genre_soap": {
+      "default": "Såpeopera"
+    },
+    "genre_special_interest": {
+      "default": "Spesielt Interessant"
+    },
+    "genre_sporting_event": {
+      "default": "Sportsbegivenhet"
+    },
+    "genre_suspense": {
+      "default": "Spenning"
+    },
+    "genre_talk_show": {
+      "default": "Talkshow"
+    },
+    "genre_thriller": {
+      "default": "Thriller"
+    },
+    "genre_war": {
+      "default": "Krig"
+    },
+    "genre_western": {
+      "default": "Western"
+    },
+    "genre_anime": {
+      "default": "Anime"
+    },
+    "genre_superhero": {
+      "default": "Superhelt"
+    },
+    "genre_donghua": {
+      "default": "Donghua"
+    },
+    "genre_mini_series": {
+      "default": "Miniserie"
+    },
+    "genre_science_fiction": {
+      "default": "Science Fiction"
+    },
+    "remove_from_watchlist_label": {
+      "default": "Fjern {title} fra din Watchlist",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "search_placeholder": {
+      "default": "Søk etter serier og filmer..."
+    },
+    "join_trakt_button": {
+      "default": "Bli med i Trakt"
+    },
+    "join_trakt_button_label": {
+      "default": "Bli med i trakt.tv for å holde oversikt over hva du ser"
+    },
+    "copyright_notice": {
+      "default": "Alle rettigheter reservert."
+    },
+    "copyright_crafted_by": {
+      "default": "Håndlaget rundt om i verden"
+    },
+    "join_trakt_for_free_button": {
+      "default": "Bli med i Trakt gratis"
+    },
+    "landing_discover_label": {
+      "default": "Oppdag"
+    },
+    "landing_discover_description": {
+      "default": "Hva som er populært og hvor du kan streame det."
+    },
+    "landing_track_label": {
+      "default": "Spor"
+    },
+    "landing_track_description": {
+      "default": "Alle serier og filmer du noen gang har sett."
+    },
+    "landing_share_label": {
+      "default": "Del"
+    },
+    "landing_share_description": {
+      "default": "Kommentarer, vurderinger og anbefalinger."
+    },
+    "trending": {
+      "default": "Populært"
+    },
+    "recommendations": {
+      "default": "Anbefalinger"
+    },
+    "most_anticipated": {
+      "default": "Mest Forventet"
+    },
+    "get": {
+      "default": "Få"
+    },
+    "get_vip_label": {
+      "default": "Lås opp VIP-funksjoner"
+    },
+    "user_profile_label": {
+      "default": "Brukerprofil"
+    },
+    "most_popular": {
+      "default": "Mest Populære"
+    },
+    "navbar_link_movies": {
+      "default": "Filmer"
+    },
+    "navbar_link_movies_label": {
+      "default": "Bla gjennom Filmer"
+    },
+    "navbar_link_shows": {
+      "default": "Serier"
+    },
+    "navbar_link_shows_label": {
+      "default": "Bla gjennom Serier"
+    },
+    "navbar_link_home": {
+      "default": "Hjem"
+    },
+    "navbar_link_home_label": {
+      "default": "Gå tilbake til hjemmesiden"
+    },
+    "watchers": {
+      "default": "Seere"
+    },
+    "plays": {
+      "default": "{number} visninger",
+      "variables": {
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "lists": {
+      "default": "Lister"
+    },
+    "favorited": {
+      "default": "Favoritt"
+    },
+    "profile": {
+      "default": "Profil"
+    },
+    "logout": {
+      "default": "Logg ut"
+    },
+    "unreleased_movies_title": {
+      "default": "Kommer Snart"
+    },
+    "tba_label": {
+      "default": "TBA"
+    },
+    "related_movies_title": {
+      "default": "Relaterte Filmer"
+    },
+    "related_shows_title": {
+      "default": "Relaterte Serier"
+    },
+    "about_placeholder_1": {
+      "default": "Denne brukeren er et mysterium, innhyllet i gåter... (eller kanskje bare lat? Hvem vet, dette er internett.)"
+    },
+    "about_placeholder_2": {
+      "default": "Tilsynelatende er denne brukeren for opptatt med å se filmer til å skrive om seg selv. (Fair nok, jeg kan relatere.)"
+    },
+    "about_placeholder_3": {
+      "default": "Denne brukerens profil er et tomt lerret, et tomrom av informasjon... (i likhet med mitt sosiale liv. sukk)"
+    },
+    "about_placeholder_4": {
+      "default": "Avslør hemmelighetene bak denne brukerens identitet... (hvis du tør)"
+    },
+    "about_placeholder_5": {
+      "default": "Hvilke skjulte dyp ligger under denne tomme profilen? (Sannheten er der ute...)"
+    },
+    "about_placeholder_6": {
+      "default": "Denne brukeren er et spøkelse i maskinen, et digitalt fantom... (eller kanskje de bare glemte å fylle ut dette?)"
+    },
+    "about_placeholder_7": {
+      "default": "Hjelp denne brukeren! Fortell dem å fullføre profilen sin. (De kan til og med belønne deg med en virtuell high five!)"
+    },
+    "about_placeholder_8": {
+      "default": "Denne profilen ber om oppmerksomhet. Gi den litt kjærlighet og fortell brukeren å fylle den ut."
+    },
+    "about_placeholder_9": {
+      "default": "Ikke vær sjenert! Oppfordre denne brukeren til å dele historien sin. (Alle har en historie å fortelle, selv om det bare handler om favorittserien deres.)"
+    },
+    "about_placeholder_10": {
+      "default": "Denne brukeren er som en karakter i en David Lynch-film: gåtefull, mystisk og muligens et påfunn av sin egen fantasi."
+    },
+    "about_placeholder_11": {
+      "default": "Denne profilen er like tom som en Blockbuster-videobutikk på en fredagskveld. (Husker du de? Gode tider.)"
+    },
+    "about_placeholder_12": {
+      "default": "Denne brukeren kanaliserer sin indre Tyler Durden: avviser forbrukerisme og omfavner tomrommet. (Eller kanskje de bare ikke har fått fylt ut dette ennå.)"
+    },
+    "about_placeholder_13": {
+      "default": "Et stilisert bilde: En morsom illustrasjon av en detektiv som klør seg i hodet i forvirring, eller en rullende rullgress over en tom profilside."
+    },
+    "about_placeholder_14": {
+      "default": "Et interaktivt element: En knapp som lar brukere sende en vennlig puff til profileieren, og oppmuntre dem til å fullføre profilen sin."
+    },
+    "about_placeholder_15": {
+      "default": "En personlig melding: Hvis du har informasjon om brukeren (f.eks. visningshistorikk), kan du bruke den til å generere en mer personlig plassholder, som 'Denne brukeren elsker skrekkfilmer, men hater å skrive bioer. (Kanskje de er for opptatt med å gjemme seg for zombier?)'"
+    },
+    "watchlist_movies_empty": {
+      "default": "Watchlisten din er tom. Legg til filmer for å lage ditt kinomesterverk."
+    },
+    "watchlist_shows_empty": {
+      "default": "Watchlisten din er tom. Legg til serier for å gi næring til fantasien din."
+    },
+    "upcoming_schedule_empty": {
+      "default": "Utforsk TV-serier og tilpass timeplanen din."
+    },
+    "up_next_empty": {
+      "default": "Begynn å se og legg til serier i watchlisten din."
+    },
+    "released_movies_empty": {
+      "default": "Legg til filmer i watchlisten din og gå aldri glipp av en premiere."
+    },
+    "unreleased_movies_empty": {
+      "default": "Legg til kommende filmer i watchlisten din og hold deg oppdatert."
+    },
+    "find_movies_link": {
+      "default": "Finn Filmer"
+    },
+    "find_shows_link": {
+      "default": "Finn Serier"
+    },
+    "active_watchers": {
+      "default": "{count} ser på",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "shows": {
+      "default": "Serier"
+    },
+    "episodes_watched": {
+      "default": "{count} episoder sett",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "movies": {
+      "default": "Filmer"
+    },
+    "movies_watched": {
+      "default": "{count} filmer sett",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "details": {
+      "default": "Detaljer"
+    },
+    "expand_category": {
+      "default": "Utvid {category}",
+      "variables": {
+        "category": {
+          "type": "string",
+          "description": "Category name"
+        }
+      }
+    },
+    "and_more": {
+      "default": "{count} til",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "premiered": {
+      "default": "Premiere"
+    },
+    "runtime": {
+      "default": "Varighet"
+    },
+    "country": {
+      "default": "Land"
+    },
+    "language": {
+      "default": "Språk"
+    },
+    "studio": {
+      "default": "Studio"
+    },
+    "genre": {
+      "default": "Sjanger"
+    },
+    "navbar_link_lists": {
+      "default": "Lister"
+    },
+    "navbar_link_lists_label": {
+      "default": "Utforsk lister"
+    },
+    "watchlist_shows": {
+      "default": "Dine Serier"
+    },
+    "watchlist_movies": {
+      "default": "Dine Filmer"
+    },
+    "watch_title_now": {
+      "default": "Se {title} nå",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "streaming_service_logo": {
+      "default": "{service} logo",
+      "variables": {
+        "service": {
+          "type": "string",
+          "description": "Service name"
+        }
+      }
+    },
+    "director": {
+      "default": "Regissør"
+    },
+    "writer": {
+      "default": "Manusforfatter"
+    },
+    "creator": {
+      "default": "Skaper"
+    },
+    "job_action_director": {
+      "default": "Action Regissør"
+    },
+    "job_additional_second_assistant_director": {
+      "default": "Ekstra Assistent Regissør (2. Assistent)"
+    },
+    "job_additional_third_assistant_director": {
+      "default": "Ekstra Assistent Regissør (3. Assistent)"
+    },
+    "job_assistant_director": {
+      "default": "Assistent Regissør"
+    },
+    "job_assistant_director_trainee": {
+      "default": "Assistent Regissør Elev"
+    },
+    "job_co_director": {
+      "default": "Medregissør"
+    },
+    "job_continuity": {
+      "default": "Kontinuitet"
+    },
+    "job_crowd_assistant_director": {
+      "default": "Folkemengde Assistent Regissør"
+    },
+    "job_director": {
+      "default": "Regissør"
+    },
+    "job_field_director": {
+      "default": "Felt Regissør"
+    },
+    "job_first_assistant_director": {
+      "default": "Første Assistent Regissør"
+    },
+    "job_first_assistant_director_trainee_prep": {
+      "default": "Første Assistent Regissør (Forberedelse)"
+    },
+    "job_first_assistant_director_trainee": {
+      "default": "Første Assistent Regissør Elev"
+    },
+    "job_insert_unit_director": {
+      "default": "Insert Unit Regissør"
+    },
+    "job_insert_unit_first_assistant_director": {
+      "default": "Insert Unit Første Assistent Regissør"
+    },
+    "job_layout": {
+      "default": "Layout"
+    },
+    "job_other": {
+      "default": "Annet"
+    },
+    "job_script_coordinator": {
+      "default": "Manuskoordinator"
+    },
+    "job_script_supervisor": {
+      "default": "Manusveileder"
+    },
+    "job_second_assistant_director": {
+      "default": "Andre Assistent Regissør"
+    },
+    "job_second_assistant_director_trainee": {
+      "default": "Andre Assistent Regissør Elev"
+    },
+    "job_second_second_assistant_director": {
+      "default": "Andre Andre Assistent Regissør"
+    },
+    "job_second_unit_director": {
+      "default": "Andre Unit Regissør"
+    },
+    "job_second_unit_first_assistant_director": {
+      "default": "Andre Unit Første Assistent Regissør"
+    },
+    "job_series_director": {
+      "default": "Serieregissør"
+    },
+    "job_series_guest_director": {
+      "default": "Spesialgjest Regissør"
+    },
+    "job_stage_director": {
+      "default": "Scene Regissør"
+    },
+    "job_third_assistant_director": {
+      "default": "Tredje Assistent Regissør"
+    },
+    "job_adaptation": {
+      "default": "Tilpasning"
+    },
+    "job_author": {
+      "default": "Forfatter"
+    },
+    "job_book": {
+      "default": "Bok"
+    },
+    "job_characters": {
+      "default": "Karakterer"
+    },
+    "job_co_writer": {
+      "default": "Medforfatter"
+    },
+    "job_comic_book": {
+      "default": "Tegneserie"
+    },
+    "job_creative_producer": {
+      "default": "Kreativ Produsent"
+    },
+    "job_dialogue": {
+      "default": "Dialog"
+    },
+    "job_executive_story_editor": {
+      "default": "Executive Story Editor"
+    },
+    "job_graphic_novel": {
+      "default": "Grafisk Roman"
+    },
+    "job_head_of_story": {
+      "default": "Head of Story"
+    },
+    "job_idea": {
+      "default": "Idé"
+    },
+    "job_junior_story_editor": {
+      "default": "Junior Story Editor"
+    },
+    "job_lyricist": {
+      "default": "Tekstforfatter"
+    },
+    "job_musical": {
+      "default": "Musikal"
+    },
+    "job_novel": {
+      "default": "Roman"
+    },
+    "job_opera": {
+      "default": "Opera"
+    },
+    "job_original_concept": {
+      "default": "Originalt Konsept"
+    },
+    "job_original_film_writer": {
+      "default": "Original Filmforfatter"
+    },
+    "job_original_series_creator": {
+      "default": "Original Serie Skaper"
+    },
+    "job_original_original_story": {
+      "default": "Original Historie"
+    },
+    "job_scenario_writer": {
+      "default": "Scenarioforfatter"
+    },
+    "job_screenplay": {
+      "default": "Filmatisering"
+    },
+    "job_screenstory": {
+      "default": "Screenstory"
+    },
+    "job_script_consultant": {
+      "default": "Manus Konsulent"
+    },
+    "job_script_editor": {
+      "default": "Manusredaktør"
+    },
+    "job_senior_story_editor": {
+      "default": "Senior Story Editor"
+    },
+    "job_series_composition": {
+      "default": "Seriessammensetning"
+    },
+    "job_short_story": {
+      "default": "Novelle"
+    },
+    "job_staff_writer": {
+      "default": "Stabforfatter"
+    },
+    "job_story": {
+      "default": "Historie"
+    },
+    "job_story_story_artist": {
+      "default": "Story Artist"
+    },
+    "job_story_story_consultant": {
+      "default": "Story Konsulent"
+    },
+    "job_story_story_coordinator": {
+      "default": "Story Koordinator"
+    },
+    "job_story_story_developer": {
+      "default": "Story Utvikler"
+    },
+    "job_story_story_editor": {
+      "default": "Story Editor"
+    },
+    "job_story_story_manager": {
+      "default": "Story Manager"
+    },
+    "job_story_story_supervisor": {
+      "default": "Story Veileder"
+    },
+    "job_storyboard": {
+      "default": "Storyboard"
+    },
+    "job_teleplay": {
+      "default": "TV-manus"
+    },
+    "job_texte": {
+      "default": "Tekst"
+    },
+    "job_theatre_play": {
+      "default": "Teaterstykke"
+    },
+    "job_writer": {
+      "default": "Forfatter"
+    },
+    "job_writers_assistant": {
+      "default": "Forfatterassistent"
+    },
+    "job_writers_production": {
+      "default": "Forfatter Produksjon"
+    },
+    "job_creator": {
+      "default": "Skaper"
+    },
+    "remove_from_watched": {
+      "default": "Fjern fra Sett"
+    },
+    "remove_from_watched_label": {
+      "default": "Fjern {title} fra din Sett-liste",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_watched_warning": {
+      "default": "Er du sikker på at du vil fjerne {title} fra din Sett-liste? Alle visninger vil bli fjernet.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_single_watched_label": {
+      "default": "Fjern denne visningen av {title} fra din Sett-liste",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_single_watched_warning": {
+      "default": "Er du sikker på at du vil fjerne denne visningen av {title} fra din Sett-liste?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "seasons_label": {
+      "default": "Sesonger"
+    },
+    "season_number_label": {
+      "default": "Sesong {number}",
+      "variables": {
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "season_specials": {
+      "default": "Spesialer"
+    },
+    "expand_media_overview": {
+      "default": "Utvid {title} oversikt",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "season_episode_number_label": {
+      "default": "Sesong {season} • Episode {number}",
+      "variables": {
+        "season": {
+          "type": "string",
+          "description": "Season number"
+        },
+        "number": {
+          "type": "string",
+          "description": "Numeric value"
+        }
+      }
+    },
+    "share_title": {
+      "default": "Del {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "status": {
+      "default": "Status"
+    },
+    "status_released": {
+      "default": "Utgitt"
+    },
+    "status_planned": {
+      "default": "Planlagt"
+    },
+    "status_post_production": {
+      "default": "Post-Produksjon"
+    },
+    "status_canceled": {
+      "default": "Kansellert"
+    },
+    "status_in_production": {
+      "default": "I Produksjon"
+    },
+    "status_rumored": {
+      "default": "Ryktes"
+    },
+    "status_ended": {
+      "default": "Fullført"
+    },
+    "status_returning_series": {
+      "default": "Gjenstår"
+    },
+    "status_pilot": {
+      "default": "Pilot"
+    },
+    "status_continuing": {
+      "default": "Fortsetter"
+    },
+    "status_upcoming": {
+      "default": "Kommende"
+    },
+    "status_unknown": {
+      "default": "Ukjent"
+    },
+    "expected_premiere": {
+      "default": "Forventet Premiere"
+    },
+    "person_headshot": {
+      "default": "Headshot av {person}",
+      "variables": {
+        "person": {
+          "type": "string",
+          "description": "Person name"
+        }
+      }
+    },
+    "actors": {
+      "default": "Skuespillere"
+    },
+    "anticipated_count": {
+      "default": "{count} forventninger",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "view_all_trending_movies": {
+      "default": "Se alle populære filmer"
+    },
+    "view_all_trending_shows": {
+      "default": "Se alle populære serier"
+    },
+    "trending_shows": {
+      "default": "Populære Serier"
+    },
+    "trending_movies": {
+      "default": "Populære Filmer"
+    },
+    "view_all": {
+      "default": "Se Alle"
+    },
+    "full_season": {
+      "default": "Full Sesong"
+    },
+    "remove_from_watchlist_warning": {
+      "default": "Er du sikker på at du vil fjerne {title} fra din Watchlist?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "view_all_recommended_movies": {
+      "default": "Se alle anbefalte filmer"
+    },
+    "view_all_recommended_shows": {
+      "default": "Se alle anbefalte serier"
+    },
+    "view_all_anticipated_movies": {
+      "default": "Se alle forventede filmer"
+    },
+    "view_all_anticipated_shows": {
+      "default": "Se alle forventede serier"
+    },
+    "anticipated_movies": {
+      "default": "Forventede Filmer"
+    },
+    "anticipated_shows": {
+      "default": "Forventede Serier"
+    },
+    "view_all_popular_movies": {
+      "default": "Se alle populære filmer"
+    },
+    "view_all_popular_shows": {
+      "default": "Se alle populære serier"
+    },
+    "popular_movies": {
+      "default": "Populære Filmer"
+    },
+    "popular_shows": {
+      "default": "Populære Serier"
+    },
+    "rate_now": {
+      "default": "Vurder nå"
+    },
+    "add_to_favorites": {
+      "default": "Legg til i favoritter"
+    },
+    "remove_from_favorites": {
+      "default": "Fjern fra favoritter"
+    },
+    "add_to_favorites_label": {
+      "default": "Legg til {title} i dine favoritter",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_favorites_label": {
+      "default": "Fjern {title} fra dine favoritter",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "remove_from_favorites_warning": {
+      "default": "Er du sikker på at du vil fjerne {title} fra favorittene dine?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "favorite_movies": {
+      "default": "Favorittfilmer"
+    },
+    "favorite_shows": {
+      "default": "Favorittserier"
+    },
+    "favorite_movies_empty": {
+      "default": "Din liste over favorittfilmer er tom."
+    },
+    "favorite_shows_empty": {
+      "default": "Din liste over favorittserier er tom."
+    },
+    "stream_on": {
+      "default": "Strøm på"
+    },
+    "your_watchlist_shows": {
+      "default": "Dine Watchlist Serier"
+    },
+    "your_watchlist_movies": {
+      "default": "Dine Watchlist Filmer"
+    },
+    "view_all_watchlist_movies": {
+      "default": "Se alle Watchlist Filmer"
+    },
+    "view_all_watchlist_shows": {
+      "default": "Se alle Watchlist Serier"
+    },
+    "streaming": {
+      "default": "Strømming"
+    },
+    "on_demand": {
+      "default": "On Demand"
+    },
+    "media_popup_label": {
+      "default": "Popup-meny for {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "popular_lists": {
+      "default": "Populære lister"
+    },
+    "no_popular_lists": {
+      "default": "{title} vises ikke på noen populære lister.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "by": {
+      "default": "av"
+    },
+    "users_avatar": {
+      "default": "{username}s avatar",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "media_poster": {
+      "default": "{title} poster",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "no_comments": {
+      "default": "Ingen kommentarer ennå."
+    },
+    "review_by": {
+      "default": "Anmeldelse av"
+    },
+    "shout_by": {
+      "default": "Skrik av"
+    },
+    "deleted_user": {
+      "default": "Slettet"
+    },
+    "social_activity_title": {
+      "default": "Sosial Aktivitet"
+    },
+    "view_all_social_activity": {
+      "default": "Se all sosial aktivitet"
+    },
+    "position_dropwdown_label": {
+      "default": "Posisjon"
+    },
+    "position_acting": {
+      "default": "Skuespill"
+    },
+    "position_production": {
+      "default": "Produksjon"
+    },
+    "position_art": {
+      "default": "Kunst"
+    },
+    "position_crew": {
+      "default": "Stab"
+    },
+    "position_costume___make_up": {
+      "default": "Kostyme & Sminke"
+    },
+    "position_directing": {
+      "default": "Regi"
+    },
+    "position_writing": {
+      "default": "Skriving"
+    },
+    "position_sound": {
+      "default": "Lyd"
+    },
+    "position_camera": {
+      "default": "Kamera"
+    },
+    "position_lighting": {
+      "default": "Lyssetting"
+    },
+    "position_visual_effects": {
+      "default": "Visuelle Effekter"
+    },
+    "position_editing": {
+      "default": "Redigering"
+    },
+    "position_creator": {
+      "default": "Skaper"
+    },
+    "position_created_by": {
+      "default": "Skapt av"
+    },
+    "personal_lists": {
+      "default": "Personlige"
+    },
+    "collaborative_lists": {
+      "default": "Samarbeid"
+    },
+    "liked_lists": {
+      "default": "Likte"
+    },
+    "share_movie": {
+      "default": "Akkurat oppdaget {title} - du må se dette! 🎬",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_show": {
+      "default": "Fant denne fantastiske serien: {title}! 📺",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_episode": {
+      "default": "Akkurat sett {show} S{season}E{episode} - {title}! 🔥",
+      "variables": {
+        "show": {
+          "type": "string",
+          "description": "Show title"
+        },
+        "season": {
+          "type": "string",
+          "description": "Season number"
+        },
+        "episode": {
+          "type": "string",
+          "description": "Episode number"
+        },
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "share_person": {
+      "default": "Sjekk ut {name} på Trakt! 🎭",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "recently_watched": {
+      "default": "Nylig sett"
+    },
+    "view_all_recently_watched": {
+      "default": "Se alt nylig sett"
+    },
+    "released_movies_title": {
+      "default": "Tilgjengelig Nå"
+    },
+    "view_all_released_movies": {
+      "default": "Se alle filmer tilgjengelig nå"
+    },
+    "view_all_unreleased_movies": {
+      "default": "Se alle filmer som kommer snart"
+    },
+    "switch_to_og": {
+      "default": "Bytt til Trakt.tv"
+    },
+    "preview": {
+      "default": "Forhåndsvisning"
+    },
+    "preview_description": {
+      "default": "Denne funksjonen får fortsatt et nytt strøk med maling, borger. Vi hamrer løs på UX-en, og får den til å synge som et kor av engler (eller i det minste fungere problemfritt uten å fremkalle eksistensiell frykt)."
+    },
+    "airs": {
+      "default": "Sendes"
+    },
+    "aired": {
+      "default": "Sendt"
+    },
+    "drop_show_warning": {
+      "default": "Er du sikker på at du vil droppe {title} serien? Dette vil fjerne den fra din Neste-liste.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "drop_show_label": {
+      "default": "Merk serien {title} som droppet",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "drop_show": {
+      "default": "Dropp serie"
+    },
+    "enable_up_next_nitro_label": {
+      "default": "Aktiver Up Next Nitro, den raskeste måten å se seriene dine på"
+    },
+    "lab_up_next_nitro_label": {
+      "default": "Aktiver Up Next Nitro"
+    },
+    "lab_up_next_nitro_message": {
+      "default": "Dette eksperimentet er en ytelsesoppgradering som forbedrer opplevelsen for alle brukere."
+    },
+    "lab_up_next_nitro_hidden_message": {
+      "default": "På grunn av interne designendringer vil tidligere skjulte serier nå være synlige i listen din med en svart-hvitt miniatyrbilde for å hjelpe deg med å oppdage dem raskt, med muligheten til enten å vise dem eller droppe dem fra listen."
+    },
+    "restore_show_warning": {
+      "default": "Er du sikker på at du vil gjenopprette {title} serien? Dette vil gjenopprette det på din fremgang og kalender.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "restore_show_label": {
+      "default": "Gjenopprett serien {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "restore_show": {
+      "default": "Gjenopprett serie"
+    },
+    "mark_as_watched_show_warning": {
+      "default": "Er du sikker på at du vil markere {title} som sett? Dette vil markere alle episoder som sett.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "mark_as_watched_show_until_warning": {
+      "default": "Er du sikker på at du vil merke {title} som sett til episode {episode}? Dette vil merke {count} episoder som sett.",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "episode": {
+          "type": "string",
+          "description": "Episode number"
+        },
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "mark_as_watched_multiple_episodes_warning": {
+      "default": "Er du sikker på at du vil markere {count} episoder som sett?",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "watch_count_label": {
+      "default": "Visningsantall"
+    },
+    "watched_episodes_count_label": {
+      "default": "Episoder sett"
+    },
+    "empty_media_history_label": {
+      "default": "Du har ikke sett {title} ennå",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "like_comment_label": {
+      "default": "Lik kommentar"
+    },
+    "unlike_comment_label": {
+      "default": "Mislik kommentar"
+    },
+    "comment_likes": {
+      "default": "{count} liker",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "close_label": {
+      "default": "Lukk"
+    },
+    "comment_replies_label": {
+      "default": "Kommentar Svar"
+    },
+    "comment_replies_text": {
+      "default": "{count} svar",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "comments": {
+      "default": "Kommentarer"
+    },
+    "comment": {
+      "default": "Kommentar"
+    },
+    "comment_reply": {
+      "default": "Svar"
+    },
+    "comment_reply_label": {
+      "default": "Svar til {user}",
+      "variables": {
+        "user": {
+          "type": "string",
+          "description": "User reference"
+        }
+      }
+    },
+    "comment_reply_placeholder": {
+      "default": "Svar..."
+    },
+    "comment_post_label": {
+      "default": "Legg til kommentar"
+    },
+    "comment_post_placeholder": {
+      "default": "Kommentar..."
+    },
+    "comment_mark_as_spoiler": {
+      "default": "Merk som spoiler"
+    },
+    "comment_spoiler": {
+      "default": "Spoiler"
+    },
+    "comment_close_error_label": {
+      "default": "Lukk feil"
+    },
+    "comment_post_reply_label": {
+      "default": "Legg ut svar"
+    },
+    "error_comment_invalid_content": {
+      "default": "Kommentarer må være på minst 5 ord og på engelsk."
+    },
+    "error_comment_unknown": {
+      "default": "En feil oppstod mens kommentaren din ble lagt ut. Vennligst prøv igjen senere."
+    },
+    "profile_page_title": {
+      "default": "{username}s profil",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "private_profile": {
+      "default": "Denne profilen er privat"
+    },
+    "private_profile_description": {
+      "default": "Som om det ikke var nok skjult fra før. {username} sine hemmeligheter forblir deres egne.",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "original_title": {
+      "default": "Originaltittel"
+    },
+    "view_all_comments": {
+      "default": "Se alle kommentarer"
+    },
+    "remove_from_list": {
+      "default": "Fjern fra liste"
+    },
+    "remove_from_list_label": {
+      "default": "Fjern {title} fra listen",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "error_page_service_title": {
+      "default": "Trakt-tjenesten er utilgjengelig"
+    },
+    "error_page_service_message": {
+      "default": "Tilkoblingen er... fraværende. Som et glemt minne."
+    },
+    "error_page_service_status": {
+      "default": "Trakt-tjenestens status"
+    },
+    "retry": {
+      "default": "Prøv igjen"
+    },
+    "community_sentiment": {
+      "default": "Felleskapsfølelse"
+    },
+    "lists_action_label": {
+      "default": "Lister"
+    },
+    "listed": {
+      "default": "Listet"
+    },
+    "add_remove_from_lists": {
+      "default": "Legg til eller fjern {title} fra lister",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "add_to_personal_list_label": {
+      "default": "Legg til {title} i {list}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "remove_from_personal_list_label": {
+      "default": "Fjern {title} fra {list}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "remove_from_personal_list_warning": {
+      "default": "Er du sikker på at du vil fjerne {title} fra {list}?",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        },
+        "list": {
+          "type": "string",
+          "description": "List name"
+        }
+      }
+    },
+    "theme_light": {
+      "default": "Lys"
+    },
+    "theme_dark": {
+      "default": "Mørk"
+    },
+    "theme_system": {
+      "default": "System"
+    },
+    "filter_label": {
+      "default": "Filter"
+    },
+    "filter_reset": {
+      "default": "Nullstill"
+    },
+    "results_for_title": {
+      "default": "Resultater for {query}",
+      "variables": {
+        "query": {
+          "type": "string",
+          "description": "Search query"
+        }
+      }
+    },
+    "type_movie": {
+      "default": "Film"
+    },
+    "type_show": {
+      "default": "Serie"
+    },
+    "sign_in": {
+      "default": "Logg inn"
+    },
+    "code_retry_title": {
+      "default": "Noe gikk galt"
+    },
+    "code_retry_message": {
+      "default": "Aktiveringen ble avslått, utløpt eller noe uforutsett skjedde. Prøv igjen."
+    },
+    "code_instruction": {
+      "default": "Skann QR-koden, eller logg inn på:"
+    },
+    "code_label": {
+      "default": "og skriv inn følgende kode:"
+    },
+    "filter_all": {
+      "default": "Alle"
+    },
+    "filters_title": {
+      "default": "Filtre"
+    },
+    "ignore_watched": {
+      "default": "Ignorer sett"
+    },
+    "ignore_watchlisted": {
+      "default": "Ignorer på huskeliste"
+    },
+    "watchnow_filter_label": {
+      "default": "Tilgjengelighet"
+    },
+    "watchnow_favorites_only": {
+      "default": "Kun favoritter"
+    },
+    "watchnow_digital_release": {
+      "default": "Alle digitale utgivelser"
+    },
+    "watchnow_streaming": {
+      "default": "Strømmer nå"
+    },
+    "decade": {
+      "default": "Tiår"
+    },
+    "ratings": {
+      "default": "Vurderinger"
+    },
+    "view_all_items_in": {
+      "default": "Vis alle i {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "filter_reset_all": {
+      "default": "Nullstill alt"
+    },
+    "filter_reset_all_label": {
+      "default": "Nullstill alle filtre"
+    },
+    "video_type_trailer": {
+      "default": "Trailer"
+    },
+    "video_type_clip": {
+      "default": "Klipp"
+    },
+    "video_type_teaser": {
+      "default": "Teaser"
+    },
+    "video_type_featurette": {
+      "default": "Featurette"
+    },
+    "video_type_recap": {
+      "default": "Sammendrag"
+    },
+    "video_type_behind_the_scenes": {
+      "default": "Bak kulissene"
+    },
+    "now_playing": {
+      "default": "Spilles nå"
+    },
+    "remaining": {
+      "default": "gjenstår"
+    },
+    "checkin": {
+      "default": "Sjekk inn"
+    },
+    "checkin_label": {
+      "default": "Sjekk inn {title}",
+      "variables": {
+        "title": {
+          "type": "string",
+          "description": "Content title"
+        }
+      }
+    },
+    "cookie_notice": {
+      "default": "Trakt bruker C🍪🍪KIES for å forbedre din totale opplevelse. Du kan <a>lese mer informasjon</a> her."
+    },
+    "cookie_accept": {
+      "default": "Greit, la oss gå!"
+    },
+    "year_to_date_label": {
+      "default": "År til dags dato"
+    },
+    "month_in_review_label": {
+      "default": "Månedens oversikt"
+    },
+    "settings": {
+      "default": "Innstillinger"
+    },
+    "settings_spoilers_title": {
+      "default": "Spoilere"
+    },
+    "settings_spoilers_label": {
+      "default": "Vis spoilere"
+    },
+    "filter_save": {
+      "default": "Lagre"
+    },
+    "filter_save_label": {
+      "default": "Lagre filtre"
+    },
+    "error_page_locked_account_title": {
+      "default": "Konto låst"
+    },
+    "error_page_locked_account_message": {
+      "default": "Kontoen din er låst, <a>kontakt support</a> for å løse dette problemet."
+    },
+    "first_play_this_month": {
+      "default": "Første visning denne måneden"
+    },
+    "shows_watched": {
+      "default": "{count} serier sett",
+      "variables": {
+        "count": {
+          "type": "string",
+          "description": "Numeric count"
+        }
+      }
+    },
+    "follow": {
+      "default": "Følg"
+    },
+    "follow_label": {
+      "default": "Følg {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "unfollow": {
+      "default": "Slutt å følge"
+    },
+    "unfollow_label": {
+      "default": "Slutt å følge {username}",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "unfollow_warning": {
+      "default": "Er du sikker på at du vil slutte å følge {username}?",
+      "variables": {
+        "username": {
+          "type": "string",
+          "description": "Username"
+        }
+      }
+    },
+    "vip_upsell_title": {
+      "default": "Lås opp VIP-funksjoner for å forbedre Trakt-opplevelsen din"
+    },
+    "vip_upsell_description": {
+      "default": "Vil du se din månedlige og årlige gjennomgang? Og få tilgang til mange andre funksjoner? Registrer deg for Trakt VIP."
+    },
+    "following": {
+      "default": "Følger"
+    },
+    "followers": {
+      "default": "Følgere"
+    },
+    "not_following_anyone": {
+      "default": "Ingen her (enda)."
+    },
+    "read_more": {
+      "default": "Les mer"
+    },
+    "add_comment": {
+      "default": "Legg til"
+    },
+    "rename_list": {
+      "default": "Endre navnet på listen din"
+    },
+    "rename_list_label": {
+      "default": "Endre navnet på listen din {name}",
+      "variables": {
+        "name": {
+          "type": "string",
+          "description": "User or entity name"
+        }
+      }
+    },
+    "hot": {
+      "default": "Populært denne måneden"
+    },
+    "hot_movies": {
+      "default": "Populære filmer denne måneden"
+    },
+    "hot_shows": {
+      "default": "Populære serier denne måneden"
+    },
+    "view_all_hot_shows": {
+      "default": "Se alle populære serier"
+    },
+    "view_all_hot_movies": {
+      "default": "Se alle populære filmer"
+    },
+    "popular_comments": {
+      "default": "Populære kommentarer"
+    }
+  }
+}
