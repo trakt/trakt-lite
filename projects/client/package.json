@@ -4,12 +4,10 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "predev": "deno task prebuild",
-    "dev": "vite dev",
-    "predev:staging": "deno task prebuild",
-    "dev:staging": "IS_STAGING=true vite dev",
-    "predev:contrib": "deno task prebuild",
-    "dev:contrib": "IS_CONTRIB=true vite dev",
+    "pre:dev": "deno task i18n:generate:watch ./i18n --platforms web",
+    "dev": "concurrently 'deno task pre:dev' 'vite dev'",
+    "dev:staging": "concurrently 'deno task pre:dev' 'IS_STAGING=true vite dev'",
+    "dev:contrib": "concurrently 'deno task pre:dev' 'IS_CONTRIB=true vite dev'",
     "prebuild": "deno task i18n:generate ./i18n --platforms web",
     "build": "vite build",
     "prebuild:preview": "deno task prebuild",
@@ -25,6 +23,7 @@
     "i18n:traktify": "deno run --allow-read --allow-write --allow-net --allow-env .scripts/traktify-i18n.ts",
     "i18n:cleanse": "deno run --allow-read --allow-write --allow-env .scripts/cleanse-i18n.ts",
     "i18n:generate": "deno run --allow-read --allow-write i18n/generator/cli.ts i18n/meta/",
+    "i18n:generate:watch": "deno run --allow-read --allow-write i18n/generator/cli.ts i18n/meta/ --watch",
     "i18n:convert": "deno run --allow-read --allow-write i18n/generator/convert-to-meta.ts i18n/messages i18n/meta"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "@types/serviceworker": "0.0.138",
     "@vite-pwa/sveltekit": "^1.0.0",
     "@vitest/coverage-istanbul": "3.2.1",
+    "concurrently": "^9.1.2",
     "eslint": "9.28.0",
     "eslint-plugin-svelte": "^3.9.1",
     "flowbite-svelte": "1.5.3",
