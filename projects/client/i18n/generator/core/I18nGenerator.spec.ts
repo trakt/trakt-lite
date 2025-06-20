@@ -210,7 +210,7 @@ describe('I18nGenerator', () => {
         const content = results[0]!.content;
 
         expect(content).toContain(
-          '<string name="user_message_count">User %s has %d messages</string>',
+          '<string name="user_message_count">User %1$s has %2$d messages</string>',
         );
       });
 
