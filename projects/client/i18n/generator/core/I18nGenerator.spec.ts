@@ -6,7 +6,9 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { I18nGenerator, type MetaMessages, Platform } from './I18nGenerator.ts';
+import type { MetaMessages } from '../model/MetaMessages.ts';
+import { Platform } from '../model/Platform.ts';
+import { I18nGenerator } from './I18nGenerator.ts';
 
 describe('I18nGenerator', () => {
   let tempDir: string;
