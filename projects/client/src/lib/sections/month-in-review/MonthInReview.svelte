@@ -25,6 +25,10 @@
     display: flex;
     justify-content: flex-end;
 
-    padding: 0 var(--layout-distance-side);
+    padding: 0;
+    padding-right: var(--layout-distance-side);
+    padding-left: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
   }
 </style>

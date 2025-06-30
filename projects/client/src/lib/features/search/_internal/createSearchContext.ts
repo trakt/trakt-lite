@@ -10,7 +10,8 @@ export function createSearchContext(type: string) {
       {
         isSearching: writable(false),
         pathName: '/search',
-        exitPathName: writable('/'),
+        // TODO: no exit to /search?
+        exitPathName: writable('/search'),
         query: writable(''),
       },
   );

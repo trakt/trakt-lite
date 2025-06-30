@@ -26,9 +26,14 @@
 
 <style>
   iframe {
-    width: 100%;
     height: 100dvh;
     border: none;
     overflow: hidden;
+
+    /* TODO fix overflow */
+    width: calc(
+      100dvw - (var(--layout-distance-side) + var(--side-navbar-width))
+    );
+    margin-left: calc(var(--layout-distance-side) + var(--side-navbar-width));
   }
 </style>

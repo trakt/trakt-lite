@@ -106,7 +106,8 @@
     }
 
     body:has(.trakt-side-navbar) {
-      --layout-distance-side: calc(var(--ni-36) + var(--side-navbar-width));
+      /* TODO: extract the extra padding on the left */
+      /* --layout-distance-side: calc(var(--ni-24) + var(--side-navbar-width)); */
     }
   </style>
 </svelte:head>
@@ -139,11 +140,19 @@
                                 <div class="trakt-layout-wrapper">
                                   <RenderFor
                                     audience="all"
-                                    navigation="default"
+                                    device={[
+                                      "mobile",
+                                      "tablet-sm",
+                                      "tablet-lg",
+                                    ]}
                                   >
                                     <Navbar />
                                   </RenderFor>
-                                  <RenderFor audience="all" navigation="dpad">
+                                  <!-- TODO: verify TV's match desktop size -->
+                                  <RenderFor
+                                    audience="all"
+                                    device={["desktop"]}
+                                  >
                                     <SideNavbar />
                                   </RenderFor>
                                   <div class="trakt-layout-content">
@@ -170,7 +179,7 @@
                                   <NowPlaying />
                                 </RenderFor>
                                 <SvelteQueryDevtools
-                                  buttonPosition="bottom-left"
+                                  buttonPosition="bottom-right"
                                   styleNonce="opacity: 0.5"
                                 />
                                 <FirefoxBlurHack />

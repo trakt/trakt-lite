@@ -412,7 +412,7 @@
       "description": "Title for the shows page."
     },
     "button_text_home": {
-      "default": "Home",
+      "default": "Dashboard",
       "description": "Text for the button that takes users back to the homepage."
     },
     "button_label_home": {
@@ -1864,7 +1864,7 @@
       "description": "Text for the system theme option in the theme selection dropdown."
     },
     "button_text_filters": {
-      "default": "Filter",
+      "default": "Filters",
       "description": "Text for the button that opens the filters panel."
     },
     "button_label_filters": {

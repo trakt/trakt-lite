@@ -34,6 +34,7 @@
   const { track } = useTrack(AnalyticsEvent.LeaveLite);
   const { user } = useUser();
   const isVip = $derived(!!$user?.isVip);
+  // TODO keep for mobile only
 </script>
 
 {#snippet traktSwitch()}
@@ -127,7 +128,7 @@
         {#if !isVip}
           <GetVIPLink />
         {/if}
-        <FilterButton />
+        <FilterButton size="small" />
         <ProfileButton />
       </RenderFor>
     </div>

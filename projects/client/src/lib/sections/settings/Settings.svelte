@@ -29,7 +29,11 @@
     grid-template-columns: var(--ni-300) 1fr;
     gap: var(--gap-s);
 
-    margin: 0 var(--layout-distance-side);
+    margin: 0;
+    margin-right: var(--layout-distance-side);
+    margin-left: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
 
     min-height: var(--ni-120);
 

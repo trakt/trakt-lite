@@ -1,6 +1,5 @@
 <script lang="ts">
   import Link from "$lib/components/link/Link.svelte";
-  import Logo from "$lib/components/logo/Logo.svelte";
   import LogoMark from "$lib/components/logo/LogoMark.svelte";
   import { DpadNavigationType } from "$lib/features/navigation/models/DpadNavigationType";
   import RenderFor from "$lib/guards/RenderFor.svelte";
@@ -35,7 +34,7 @@
 
 <RenderFor audience="public" navigation="default">
   <div class="trakt-logo">
-    <Logo />
+    <LogoMark />
   </div>
 </RenderFor>
 

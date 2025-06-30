@@ -72,17 +72,23 @@
 
     &.trakt-list-inset-title {
       margin: 0;
-      margin-left: var(--layout-distance-side);
+      margin-left: calc(
+        2 * var(--layout-distance-side) + var(--side-navbar-width)
+      );
       margin-right: var(--layout-distance-side);
       transition: margin-left calc(var(--transition-increment) * 2) ease-in-out;
 
-      @include for-tablet-sm-and-below {
-        margin-left: calc(var(--layout-distance-side));
-      }
+      // @include for-tablet-sm-and-below {
+      //   margin-left: calc(var(--layout-distance-side));
+      // }
     }
 
     &.trakt-inset-all {
-      margin: 0 calc(var(--ni-72) + var(--layout-distance-side));
+      margin: 0;
+      margin-left: calc(
+        2 * var(--layout-distance-side) + var(--side-navbar-width)
+      );
+      margin-right: var(--layout-distance-side);
       transition: margin calc(var(--transition-increment) * 2) ease-in-out;
 
       @include for-tablet-sm-and-below {

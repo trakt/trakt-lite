@@ -17,7 +17,10 @@
   .trakt-cover-image {
     --max-image-height: var(--ni-300);
 
-    width: calc(100dvw - 2 * var(--layout-distance-side));
+    /* TODO only for footer */
+    width: calc(
+      100dvw - 3 * var(--layout-distance-side) - var(--side-navbar-width)
+    );
     height: var(--max-image-height);
     overflow: hidden;
     position: absolute;

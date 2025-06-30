@@ -10,7 +10,9 @@
 
   $effect(() => {
     if (!page.url.pathname.startsWith(pathName)) {
-      exitPathName.set(page.url.pathname);
+      //TODO better
+      const newPath = page.url.pathname === "/" ? "/search" : page.url.pathname;
+      exitPathName.set(newPath);
     }
   });
 

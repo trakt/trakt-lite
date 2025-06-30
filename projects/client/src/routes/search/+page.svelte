@@ -5,6 +5,7 @@
   import CoverImageSetter from "$lib/components/background/CoverImageSetter.svelte";
   import SectionList from "$lib/components/lists/section-list/SectionList.svelte";
   import InfoTag from "$lib/components/media/tags/InfoTag.svelte";
+  import SearchInput from "$lib/features/search/SearchInput.svelte";
   import { useSearch } from "$lib/features/search/useSearch";
   import TraktPage from "$lib/sections/layout/TraktPage.svelte";
   import TraktPageCoverSetter from "$lib/sections/layout/TraktPageCoverSetter.svelte";
@@ -40,6 +41,11 @@
 
   const first = $derived($shows.at(0) ?? $movies.at(0));
 </script>
+
+<!-- TODO put in page & autofocus -->
+<div class="trakt-search">
+  <SearchInput />
+</div>
 
 {#if query}
   <TraktPage
@@ -86,3 +92,18 @@
     </SectionList>
   </TraktPage>
 {/if}
+
+<style>
+  .trakt-search {
+    width: calc(
+      100dvw - (3 * var(--layout-distance-side) + var(--side-navbar-width))
+    );
+
+    margin-top: var(--gap-xl);
+    margin-bottom: var(--gap-xl);
+    margin-right: var(--layout-distance-side);
+    margin-left: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
+  }
+</style>
