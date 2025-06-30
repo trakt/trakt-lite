@@ -45,7 +45,11 @@
     display: grid;
     gap: var(--gap-xl);
     grid-template-columns: minmax(var(--ni-320), 1fr) 2fr 1fr;
-    margin: 0 calc(var(--ni-32) + var(--layout-distance-side));
+    margin: 0;
+    margin-right: var(--layout-distance-side);
+    margin-left: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
 
     @include for-tablet-sm-and-below {
       margin: 0 var(--layout-distance-side);

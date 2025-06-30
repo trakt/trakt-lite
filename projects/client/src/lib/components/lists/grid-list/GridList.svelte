@@ -78,6 +78,10 @@
     justify-content: center;
     gap: var(--gap-m);
 
-    padding: 0 var(--layout-distance-side);
+    padding: 0;
+    padding-left: var(--layout-distance-side);
+    padding-right: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
   }
 </style>

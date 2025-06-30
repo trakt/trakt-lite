@@ -59,7 +59,7 @@
   @use "$style/scss/mixins/index" as *;
 
   .profile-page-banner-container {
-    margin-left: var(--ni-72);
+    // margin-left: var(--ni-72);
     display: flex;
     flex-direction: column;
     align-items: flex-start;

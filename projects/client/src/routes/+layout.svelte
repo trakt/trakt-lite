@@ -22,7 +22,6 @@
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import Footer from "$lib/sections/footer/Footer.svelte";
   import MobileNavbar from "$lib/sections/navbar/MobileNavbar.svelte";
-  import Navbar from "$lib/sections/navbar/Navbar.svelte";
   import SideNavbar from "$lib/sections/navbar/SideNavbar.svelte";
   import NowPlaying from "$lib/sections/now-playing/NowPlaying.svelte";
   import { isPWA } from "$lib/utils/devices/isPWA.ts";
@@ -105,7 +104,8 @@
     }
 
     body:has(.trakt-side-navbar) {
-      --layout-distance-side: calc(var(--ni-36) + var(--side-navbar-width));
+      /* TODO: extract the extra padding on the left */
+      /* --layout-distance-side: calc(var(--ni-24) + var(--side-navbar-width)); */
     }
   </style>
 </svelte:head>
@@ -132,12 +132,17 @@
                           <ThemeProvider theme={data.theme}>
                             <ListScrollHistoryProvider>
                               <div class="trakt-layout-wrapper">
-                                <RenderFor audience="all" navigation="default">
+                                <!-- <RenderFor audience="all" navigation="default">
                                   <Navbar />
                                 </RenderFor>
-                                <RenderFor audience="all" navigation="dpad">
+                                <RenderFor audience="all" navigation="dpad"> -->
+                                <RenderFor
+                                  audience="all"
+                                  device={["tablet-lg", "desktop"]}
+                                >
                                   <SideNavbar />
                                 </RenderFor>
+                                <!-- </RenderFor> -->
                                 <div class="trakt-layout-content">
                                   {@render children()}
                                 </div>
@@ -159,7 +164,7 @@
                                 <NowPlaying />
                               </RenderFor>
                               <SvelteQueryDevtools
-                                buttonPosition="bottom-left"
+                                buttonPosition="bottom-right"
                                 styleNonce="opacity: 0.5"
                               />
                               <FirefoxBlurHack />

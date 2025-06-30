@@ -26,7 +26,11 @@
     display: grid;
     gap: var(--gap-xl);
     grid-template-columns: 1fr 3fr;
-    margin: 0 var(--layout-distance-side);
+    margin: 0;
+    margin-right: var(--layout-distance-side);
+    margin-left: calc(
+      2 * var(--layout-distance-side) + var(--side-navbar-width)
+    );
 
     @include for-desktop {
       max-width: 75dvw;

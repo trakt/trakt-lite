@@ -114,6 +114,7 @@ export const UrlBuilder = {
   show: (id: string, params: Record<string, string | number> = {}) =>
     `/shows/${id}${buildParamString(params)}`,
   movies: () => '/movies',
+  search: () => '/search',
   movie: (id: string) => `/movies/${id}`,
   people: (id: string) => `/people/${id}`,
   episode: (id: string, season: number, episode: number) =>

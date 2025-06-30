@@ -1,21 +1,34 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
+  import FilterIcon from "$lib/components/icons/FilterIcon.svelte";
+  import GearIcon from "$lib/components/icons/GearIcon.svelte";
   import HomeIcon from "$lib/components/icons/mobile/HomeIcon.svelte";
   import WatchlistIcon from "$lib/components/icons/mobile/WatchlistIcon.svelte";
   import MovieIcon from "$lib/components/icons/MovieIcon.svelte";
   import ShowIcon from "$lib/components/icons/ShowIcon.svelte";
   import Link from "$lib/components/link/Link.svelte";
-  import LocalePicker from "$lib/features/i18n/components/LocalePicker.svelte";
   import * as m from "$lib/features/i18n/messages";
   import { DpadNavigationType } from "$lib/features/navigation/models/DpadNavigationType";
+  import SearchIcon from "$lib/features/search/SearchIcon.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import { getDeviceType } from "$lib/utils/devices/getDeviceType";
   import { UrlBuilder } from "$lib/utils/url/UrlBuilder";
   import BetaBadge from "./components/BetaBadge.svelte";
-  import FilterButton from "./components/filter/FilterButton.svelte";
   import TraktLogo from "./components/TraktLogo.svelte";
+  import TraktTagline from "./components/TraktTagline.svelte";
   import ProfileButton from "./ProfileButton.svelte";
 
-  const isTV = $derived(getDeviceType(navigator.userAgent) === "tv");
+  const isTV = $derived(browser && getDeviceType(navigator.userAgent) === "tv");
+
+  /*
+    TODO:
+    -Use button component
+    -Focus state only when using d-pad
+    -Search input on search page
+    -Layout fixes/changes (side distances)
+    -New profile button
+    -VIP upsell badge
+   */
 </script>
 
 <header>
@@ -28,9 +41,17 @@
       {#if isTV}
         <BetaBadge />
       {/if}
+      <TraktTagline />
     </div>
 
     <div class="trakt-side-navbar-content">
+      <Link href={UrlBuilder.search()} navigationType={DpadNavigationType.Item}>
+        <div class="trakt-side-navbar-link">
+          <SearchIcon />
+          <h6>Search</h6>
+        </div>
+      </Link>
+
       <Link href={UrlBuilder.home()} navigationType={DpadNavigationType.Item}>
         <div class="trakt-side-navbar-link">
           <HomeIcon />
@@ -62,13 +83,31 @@
             <h6>{m.lists()}</h6>
           </div>
         </Link>
+        <Link
+          href={UrlBuilder.settings()}
+          navigationType={DpadNavigationType.Item}
+        >
+          <div class="trakt-side-navbar-link">
+            <GearIcon />
+            <h6>Settings</h6>
+          </div>
+        </Link>
       </RenderFor>
     </div>
 
     <div class="trakt-side-navbar-bottom">
       <RenderFor audience="authenticated">
-        <LocalePicker />
-        <FilterButton />
+        <!-- <LocalePicker /> -->
+        <!-- <FilterButton /> -->
+        <Link
+          href={UrlBuilder.movies()}
+          navigationType={DpadNavigationType.Item}
+        >
+          <div class="trakt-side-navbar-link">
+            <FilterIcon state="unfiltered" />
+            <h6>Global Filters</h6>
+          </div>
+        </Link>
         <ProfileButton />
       </RenderFor>
     </div>
@@ -134,6 +173,15 @@
       .trakt-side-navbar-content {
         min-width: var(--ni-200);
       }
+
+      .trakt-side-navbar-link h6,
+      :global(.trakt-tagline) {
+        opacity: 1;
+      }
+
+      :global(.trakt-link.trakt-link-active) {
+        background-color: var(--color-foreground-purple);
+      }
     }
 
     /** 
@@ -148,11 +196,11 @@
     :global(a.trakt-link) {
       text-decoration: none;
       width: 100%;
+      border-radius: var(--border-radius-s);
 
       &:focus-visible {
         outline: var(--border-thickness-xs) solid var(--purple-500);
-        outline-offset: var(--gap-xs);
-        border-radius: var(--border-radius-xs);
+        outline-offset: var(--ni-2);
       }
     }
 
@@ -179,15 +227,39 @@
     align-items: flex-start;
   }
 
+  .trakt-side-navbar-top {
+    color: var(--color-foreground);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-m);
+
+    :global(.trakt-tagline) {
+      opacity: 0;
+      transition: opacity var(--transition-increment) ease-in-out;
+    }
+  }
+
   /* FIXME: temporary overrides until we add new components */
   .trakt-side-navbar-bottom {
     gap: var(--gap-m);
-    transform: scale(0.8);
-    transform-origin: bottom left;
+    /* transform: scale(0.8);
+    transform-origin: bottom left; */
   }
 
   .trakt-side-navbar-content {
-    gap: var(--gap-xl);
+    gap: var(--gap-m);
+    margin-left: var(--ni-neg-4);
+
+    :global(a.trakt-link) {
+      border-radius: var(--border-radius-m);
+      transition: background-color var(--transition-increment) ease-in-out;
+      padding: var(--ni-8);
+
+      &:focus-visible {
+        outline-offset: 0;
+      }
+    }
   }
 
   .trakt-side-navbar-link {
@@ -196,10 +268,12 @@
 
     display: flex;
     align-items: center;
-    gap: var(--gap-l);
+    gap: var(--gap-m);
 
     h6 {
       white-space: nowrap;
+      opacity: 0;
+      transition: opacity var(--transition-increment) ease-in-out;
     }
 
     &:hover {

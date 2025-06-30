@@ -361,7 +361,7 @@
       "description": "Title for the shows page."
     },
     "button_text_home": {
-      "default": "Home",
+      "default": "Dashboard",
       "description": "Text for the button that takes users back to the homepage."
     },
     "button_label_home": {
