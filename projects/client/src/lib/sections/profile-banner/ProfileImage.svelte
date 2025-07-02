@@ -34,11 +34,11 @@
   {#if isEditable}
     <EditableImage
       {src}
-      alt={m.users_avatar({ username: name })}
+      alt={m.image_alt_user_avatar({ username: name })}
       onchange={handleImageUploaded}
     />
   {:else}
-    <CrossOriginImage {src} alt={m.users_avatar({ username: name })} />
+    <CrossOriginImage {src} alt={m.image_alt_user_avatar({ username: name })} />
   {/if}
 </figure>
 

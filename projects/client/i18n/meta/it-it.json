@@ -251,10 +251,10 @@
     "button_label_join_trakt": {
       "default": "Iscriviti a trakt.tv per tenere traccia di ciò che stai guardando"
     },
-    "copyright_notice": {
+    "text_copyright_notice": {
       "default": "Tutti i diritti riservati."
     },
-    "copyright_crafted_by": {
+    "text_copyright_crafted_by": {
       "default": "Realizzato a mano in tutto il mondo"
     },
     "button_text_join_trakt_for_free": {
@@ -370,49 +370,49 @@
     "list_title_related_shows": {
       "default": "Serie TV correlate"
     },
-    "about_placeholder_1": {
+    "text_about_placeholder_1": {
       "default": "Questo utente è un mistero, avvolto nell'enigma... (o forse solo pigro? Chi lo sa, questo è internet)."
     },
-    "about_placeholder_2": {
+    "text_about_placeholder_2": {
       "default": "A quanto pare, questo utente è troppo impegnato a guardare film per scrivere di sé. (Mi sembra giusto, posso capirlo)."
     },
-    "about_placeholder_3": {
+    "text_about_placeholder_3": {
       "default": "Il profilo di questo utente è una tela bianca, un vuoto di informazioni... (proprio come la mia vita sociale. sigh)"
     },
-    "about_placeholder_4": {
+    "text_about_placeholder_4": {
       "default": "Svela i segreti dell'identità di questo utente... (se hai il coraggio)"
     },
-    "about_placeholder_5": {
+    "text_about_placeholder_5": {
       "default": "Quali profondità nascoste si celano sotto questo profilo vuoto? (La verità è là fuori...)"
     },
-    "about_placeholder_6": {
+    "text_about_placeholder_6": {
       "default": "Questo utente è un fantasma nella macchina, un fantasma digitale... (o forse si è semplicemente dimenticato di compilare questo modulo?)."
     },
-    "about_placeholder_7": {
+    "text_about_placeholder_7": {
       "default": "Aiuta questo utente! Digli di completare il suo profilo. (Potrebbero anche ricompensarti con un cinque virtuale)."
     },
-    "about_placeholder_8": {
+    "text_about_placeholder_8": {
       "default": "Questo profilo chiede attenzione. Dagli un po' di amore e dì all'utente di compilarlo."
     },
-    "about_placeholder_9": {
+    "text_about_placeholder_9": {
       "default": "Non essere timido! Incoraggia questo utente a condividere la sua storia. (Tutti hanno una storia da raccontare, anche se si tratta solo della loro serie TV preferita)."
     },
-    "about_placeholder_10": {
+    "text_about_placeholder_10": {
       "default": "Questo utente è come un personaggio di un film di David Lynch: enigmatico, misterioso e forse frutto della propria immaginazione."
     },
-    "about_placeholder_11": {
+    "text_about_placeholder_11": {
       "default": "Questo profilo è vuoto come un negozio di video Blockbuster il venerdì sera. (“Te li ricordi? Bei tempi!”)."
     },
-    "about_placeholder_12": {
+    "text_about_placeholder_12": {
       "default": "Questo utente sta incanalando il suo Tyler Durden interiore: rifiuta il consumismo e abbraccia il vuoto. (O forse semplicemente non è ancora riuscito a compilare questo modulo)."
     },
-    "about_placeholder_13": {
+    "text_about_placeholder_13": {
       "default": "Un'immagine stilizzata: Un'illustrazione divertente di un detective che si gratta la testa in preda alla confusione, o un'alga che rotola su una pagina di profilo vuota."
     },
-    "about_placeholder_14": {
+    "text_about_placeholder_14": {
       "default": "Un elemento interattivo: Un pulsante che consenta agli utenti di inviare una spinta amichevole al proprietario del profilo, incoraggiandolo a completare il suo profilo."
     },
-    "about_placeholder_15": {
+    "text_about_placeholder_15": {
       "default": "Un messaggio personalizzato: Se si dispone di informazioni sull'utente (ad esempio, la sua cronologia di cosa ha guardato), è possibile utilizzarle per generare un segnaposto più personalizzato, come 'Questo utente ama i film horror ma odia scrivere le biografie. (Forse è troppo impegnato a nascondersi dagli zombie?)'."
     },
     "list_placeholder_watchlist_movies": {
@@ -469,10 +469,10 @@
         }
       }
     },
-    "details": {
+    "header_details": {
       "default": "Dettagli"
     },
-    "expand_category": {
+    "button_label_expand_category": {
       "default": "Espandi {category}",
       "variables": {
         "category": {
@@ -488,22 +488,22 @@
         }
       }
     },
-    "premiered": {
+    "header_premiered": {
       "default": "In anteprima il"
     },
-    "runtime": {
+    "header_runtime": {
       "default": "Durata"
     },
-    "country": {
+    "header_country": {
       "default": "Paese"
     },
-    "language": {
+    "header_language": {
       "default": "Linuga"
     },
-    "studio": {
+    "header_studio": {
       "default": "Studio"
     },
-    "genre": {
+    "header_genre": {
       "default": "Genere"
     },
     "button_text_browse_lists": {
@@ -529,7 +529,7 @@
         }
       }
     },
-    "streaming_service_logo": {
+    "image_alt_streaming_service_logo": {
       "default": "{service} logo",
       "variables": {
         "service": {
@@ -537,13 +537,13 @@
         }
       }
     },
-    "director": {
+    "header_director": {
       "default": "Regista"
     },
-    "writer": {
+    "header_writer": {
       "default": "Sceneggiatore"
     },
-    "creator": {
+    "header_creator": {
       "default": "Creatore"
     },
     "job_action_director": {
@@ -836,7 +836,7 @@
         }
       }
     },
-    "share_title": {
+    "button_label_share": {
       "default": "Condividi {title}",
       "variables": {
         "title": {
@@ -844,7 +844,7 @@
         }
       }
     },
-    "status": {
+    "header_status": {
       "default": "Stato"
     },
     "status_released": {
@@ -883,10 +883,10 @@
     "status_unknown": {
       "default": "Sconosciuto"
     },
-    "expected_premiere": {
+    "header_expected_premiere": {
       "default": "Anteprima prevista"
     },
-    "person_headshot": {
+    "image_alt_person_headshot": {
       "default": "Foto ritratto di {person}",
       "variables": {
         "person": {
@@ -905,10 +905,10 @@
         }
       }
     },
-    "view_all_trending_movies": {
+    "button_label_view_all_trending_movies": {
       "default": "Visualizza tutti i film in tendenza"
     },
-    "view_all_trending_shows": {
+    "button_label_view_all_trending_shows": {
       "default": "Visualizza tutte le serie TV in tendenza"
     },
     "list_title_trending_shows": {
@@ -931,16 +931,16 @@
         }
       }
     },
-    "view_all_recommended_movies": {
+    "button_label_view_all_recommended_movies": {
       "default": "Visualizza tutti i film raccomandati"
     },
-    "view_all_recommended_shows": {
+    "button_label_view_all_recommended_shows": {
       "default": "Visualizza tutte le serie TV raccomandate"
     },
-    "view_all_anticipated_movies": {
+    "button_label_view_all_anticipated_movies": {
       "default": "Visualizza tutti i film in arrivo"
     },
-    "view_all_anticipated_shows": {
+    "button_label_view_all_anticipated_shows": {
       "default": "Visualizza tutte le serie TV in arrivo"
     },
     "list_title_anticipated_movies": {
@@ -949,10 +949,10 @@
     "list_title_anticipated_shows": {
       "default": "Serie TV in arrivo"
     },
-    "view_all_popular_movies": {
+    "button_label_view_all_popular_movies": {
       "default": "Visualizza tutti i film popolari"
     },
-    "view_all_popular_shows": {
+    "button_label_view_all_popular_shows": {
       "default": "Visualizza tutte le serie TV popolari"
     },
     "list_title_popular_movies": {
@@ -961,7 +961,7 @@
     "list_title_popular_shows": {
       "default": "Serie TV popolari"
     },
-    "rate_now": {
+    "header_rate_now": {
       "default": "Vota ora"
     },
     "button_text_add_to_favorites": {
@@ -1018,19 +1018,19 @@
     "list_title_your_watchlist_movies": {
       "default": "La tua Watchlist di film"
     },
-    "view_all_watchlist_movies": {
+    "button_label_view_all_watchlist_movies": {
       "default": "Visualizza tutti i film della tua Watchlist"
     },
-    "view_all_watchlist_shows": {
+    "button_label_view_all_watchlist_shows": {
       "default": "Visualizza tutte le serie TV della tua Watchlist"
     },
-    "streaming": {
+    "header_streaming": {
       "default": "Streaming"
     },
-    "on_demand": {
+    "header_on_demand": {
       "default": "On Demand"
     },
-    "media_popup_label": {
+    "button_label_popup_media": {
       "default": "Menù a tendina per {title}",
       "variables": {
         "title": {
@@ -1049,10 +1049,10 @@
         }
       }
     },
-    "by": {
+    "text_by": {
       "default": "di"
     },
-    "users_avatar": {
+    "image_alt_user_avatar": {
       "default": "Avatar di {username}",
       "variables": {
         "username": {
@@ -1060,7 +1060,7 @@
         }
       }
     },
-    "media_poster": {
+    "image_alt_media_poster": {
       "default": "Locandina di {title}",
       "variables": {
         "title": {
@@ -1071,19 +1071,19 @@
     "list_placeholder_comments": {
       "default": "Nessun commento per ora."
     },
-    "review_by": {
+    "text_review_by": {
       "default": "Recensione di"
     },
-    "shout_by": {
+    "text_shout_by": {
       "default": "Grido di"
     },
-    "deleted_user": {
+    "text_deleted_username": {
       "default": "Eliminato"
     },
     "list_title_social_activity": {
       "default": "Attività Sociale"
     },
-    "view_all_social_activity": {
+    "button_label_view_all_social_activity": {
       "default": "Visualizza tutte le attività social"
     },
     "dropdown_label_person_position": {
@@ -1134,10 +1134,10 @@
     "list_title_personal_lists": {
       "default": "Personali"
     },
-    "collaborative_lists": {
+    "list_title_collaborative_lists": {
       "default": "Collaborazioni"
     },
-    "liked_lists": {
+    "list_title_liked_lists": {
       "default": "Piaciute"
     },
     "share_movie": {
@@ -1184,16 +1184,16 @@
     "list_title_recently_watched": {
       "default": "Recentemente guardati"
     },
-    "view_all_recently_watched": {
+    "button_label_view_all_recently_watched": {
       "default": "Vedi tutti i guardati di recente"
     },
     "list_title_available_now": {
       "default": "Disponibile ora"
     },
-    "view_all_released_movies": {
+    "button_label_view_all_released_movies": {
       "default": "Vezi toate filmele disponibile acum"
     },
-    "view_all_unreleased_movies": {
+    "button_label_view_all_unreleased_movies": {
       "default": "Vezi toate filmele ce vin curând"
     },
     "switch_to_og": {
@@ -1202,13 +1202,13 @@
     "tag_text_preview": {
       "default": "Previzualizare"
     },
-    "preview_description": {
+    "tooltip_text_preview_feature": {
       "default": "Această caracteristică mai primește o nouă „înveliș”. Ne străduim pentru o experiență îmbunătățită, ca un cor de îngeri (sau cel puțin, funcționalitate fără teroare existențială)."
     },
-    "airs": {
+    "header_airs": {
       "default": "Apare"
     },
-    "aired": {
+    "header_aired": {
       "default": "Apărut"
     },
     "warning_prompt_drop_show": {
@@ -1233,13 +1233,13 @@
     "enable_up_next_nitro_label": {
       "default": "Abilita Up Next Nitro, il modo più veloce per guardare i tuoi contenuti"
     },
-    "lab_up_next_nitro_label": {
+    "switch_label_up_next_nitro": {
       "default": "Attiva Nitro Prossimo"
     },
-    "lab_up_next_nitro_message": {
+    "tooltip_text_up_next_nitro": {
       "default": "Questo esperimento è un aggiornamento prestazionale che migliora l'esperienza per tutti gli utenti."
     },
-    "lab_up_next_nitro_hidden_message": {
+    "tooltip_text_up_next_nitro_hidden": {
       "default": "A causa di modifiche interne, le serie nascoste in precedenza saranno ora visibili nel tuo elenco con un'anteprima in bianco e nero per aiutarti a individuarle rapidamente, con la possibilità di nasconderle di nuovo o rimuoverle dall'elenco."
     },
     "warning_prompt_restore_show": {
@@ -1399,7 +1399,7 @@
         }
       }
     },
-    "original_title": {
+    "header_original_title": {
       "default": "Titolo Originale"
     },
     "view_all_comments": {
@@ -1534,10 +1534,10 @@
     "filters_title": {
       "default": "Filtri"
     },
-    "ignore_watched": {
+    "header_ignore_watched": {
       "default": "Ignora visti"
     },
-    "ignore_watchlisted": {
+    "header_ignore_watchlisted": {
       "default": "Ignora da vedere"
     },
     "watchnow_filter_label": {
@@ -1552,10 +1552,10 @@
     "watchnow_streaming": {
       "default": "In streaming ora"
     },
-    "decade": {
+    "header_decade": {
       "default": "Decennio"
     },
-    "ratings": {
+    "header_ratings": {
       "default": "Valutazioni"
     },
     "view_all_items_in": {
@@ -1693,10 +1693,10 @@
         }
       }
     },
-    "vip_upsell_title": {
+    "text_vip_upsell": {
       "default": "Sblocca le funzionalità VIP per migliorare la tua esperienza Trakt"
     },
-    "vip_upsell_description": {
+    "text_vip_upsell_description": {
       "default": "Vuoi vedere la tua recensione mensile e annuale? E accedere a molte altre funzionalità? Iscriviti a Trakt VIP."
     },
     "list_title_following": {
@@ -1708,7 +1708,7 @@
     "list_placeholder_followers": {
       "default": "Non c'è nessuno qui (ancora)."
     },
-    "read_more": {
+    "button_label_read_more": {
       "default": "Leggi di più"
     },
     "button_text_add_comment": {
@@ -1717,10 +1717,10 @@
     "button_label_add_comment": {
       "default": "Aggiungi commento"
     },
-    "rename_list": {
+    "button_text_rename_list": {
       "default": "Rinomina la tua lista"
     },
-    "rename_list_label": {
+    "button_label_rename_list": {
       "default": "Rinomina la tua lista {name}",
       "variables": {
         "name": {
@@ -1737,10 +1737,10 @@
     "list_title_hot_shows": {
       "default": "Serie TV popolari questo mese"
     },
-    "view_all_hot_shows": {
+    "button_label_view_all_hot_shows": {
       "default": "Guarda tutte le serie TV popolari"
     },
-    "view_all_hot_movies": {
+    "button_label_view_all_hot_movies": {
       "default": "Guarda tutti i film popolari"
     },
     "list_title_extras": {

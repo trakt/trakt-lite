@@ -251,10 +251,10 @@
     "button_label_join_trakt": {
       "default": "Приєднайтеся до trakt.tv, щоб відстежувати те, що ви дивитеся"
     },
-    "copyright_notice": {
+    "text_copyright_notice": {
       "default": "Всі права захищені."
     },
-    "copyright_crafted_by": {
+    "text_copyright_crafted_by": {
       "default": "Створено по всьому світу"
     },
     "button_text_join_trakt_for_free": {
@@ -370,49 +370,49 @@
     "list_title_related_shows": {
       "default": "Пов'язані серіали"
     },
-    "about_placeholder_1": {
+    "text_about_placeholder_1": {
       "default": "Ця користувач — таємниця, окутана загадкою... (а може, просто лінивий? Хто знає, це ж інтернет.)"
     },
-    "about_placeholder_2": {
+    "text_about_placeholder_2": {
       "default": "Мабуть, ця користувач занадто захоплений переглядом фільмів, щоб писати про себе. (Добре, я теж це розумію.)"
     },
-    "about_placeholder_3": {
+    "text_about_placeholder_3": {
       "default": "Профіль цієї користувача — чистий аркуш, порожнеча інформації... (так само, як і моє соціальне життя. Схлик!)"
     },
-    "about_placeholder_4": {
+    "text_about_placeholder_4": {
       "default": "Розгадайте таємниці особистості цієї користувача... (якщо наважитеся)"
     },
-    "about_placeholder_5": {
+    "text_about_placeholder_5": {
       "default": "Які таємні глибини ховаються за цим порожнім профілем? (Правда десь поруч...)"
     },
-    "about_placeholder_6": {
+    "text_about_placeholder_6": {
       "default": "Ця користувач — привид у машині, цифровий привид... (або можливо, вони просто забули це заповнити?)"
     },
-    "about_placeholder_7": {
+    "text_about_placeholder_7": {
       "default": "Допоможіть цій користувачу! Нагадайте їм заповнити свій профіль. (Можливо, вони навіть винагородять вас віртуальним п'ятикратним привітанням!)"
     },
-    "about_placeholder_8": {
+    "text_about_placeholder_8": {
       "default": "Цей профіль благає про увагу. Надайте йому трохи любові та нагадайте користувачеві заповнити його."
     },
-    "about_placeholder_9": {
+    "text_about_placeholder_9": {
       "default": "Не соромтеся! Заохочуйте цю користувача поділитися своєю історією. (У кожного є історія, навіть якщо це просто про улюблене телешоу.)"
     },
-    "about_placeholder_10": {
+    "text_about_placeholder_10": {
       "default": "Ця користувач — як персонаж з фільму Девіда Лінча: загадковий, таємничий і, можливо, уявний продукт власної уяви."
     },
-    "about_placeholder_11": {
+    "text_about_placeholder_11": {
       "default": "Цей профіль такий порожній, як магазин відеопрокату \"Блокбастер\" у п'ятницю ввечері. (Ви пам'ятаєте такі? Хороші часи.)"
     },
-    "about_placeholder_12": {
+    "text_about_placeholder_12": {
       "default": "Ця користувач надихається своїм внутрішнім Тайлером Дурденом: відкидає споживацтво та обіймає порожнечу. (Або, можливо, вони просто ще не дойшли до цього.)"
     },
-    "about_placeholder_13": {
+    "text_about_placeholder_13": {
       "default": "Стилізоване зображення: Смішна ілюстрація детектива, що почухує голову у здивуванні, або куля, що котиться по порожній сторінці профілю."
     },
-    "about_placeholder_14": {
+    "text_about_placeholder_14": {
       "default": "Інтерактивний елемент: кнопка, що дозволяє користувачам надіслати доброзичливий сигнал профілю власнику, заохочуючи заповнити свій профіль."
     },
-    "about_placeholder_15": {
+    "text_about_placeholder_15": {
       "default": "Персоналізоване повідомлення: Якщо у вас є будь-яка інформація про користувача (наприклад, їхня історія переглядів), ви можете використовувати її для створення більш персоналізованого заповнювача, наприклад: \"Ця користувач любить жахи, але ненавидить писати біографії. (Можливо, вони занадто зайняті, щоб ховатися від зомбі?)\""
     },
     "list_placeholder_watchlist_movies": {
@@ -469,10 +469,10 @@
         }
       }
     },
-    "details": {
+    "header_details": {
       "default": "Деталі"
     },
-    "expand_category": {
+    "button_label_expand_category": {
       "default": "Розгорнути {category}",
       "variables": {
         "category": {
@@ -488,22 +488,22 @@
         }
       }
     },
-    "premiered": {
+    "header_premiered": {
       "default": "Прем'єра"
     },
-    "runtime": {
+    "header_runtime": {
       "default": "Тривалість"
     },
-    "country": {
+    "header_country": {
       "default": "Країна"
     },
-    "language": {
+    "header_language": {
       "default": "Мова"
     },
-    "studio": {
+    "header_studio": {
       "default": "Студія"
     },
-    "genre": {
+    "header_genre": {
       "default": "Жанр"
     },
     "button_text_browse_lists": {
@@ -529,7 +529,7 @@
         }
       }
     },
-    "streaming_service_logo": {
+    "image_alt_streaming_service_logo": {
       "default": "Логотип {service}",
       "variables": {
         "service": {
@@ -537,13 +537,13 @@
         }
       }
     },
-    "director": {
+    "header_director": {
       "default": "Режисер"
     },
-    "writer": {
+    "header_writer": {
       "default": "Сценарист"
     },
-    "creator": {
+    "header_creator": {
       "default": "Створитель"
     },
     "job_action_director": {
@@ -836,7 +836,7 @@
         }
       }
     },
-    "share_title": {
+    "button_label_share": {
       "default": "Поділитись {title}",
       "variables": {
         "title": {
@@ -844,7 +844,7 @@
         }
       }
     },
-    "status": {
+    "header_status": {
       "default": "Статус"
     },
     "status_released": {
@@ -883,10 +883,10 @@
     "status_unknown": {
       "default": "Невідомо"
     },
-    "expected_premiere": {
+    "header_expected_premiere": {
       "default": "Очікувана прем'єра"
     },
-    "person_headshot": {
+    "image_alt_person_headshot": {
       "default": "Фото {person}",
       "variables": {
         "person": {
@@ -905,10 +905,10 @@
         }
       }
     },
-    "view_all_trending_movies": {
+    "button_label_view_all_trending_movies": {
       "default": "Дивитись всі популярні фільми"
     },
-    "view_all_trending_shows": {
+    "button_label_view_all_trending_shows": {
       "default": "Дивитись всі популярні серіали"
     },
     "list_title_trending_shows": {
@@ -931,16 +931,16 @@
         }
       }
     },
-    "view_all_recommended_movies": {
+    "button_label_view_all_recommended_movies": {
       "default": "Дивитись всі рекомендовані фільми"
     },
-    "view_all_recommended_shows": {
+    "button_label_view_all_recommended_shows": {
       "default": "Дивитись всі рекомендовані серіали"
     },
-    "view_all_anticipated_movies": {
+    "button_label_view_all_anticipated_movies": {
       "default": "Переглянути всі очікувані фільми"
     },
-    "view_all_anticipated_shows": {
+    "button_label_view_all_anticipated_shows": {
       "default": "Переглянути всі очікувані серіали"
     },
     "list_title_anticipated_movies": {
@@ -949,10 +949,10 @@
     "list_title_anticipated_shows": {
       "default": "Очікувані серіали"
     },
-    "view_all_popular_movies": {
+    "button_label_view_all_popular_movies": {
       "default": "Переглянути всі популярні фільми"
     },
-    "view_all_popular_shows": {
+    "button_label_view_all_popular_shows": {
       "default": "Переглянути всі популярні серіали"
     },
     "list_title_popular_movies": {
@@ -961,7 +961,7 @@
     "list_title_popular_shows": {
       "default": "Популярні серіали"
     },
-    "rate_now": {
+    "header_rate_now": {
       "default": "Оцінити зараз"
     },
     "button_text_add_to_favorites": {
@@ -1018,19 +1018,19 @@
     "list_title_your_watchlist_movies": {
       "default": "Ваш список перегляду"
     },
-    "view_all_watchlist_movies": {
+    "button_label_view_all_watchlist_movies": {
       "default": "Усі зі списку до перегляду"
     },
-    "view_all_watchlist_shows": {
+    "button_label_view_all_watchlist_shows": {
       "default": "Усі зі списку до перегляду"
     },
-    "streaming": {
+    "header_streaming": {
       "default": "Онлайн"
     },
-    "on_demand": {
+    "header_on_demand": {
       "default": "На вимогу"
     },
-    "media_popup_label": {
+    "button_label_popup_media": {
       "default": "Меню для {title}",
       "variables": {
         "title": {
@@ -1049,10 +1049,10 @@
         }
       }
     },
-    "by": {
+    "text_by": {
       "default": "від"
     },
-    "users_avatar": {
+    "image_alt_user_avatar": {
       "default": "Аватар {username}",
       "variables": {
         "username": {
@@ -1060,7 +1060,7 @@
         }
       }
     },
-    "media_poster": {
+    "image_alt_media_poster": {
       "default": "Постер {title}",
       "variables": {
         "title": {
@@ -1071,19 +1071,19 @@
     "list_placeholder_comments": {
       "default": "Ще немає коментарів."
     },
-    "review_by": {
+    "text_review_by": {
       "default": "Огляд від"
     },
-    "shout_by": {
+    "text_shout_by": {
       "default": "Вигук від"
     },
-    "deleted_user": {
+    "text_deleted_username": {
       "default": "Видалено"
     },
     "list_title_social_activity": {
       "default": "Соціальна активність"
     },
-    "view_all_social_activity": {
+    "button_label_view_all_social_activity": {
       "default": "Переглянути всю соціальну активність"
     },
     "dropdown_label_person_position": {
@@ -1134,10 +1134,10 @@
     "list_title_personal_lists": {
       "default": "Особисті"
     },
-    "collaborative_lists": {
+    "list_title_collaborative_lists": {
       "default": "Співпраця"
     },
-    "liked_lists": {
+    "list_title_liked_lists": {
       "default": "Сподобалося"
     },
     "share_movie": {
@@ -1184,16 +1184,16 @@
     "list_title_recently_watched": {
       "default": "Нещодавно переглянуті"
     },
-    "view_all_recently_watched": {
+    "button_label_view_all_recently_watched": {
       "default": "Переглянути всі нещодавно переглянуті"
     },
     "list_title_available_now": {
       "default": "Доступно зараз"
     },
-    "view_all_released_movies": {
+    "button_label_view_all_released_movies": {
       "default": "Переглянути всі доступні фільми"
     },
-    "view_all_unreleased_movies": {
+    "button_label_view_all_unreleased_movies": {
       "default": "Переглянути всі фільми, що виходять скоро"
     },
     "switch_to_og": {
@@ -1202,13 +1202,13 @@
     "tag_text_preview": {
       "default": "Перегляд"
     },
-    "preview_description": {
+    "tooltip_text_preview_feature": {
       "default": "Ця функція ще набуває свіжого вигляду, громадяни. Ми наполегливо працюємо над UX, щоб вона працювала гладко, як хор янголів (або принаймні, без виникнення існувального жаху)."
     },
-    "airs": {
+    "header_airs": {
       "default": "Виходить"
     },
-    "aired": {
+    "header_aired": {
       "default": "Виходило"
     },
     "warning_prompt_drop_show": {
@@ -1233,13 +1233,13 @@
     "enable_up_next_nitro_label": {
       "default": "Увімкнути Nitro «Наступне», найшвидший спосіб перегляду ваших серіалів"
     },
-    "lab_up_next_nitro_label": {
+    "switch_label_up_next_nitro": {
       "default": "Увімкнути Nitro для «Наступного»"
     },
-    "lab_up_next_nitro_message": {
+    "tooltip_text_up_next_nitro": {
       "default": "Цей експеримент — це покращення продуктивності, яке покращує досвід для всіх користувачів."
     },
-    "lab_up_next_nitro_hidden_message": {
+    "tooltip_text_up_next_nitro_hidden": {
       "default": "Через зміни в інтерфейсі, раніше приховані контент будуть тепер видимі у вашому списку з чорно-білою мініатюрою, щоб ви могли швидко їх знайти, та з можливістю або приховати їх знову, або видалити з списку."
     },
     "warning_prompt_restore_show": {
@@ -1399,7 +1399,7 @@
         }
       }
     },
-    "original_title": {
+    "header_original_title": {
       "default": "Оригінальна назва"
     },
     "view_all_comments": {
@@ -1534,10 +1534,10 @@
     "filters_title": {
       "default": "Фільтри"
     },
-    "ignore_watched": {
+    "header_ignore_watched": {
       "default": "Ігнорувати переглянуте"
     },
-    "ignore_watchlisted": {
+    "header_ignore_watchlisted": {
       "default": "Ігнорувати у списку"
     },
     "watchnow_filter_label": {
@@ -1552,10 +1552,10 @@
     "watchnow_streaming": {
       "default": "Транслюється зараз"
     },
-    "decade": {
+    "header_decade": {
       "default": "Десятиліття"
     },
-    "ratings": {
+    "header_ratings": {
       "default": "Оцінки"
     },
     "view_all_items_in": {
@@ -1693,10 +1693,10 @@
         }
       }
     },
-    "vip_upsell_title": {
+    "text_vip_upsell": {
       "default": "Розблокуйте VIP-функції, щоб покращити свій досвід Trakt"
     },
-    "vip_upsell_description": {
+    "text_vip_upsell_description": {
       "default": "Хочете побачити свій місячний та річний огляд? Та отримати доступ до багатьох інших функцій? Підпишіться на Trakt VIP."
     },
     "list_title_following": {
@@ -1708,7 +1708,7 @@
     "list_placeholder_followers": {
       "default": "Тут нікого немає (поки що)."
     },
-    "read_more": {
+    "button_label_read_more": {
       "default": "Читати далі"
     },
     "button_text_add_comment": {
@@ -1717,10 +1717,10 @@
     "button_label_add_comment": {
       "default": "Додати коментар"
     },
-    "rename_list": {
+    "button_text_rename_list": {
       "default": "Перейменувати ваш список"
     },
-    "rename_list_label": {
+    "button_label_rename_list": {
       "default": "Перейменувати ваш список {name}",
       "variables": {
         "name": {
@@ -1737,10 +1737,10 @@
     "list_title_hot_shows": {
       "default": "Найкращі серіали цього місяця"
     },
-    "view_all_hot_shows": {
+    "button_label_view_all_hot_shows": {
       "default": "Переглянути всі гарячі серіали"
     },
-    "view_all_hot_movies": {
+    "button_label_view_all_hot_movies": {
       "default": "Переглянути всі гарячі фільми"
     },
     "list_title_extras": {

@@ -251,10 +251,10 @@
     "button_label_join_trakt": {
       "default": "Alătură-te trakt.tv pentru a urmări ce urmărești"
     },
-    "copyright_notice": {
+    "text_copyright_notice": {
       "default": "Toate drepturile rezervate."
     },
-    "copyright_crafted_by": {
+    "text_copyright_crafted_by": {
       "default": "Elaborat manual în toată lumea"
     },
     "button_text_join_trakt_for_free": {
@@ -370,49 +370,49 @@
     "list_title_related_shows": {
       "default": "Seriale asemănătoare"
     },
-    "about_placeholder_1": {
+    "text_about_placeholder_1": {
       "default": "Acest utilizator este un mister, învăluit în enigmă... (sau poate doar leneș? Cine știe, acesta este internetul.)"
     },
-    "about_placeholder_2": {
+    "text_about_placeholder_2": {
       "default": "Se pare că acest utilizator este prea ocupat cu vizionarea de filme pentru a scrie despre el însuși. (Destul de corect, pot să mă raportez.)"
     },
-    "about_placeholder_3": {
+    "text_about_placeholder_3": {
       "default": "Profilul acestui utilizator este o pânză goală, un vid de informații... (la fel ca viața mea socială. of.)"
     },
-    "about_placeholder_4": {
+    "text_about_placeholder_4": {
       "default": "Dezvăluie secretele identității acestui utilizator... (dacă îndrăznești)"
     },
-    "about_placeholder_5": {
+    "text_about_placeholder_5": {
       "default": "Ce adâncimi ascunse se află sub acest profil gol? (Adevărul este acolo...)"
     },
-    "about_placeholder_6": {
+    "text_about_placeholder_6": {
       "default": "Acest utilizator este un fantomă în mașină, un fantomă digitală... (sau poate a uitat pur și simplu să completeze asta?)"
     },
-    "about_placeholder_7": {
+    "text_about_placeholder_7": {
       "default": "Ajută-l pe acest utilizator! Spune-i să își completeze profilul. (Poate chiar te va răsplăti cu o cinci virtuala!)"
     },
-    "about_placeholder_8": {
+    "text_about_placeholder_8": {
       "default": "Acest profil imploră atenție. Dă-i un pic de dragoste și spune utilizatorului să îl completeze."
     },
-    "about_placeholder_9": {
+    "text_about_placeholder_9": {
       "default": "Nu fi timid! Încurajează acest utilizator să își împărtășească povestea. (Toată lumea are o poveste de spus, chiar dacă este doar despre serialul lor preferat.)"
     },
-    "about_placeholder_10": {
+    "text_about_placeholder_10": {
       "default": "Acest utilizator este ca un personaj dintr-un film David Lynch: enigmatic, misterios și, probabil, o creație a propriei imaginații."
     },
-    "about_placeholder_11": {
+    "text_about_placeholder_11": {
       "default": "Acest profil este la fel de gol ca un magazin Blockbuster într-o vineri seara. (V-amintiți? Timpuri frumoase.)"
     },
-    "about_placeholder_12": {
+    "text_about_placeholder_12": {
       "default": "Acest utilizator își canalizează Tyler Durden interior: respingând consumerismul și îmbrățișând vidul. (Sau poate că pur și simplu nu a apucat să completeze acest lucru.)"
     },
-    "about_placeholder_13": {
+    "text_about_placeholder_13": {
       "default": "O imagine stilizată: O ilustrație amuzantă a unui detectiv care își zgârie capul din confuzie, sau o năluci care se rostogolește peste o pagină de profil goală."
     },
-    "about_placeholder_14": {
+    "text_about_placeholder_14": {
       "default": "Un element interactiv: Un buton care permite utilizatorilor să trimită un îndemn prietenos proprietarului profilului, încurajându-l să își completeze profilul."
     },
-    "about_placeholder_15": {
+    "text_about_placeholder_15": {
       "default": "Un mesaj personalizat: Dacă ai vreo informație despre utilizator (de exemplu, istoricul lor de vizionare), ai putea folosi aceste informații pentru a genera un placeholder mai personalizat, cum ar fi 'Acest utilizator adoră filmele de groază, dar urăște să scrie biografii. (Poate este prea ocupat să se ascundă de zombi?)'"
     },
     "list_placeholder_watchlist_movies": {
@@ -469,10 +469,10 @@
         }
       }
     },
-    "details": {
+    "header_details": {
       "default": "Detalii"
     },
-    "expand_category": {
+    "button_label_expand_category": {
       "default": "Extinde {category}",
       "variables": {
         "category": {
@@ -488,22 +488,22 @@
         }
       }
     },
-    "premiered": {
+    "header_premiered": {
       "default": "A debutat"
     },
-    "runtime": {
+    "header_runtime": {
       "default": "Durata"
     },
-    "country": {
+    "header_country": {
       "default": "Țară"
     },
-    "language": {
+    "header_language": {
       "default": "Limbă"
     },
-    "studio": {
+    "header_studio": {
       "default": "Studiouri"
     },
-    "genre": {
+    "header_genre": {
       "default": "Gen"
     },
     "button_text_browse_lists": {
@@ -529,7 +529,7 @@
         }
       }
     },
-    "streaming_service_logo": {
+    "image_alt_streaming_service_logo": {
       "default": "Sigla {service}",
       "variables": {
         "service": {
@@ -537,13 +537,13 @@
         }
       }
     },
-    "director": {
+    "header_director": {
       "default": "Regizor"
     },
-    "writer": {
+    "header_writer": {
       "default": "Scriitor"
     },
-    "creator": {
+    "header_creator": {
       "default": "Creator"
     },
     "job_action_director": {
@@ -836,7 +836,7 @@
         }
       }
     },
-    "share_title": {
+    "button_label_share": {
       "default": "Distribuie {title}",
       "variables": {
         "title": {
@@ -844,7 +844,7 @@
         }
       }
     },
-    "status": {
+    "header_status": {
       "default": "Stare"
     },
     "status_released": {
@@ -883,10 +883,10 @@
     "status_unknown": {
       "default": "Necunoscut"
     },
-    "expected_premiere": {
+    "header_expected_premiere": {
       "default": "Premiera Așteptată"
     },
-    "person_headshot": {
+    "image_alt_person_headshot": {
       "default": "Portretul lui {person}",
       "variables": {
         "person": {
@@ -905,10 +905,10 @@
         }
       }
     },
-    "view_all_trending_movies": {
+    "button_label_view_all_trending_movies": {
       "default": "Vezi toate filmele populare"
     },
-    "view_all_trending_shows": {
+    "button_label_view_all_trending_shows": {
       "default": "Vezi toate serialele populare"
     },
     "list_title_trending_shows": {
@@ -931,16 +931,16 @@
         }
       }
     },
-    "view_all_recommended_movies": {
+    "button_label_view_all_recommended_movies": {
       "default": "Vezi toate filmele recomandate"
     },
-    "view_all_recommended_shows": {
+    "button_label_view_all_recommended_shows": {
       "default": "Vezi toate serialele recomandate"
     },
-    "view_all_anticipated_movies": {
+    "button_label_view_all_anticipated_movies": {
       "default": "Vezi toate filmele așteptate"
     },
-    "view_all_anticipated_shows": {
+    "button_label_view_all_anticipated_shows": {
       "default": "Vezi toate serialele așteptate"
     },
     "list_title_anticipated_movies": {
@@ -949,10 +949,10 @@
     "list_title_anticipated_shows": {
       "default": "Seriale anticipate"
     },
-    "view_all_popular_movies": {
+    "button_label_view_all_popular_movies": {
       "default": "Vezi toate filmele populare"
     },
-    "view_all_popular_shows": {
+    "button_label_view_all_popular_shows": {
       "default": "Vezi toate serialele populare"
     },
     "list_title_popular_movies": {
@@ -961,7 +961,7 @@
     "list_title_popular_shows": {
       "default": "Seriale populare"
     },
-    "rate_now": {
+    "header_rate_now": {
       "default": "Evaluează acum"
     },
     "button_text_add_to_favorites": {
@@ -1018,19 +1018,19 @@
     "list_title_your_watchlist_movies": {
       "default": "Filmele din lista ta"
     },
-    "view_all_watchlist_movies": {
+    "button_label_view_all_watchlist_movies": {
       "default": "Vezi toate filmele din lista"
     },
-    "view_all_watchlist_shows": {
+    "button_label_view_all_watchlist_shows": {
       "default": "Vezi toate serialele din listă"
     },
-    "streaming": {
+    "header_streaming": {
       "default": "Streaming"
     },
-    "on_demand": {
+    "header_on_demand": {
       "default": "La cerere"
     },
-    "media_popup_label": {
+    "button_label_popup_media": {
       "default": "Meniu pop-up pentru {title}",
       "variables": {
         "title": {
@@ -1049,10 +1049,10 @@
         }
       }
     },
-    "by": {
+    "text_by": {
       "default": "de"
     },
-    "users_avatar": {
+    "image_alt_user_avatar": {
       "default": "Avatarul lui {username}",
       "variables": {
         "username": {
@@ -1060,7 +1060,7 @@
         }
       }
     },
-    "media_poster": {
+    "image_alt_media_poster": {
       "default": "Posterul {title}",
       "variables": {
         "title": {
@@ -1071,19 +1071,19 @@
     "list_placeholder_comments": {
       "default": "Încă nu sunt comentarii."
     },
-    "review_by": {
+    "text_review_by": {
       "default": "Recenzie de"
     },
-    "shout_by": {
+    "text_shout_by": {
       "default": "Strigăt de"
     },
-    "deleted_user": {
+    "text_deleted_username": {
       "default": "Șters"
     },
     "list_title_social_activity": {
       "default": "Activitate Socială"
     },
-    "view_all_social_activity": {
+    "button_label_view_all_social_activity": {
       "default": "Vezi toate activitățile sociale"
     },
     "dropdown_label_person_position": {
@@ -1134,10 +1134,10 @@
     "list_title_personal_lists": {
       "default": "Personale"
     },
-    "collaborative_lists": {
+    "list_title_collaborative_lists": {
       "default": "Colaborări"
     },
-    "liked_lists": {
+    "list_title_liked_lists": {
       "default": "Apreciate"
     },
     "share_movie": {
@@ -1184,16 +1184,16 @@
     "list_title_recently_watched": {
       "default": "Vizionate urmărite recent"
     },
-    "view_all_recently_watched": {
+    "button_label_view_all_recently_watched": {
       "default": "Vezi toate urmărite recent"
     },
     "list_title_available_now": {
       "default": "Disponibil Acum"
     },
-    "view_all_released_movies": {
+    "button_label_view_all_released_movies": {
       "default": "Vezi toate filmele disponibile acum"
     },
-    "view_all_unreleased_movies": {
+    "button_label_view_all_unreleased_movies": {
       "default": "Vezi toate filmele care vin curând"
     },
     "switch_to_og": {
@@ -1202,13 +1202,13 @@
     "tag_text_preview": {
       "default": "Previzualizare"
     },
-    "preview_description": {
+    "tooltip_text_preview_feature": {
       "default": "Această funcție este încă în curs de finisare, cetățene. Ne străduim din răsputeri să o îmbunătățim, făcându-i interfața de utilizator să funcționeze fluid, fără a provoca groază existențială."
     },
-    "airs": {
+    "header_airs": {
       "default": "Se difuzează"
     },
-    "aired": {
+    "header_aired": {
       "default": "S-a difuzat"
     },
     "warning_prompt_drop_show": {
@@ -1233,13 +1233,13 @@
     "enable_up_next_nitro_label": {
       "default": "Activează Nitro Up Next, cel mai rapid mod de a viziona serialele tale"
     },
-    "lab_up_next_nitro_label": {
+    "switch_label_up_next_nitro": {
       "default": "Activează Nitro Up Next"
     },
-    "lab_up_next_nitro_message": {
+    "tooltip_text_up_next_nitro": {
       "default": "Acest experiment este o actualizare de performanță care îmbunătățește experiența pentru toți utilizatorii."
     },
-    "lab_up_next_nitro_hidden_message": {
+    "tooltip_text_up_next_nitro_hidden": {
       "default": "Datorită modificărilor de design interne, filmele ascunse anterior vor fi acum vizibile în lista ta, cu o miniatură alb-negru pentru a le identifica rapid, având opțiunea de a le readuce sau de a le elimina din listă."
     },
     "warning_prompt_restore_show": {
@@ -1399,7 +1399,7 @@
         }
       }
     },
-    "original_title": {
+    "header_original_title": {
       "default": "Titlu original"
     },
     "view_all_comments": {
@@ -1534,10 +1534,10 @@
     "filters_title": {
       "default": "Filtre"
     },
-    "ignore_watched": {
+    "header_ignore_watched": {
       "default": "Ignoră Văzute"
     },
-    "ignore_watchlisted": {
+    "header_ignore_watchlisted": {
       "default": "Ignoră de Vizionat"
     },
     "watchnow_filter_label": {
@@ -1552,10 +1552,10 @@
     "watchnow_streaming": {
       "default": "Streaming acum"
     },
-    "decade": {
+    "header_decade": {
       "default": "Deceniu"
     },
-    "ratings": {
+    "header_ratings": {
       "default": "Evaluări"
     },
     "view_all_items_in": {
@@ -1693,10 +1693,10 @@
         }
       }
     },
-    "vip_upsell_title": {
+    "text_vip_upsell": {
       "default": "Deblocați funcțiile VIP pentru a vă îmbunătăți experiența Trakt"
     },
-    "vip_upsell_description": {
+    "text_vip_upsell_description": {
       "default": "Vrei să-ți vezi retrospectiva lunară și anuală? Și să accesezi multe alte funcții? Înscrie-te la Trakt VIP."
     },
     "list_title_following": {
@@ -1708,7 +1708,7 @@
     "list_placeholder_followers": {
       "default": "Nimeni pe aici (încă)."
     },
-    "read_more": {
+    "button_label_read_more": {
       "default": "Citește mai mult"
     },
     "button_text_add_comment": {
@@ -1717,10 +1717,10 @@
     "button_label_add_comment": {
       "default": "Adaugă un comentariu"
     },
-    "rename_list": {
+    "button_text_rename_list": {
       "default": "Redenumiți lista"
     },
-    "rename_list_label": {
+    "button_label_rename_list": {
       "default": "Redenumiți lista {name}",
       "variables": {
         "name": {
@@ -1737,10 +1737,10 @@
     "list_title_hot_shows": {
       "default": "Seriale în tendințe luna aceasta"
     },
-    "view_all_hot_shows": {
+    "button_label_view_all_hot_shows": {
       "default": "Vezi toate serialele în tendințe"
     },
-    "view_all_hot_movies": {
+    "button_label_view_all_hot_movies": {
       "default": "Vezi toate filmele în tendințe"
     },
     "list_title_extras": {

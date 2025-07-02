@@ -251,10 +251,10 @@
     "button_label_join_trakt": {
       "default": "Присъедини се към trakt.tv, за да следиш какво гледаш"
     },
-    "copyright_notice": {
+    "text_copyright_notice": {
       "default": "Всички права запазени."
     },
-    "copyright_crafted_by": {
+    "text_copyright_crafted_by": {
       "default": "Направено с любов из различни кътчета на света"
     },
     "button_text_join_trakt_for_free": {
@@ -370,49 +370,49 @@
     "list_title_related_shows": {
       "default": "Подобни предавания"
     },
-    "about_placeholder_1": {
+    "text_about_placeholder_1": {
       "default": "Този потребител е мистерия, обгърната в енигла... (или може би просто е мързелив? Кой знае, това е интернет.)"
     },
-    "about_placeholder_2": {
+    "text_about_placeholder_2": {
       "default": "Явно този потребител е твърде зает да гледа филми, за да пише за себе си. (Разбираемо, и аз съм така.)"
     },
-    "about_placeholder_3": {
+    "text_about_placeholder_3": {
       "default": "Профилът на този потребител е празно платно, празнота от информация... (подобно на моя социален живот. *въздишка*)"
     },
-    "about_placeholder_4": {
+    "text_about_placeholder_4": {
       "default": "Разкрий тайните на самоличността на този потребител... (ако се осмелиш)"
     },
-    "about_placeholder_5": {
+    "text_about_placeholder_5": {
       "default": "Какви скрити дълбини се крият под този празен профил? (Истината е някъде там...)"
     },
-    "about_placeholder_6": {
+    "text_about_placeholder_6": {
       "default": "Този потребител е призрак в машината, цифров фантом... (или може би просто е забравил да попълни това?)"
     },
-    "about_placeholder_7": {
+    "text_about_placeholder_7": {
       "default": "Помогнете на този потребител! Кажете му да попълни профила си. (Той може дори да ви възнагради с виртуално „дай пет“!)"
     },
-    "about_placeholder_8": {
+    "text_about_placeholder_8": {
       "default": "Този профил си проси внимание. Дай му малко любов и кажи на потребителя да го попълни."
     },
-    "about_placeholder_9": {
+    "text_about_placeholder_9": {
       "default": "Не се срамувай! Насърчи този потребител да сподели историята си. (Всеки има какво да разкаже, дори и да е само за любимото му телевизионно шоу.)"
     },
-    "about_placeholder_10": {
+    "text_about_placeholder_10": {
       "default": "Този потребител е като герой от филм на Дейвид Линч: загадъчен, мистериозен и вероятно плод на собственото му въображение."
     },
-    "about_placeholder_11": {
+    "text_about_placeholder_11": {
       "default": "Този профил е празен като видеотека „Блокбъстър“ в петък вечер. (Помните ли ги? Хубави времена.)"
     },
-    "about_placeholder_12": {
+    "text_about_placeholder_12": {
       "default": "Този потребител е насочил своя вътрешен Тайлър Дърдън: отхвърля консуматорството и прегръща празнотата. (А може би просто още не е успял да го попълни.)"
     },
-    "about_placeholder_13": {
+    "text_about_placeholder_13": {
       "default": "Стилизирано изображение: Забавна илюстрация на детектив, който се почесва по главата в недоумение, или на тумбесто дърво, което се търкаля по празна страница на профила."
     },
-    "about_placeholder_14": {
+    "text_about_placeholder_14": {
       "default": "Интерактивен елемент: Бутон, който позволява на потребителите да изпратят приятелски сигнал до собственика на профила, като го насърчат да попълни профила си."
     },
-    "about_placeholder_15": {
+    "text_about_placeholder_15": {
       "default": "Персонализирано съобщение: Ако разполагате с някаква информация за потребителя (напр. историята на гледанията му), можете да я използвате, за да генерирате по-персонализирано съобщение, като например 'Този потребител обича филми на ужасите, но мрази да пише биографии. (Може би е твърде зает да се крие от зомбита?)'"
     },
     "list_placeholder_watchlist_movies": {
@@ -469,10 +469,10 @@
         }
       }
     },
-    "details": {
+    "header_details": {
       "default": "Подробности"
     },
-    "expand_category": {
+    "button_label_expand_category": {
       "default": "Разшири {category}",
       "variables": {
         "category": {
@@ -488,22 +488,22 @@
         }
       }
     },
-    "premiered": {
+    "header_premiered": {
       "default": "Премиера"
     },
-    "runtime": {
+    "header_runtime": {
       "default": "Времетраене"
     },
-    "country": {
+    "header_country": {
       "default": "Държава"
     },
-    "language": {
+    "header_language": {
       "default": "Език"
     },
-    "studio": {
+    "header_studio": {
       "default": "Студио"
     },
-    "genre": {
+    "header_genre": {
       "default": "Жанр"
     },
     "button_text_browse_lists": {
@@ -529,7 +529,7 @@
         }
       }
     },
-    "streaming_service_logo": {
+    "image_alt_streaming_service_logo": {
       "default": "{service} лого",
       "variables": {
         "service": {
@@ -537,13 +537,13 @@
         }
       }
     },
-    "director": {
+    "header_director": {
       "default": "Режисьор"
     },
-    "writer": {
+    "header_writer": {
       "default": "Сценарист"
     },
-    "creator": {
+    "header_creator": {
       "default": "Създател"
     },
     "job_action_director": {
@@ -836,7 +836,7 @@
         }
       }
     },
-    "share_title": {
+    "button_label_share": {
       "default": "Сподели {title}",
       "variables": {
         "title": {
@@ -844,7 +844,7 @@
         }
       }
     },
-    "status": {
+    "header_status": {
       "default": "Статус"
     },
     "status_released": {
@@ -883,10 +883,10 @@
     "status_unknown": {
       "default": "Непознат"
     },
-    "expected_premiere": {
+    "header_expected_premiere": {
       "default": "Очаквана премиера"
     },
-    "person_headshot": {
+    "image_alt_person_headshot": {
       "default": "Портрет на {person}",
       "variables": {
         "person": {
@@ -905,10 +905,10 @@
         }
       }
     },
-    "view_all_trending_movies": {
+    "button_label_view_all_trending_movies": {
       "default": "Виж всички популярни филми в момента"
     },
-    "view_all_trending_shows": {
+    "button_label_view_all_trending_shows": {
       "default": "Виж всички популярни предавания в момента"
     },
     "list_title_trending_shows": {
@@ -931,16 +931,16 @@
         }
       }
     },
-    "view_all_recommended_movies": {
+    "button_label_view_all_recommended_movies": {
       "default": "Виж всички препоръчани филми"
     },
-    "view_all_recommended_shows": {
+    "button_label_view_all_recommended_shows": {
       "default": "Виж всички препоръчани предавания"
     },
-    "view_all_anticipated_movies": {
+    "button_label_view_all_anticipated_movies": {
       "default": "Виж всички очаквани филми"
     },
-    "view_all_anticipated_shows": {
+    "button_label_view_all_anticipated_shows": {
       "default": "Виж всички очаквани предавания"
     },
     "list_title_anticipated_movies": {
@@ -949,10 +949,10 @@
     "list_title_anticipated_shows": {
       "default": "Очаквани предавания"
     },
-    "view_all_popular_movies": {
+    "button_label_view_all_popular_movies": {
       "default": "Виж всички популярни филми"
     },
-    "view_all_popular_shows": {
+    "button_label_view_all_popular_shows": {
       "default": "Виж всички популярни предаавания"
     },
     "list_title_popular_movies": {
@@ -961,7 +961,7 @@
     "list_title_popular_shows": {
       "default": "Популярни предавания"
     },
-    "rate_now": {
+    "header_rate_now": {
       "default": "Оцени сега"
     },
     "button_text_add_to_favorites": {
@@ -1018,19 +1018,19 @@
     "list_title_your_watchlist_movies": {
       "default": "Филми, които наблюдаваш"
     },
-    "view_all_watchlist_movies": {
+    "button_label_view_all_watchlist_movies": {
       "default": "Виж всички филми, които наблюдаваш"
     },
-    "view_all_watchlist_shows": {
+    "button_label_view_all_watchlist_shows": {
       "default": "Виж всички предавания, които наблюдаваш"
     },
-    "streaming": {
+    "header_streaming": {
       "default": "Стрийминг"
     },
-    "on_demand": {
+    "header_on_demand": {
       "default": "При поискване"
     },
-    "media_popup_label": {
+    "button_label_popup_media": {
       "default": "Изскачащо меню за {title}",
       "variables": {
         "title": {
@@ -1049,10 +1049,10 @@
         }
       }
     },
-    "by": {
+    "text_by": {
       "default": "по"
     },
-    "users_avatar": {
+    "image_alt_user_avatar": {
       "default": "Аватара на {username}",
       "variables": {
         "username": {
@@ -1060,7 +1060,7 @@
         }
       }
     },
-    "media_poster": {
+    "image_alt_media_poster": {
       "default": "{title} плакат",
       "variables": {
         "title": {
@@ -1071,19 +1071,19 @@
     "list_placeholder_comments": {
       "default": "Все още няма коментари"
     },
-    "review_by": {
+    "text_review_by": {
       "default": "Прегледай по"
     },
-    "shout_by": {
+    "text_shout_by": {
       "default": "Вик от"
     },
-    "deleted_user": {
+    "text_deleted_username": {
       "default": "Изтрит"
     },
     "list_title_social_activity": {
       "default": "Социална активност"
     },
-    "view_all_social_activity": {
+    "button_label_view_all_social_activity": {
       "default": "Виж цялата социална активност"
     },
     "dropdown_label_person_position": {
@@ -1134,10 +1134,10 @@
     "list_title_personal_lists": {
       "default": "Лични"
     },
-    "collaborative_lists": {
+    "list_title_collaborative_lists": {
       "default": "Сътрудничества"
     },
-    "liked_lists": {
+    "list_title_liked_lists": {
       "default": "Харесани"
     },
     "share_movie": {
@@ -1184,16 +1184,16 @@
     "list_title_recently_watched": {
       "default": "Наскоро гледано"
     },
-    "view_all_recently_watched": {
+    "button_label_view_all_recently_watched": {
       "default": "Преглед на всички наскоро гледани"
     },
     "list_title_available_now": {
       "default": "Достъпно сега"
     },
-    "view_all_released_movies": {
+    "button_label_view_all_released_movies": {
       "default": "Виж всички филми, налични сега"
     },
-    "view_all_unreleased_movies": {
+    "button_label_view_all_unreleased_movies": {
       "default": "Виж всички филми, които ще се появят скоро"
     },
     "switch_to_og": {
@@ -1202,13 +1202,13 @@
     "tag_text_preview": {
       "default": "Предварителен преглед"
     },
-    "preview_description": {
+    "tooltip_text_preview_feature": {
       "default": "Тази функция все още се обновява, гражданино. Работим върху потребителския интерфейс, за да го накараме да запее като ангелски хор (или поне да функционира гладко, без да предизвиква екзистенциален ужас)."
     },
-    "airs": {
+    "header_airs": {
       "default": "Излъчва се"
     },
-    "aired": {
+    "header_aired": {
       "default": "Излъчено"
     },
     "warning_prompt_drop_show": {
@@ -1233,13 +1233,13 @@
     "enable_up_next_nitro_label": {
       "default": "Активирай Up Next Nitro - най-бързият начин да гледате предаванията си"
     },
-    "lab_up_next_nitro_label": {
+    "switch_label_up_next_nitro": {
       "default": "Активирай Up Next Nitro"
     },
-    "lab_up_next_nitro_message": {
+    "tooltip_text_up_next_nitro": {
       "default": "Този експеримент е надграждане на производителността, което подобрява работата на всички потребители."
     },
-    "lab_up_next_nitro_hidden_message": {
+    "tooltip_text_up_next_nitro_hidden": {
       "default": "Поради вътрешни промени в дизайна, скритите преди това предавания вече ще се виждат в списъка с черно-бяла миниатюра, за да ги откривате бързо, с възможност да ги премахнете или да ги изхвърлите от списъка."
     },
     "warning_prompt_restore_show": {
@@ -1399,7 +1399,7 @@
         }
       }
     },
-    "original_title": {
+    "header_original_title": {
       "default": "Оригинално Заглавие"
     },
     "view_all_comments": {
@@ -1534,10 +1534,10 @@
     "filters_title": {
       "default": "Филтри"
     },
-    "ignore_watched": {
+    "header_ignore_watched": {
       "default": "Пренебрегвай гледаното"
     },
-    "ignore_watchlisted": {
+    "header_ignore_watchlisted": {
       "default": "Пренебрегвай в списъка за гледане"
     },
     "watchnow_filter_label": {
@@ -1552,10 +1552,10 @@
     "watchnow_streaming": {
       "default": "Стрийминг в момента"
     },
-    "decade": {
+    "header_decade": {
       "default": "Десетилетие"
     },
-    "ratings": {
+    "header_ratings": {
       "default": "Оценки"
     },
     "view_all_items_in": {
@@ -1693,10 +1693,10 @@
         }
       }
     },
-    "vip_upsell_title": {
+    "text_vip_upsell": {
       "default": "Отключете VIP функции, за да подобрите изживяването си с Trakt"
     },
-    "vip_upsell_description": {
+    "text_vip_upsell_description": {
       "default": "Искате ли да видите своя месечен и годишен преглед? И да получите достъп до много други функции? Регистрирайте се за Trakt VIP."
     },
     "list_title_following": {
@@ -1708,7 +1708,7 @@
     "list_placeholder_followers": {
       "default": "Тук няма никой (още)."
     },
-    "read_more": {
+    "button_label_read_more": {
       "default": "Прочети още"
     },
     "button_text_add_comment": {
@@ -1717,10 +1717,10 @@
     "button_label_add_comment": {
       "default": "Добави коментар"
     },
-    "rename_list": {
+    "button_text_rename_list": {
       "default": "Преименувайте списъка си"
     },
-    "rename_list_label": {
+    "button_label_rename_list": {
       "default": "Преименувайте списъка си {name}",
       "variables": {
         "name": {
@@ -1737,10 +1737,10 @@
     "list_title_hot_shows": {
       "default": "Активни сериали този месец"
     },
-    "view_all_hot_shows": {
+    "button_label_view_all_hot_shows": {
       "default": "Вижте всички активни сериали"
     },
-    "view_all_hot_movies": {
+    "button_label_view_all_hot_movies": {
       "default": "Вижте всички активни филми"
     },
     "list_title_extras": {

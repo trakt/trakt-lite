@@ -251,10 +251,10 @@
     "button_label_join_trakt": {
       "default": "Gå med i trakt.tv för att hålla koll på vad du tittar på"
     },
-    "copyright_notice": {
+    "text_copyright_notice": {
       "default": "Alla rättigheter förbehållna."
     },
-    "copyright_crafted_by": {
+    "text_copyright_crafted_by": {
       "default": "Handgjord runt om i världen"
     },
     "button_text_join_trakt_for_free": {
@@ -370,49 +370,49 @@
     "list_title_related_shows": {
       "default": "Relaterade serier"
     },
-    "about_placeholder_1": {
+    "text_about_placeholder_1": {
       "default": "Den här användaren är ett mysterium, höljt i gåtor... (eller kanske bara lat? Vem vet, det här är internet.)"
     },
-    "about_placeholder_2": {
+    "text_about_placeholder_2": {
       "default": "Tydligen är den här användaren för upptagen med att titta på filmer för att skriva om sig själv. (Helt rätt, jag kan relatera.)"
     },
-    "about_placeholder_3": {
+    "text_about_placeholder_3": {
       "default": "Den här användarens profil är en tom duk, ett informationsvakuum... (ungefär som mitt sociala liv. suck)"
     },
-    "about_placeholder_4": {
+    "text_about_placeholder_4": {
       "default": "Avslöja hemligheterna bakom den här användarens identitet... (om du vågar)"
     },
-    "about_placeholder_5": {
+    "text_about_placeholder_5": {
       "default": "Vilka dolda djup ligger under den här tomma profilen? (Sanningen finns där ute...)"
     },
-    "about_placeholder_6": {
+    "text_about_placeholder_6": {
       "default": "Den här användaren är ett spöke i maskinen, ett digitalt spöke... (eller så glömde de bara att fylla i detta?)"
     },
-    "about_placeholder_7": {
+    "text_about_placeholder_7": {
       "default": "Hjälp den här användaren! Be dem att fylla i sin profil. (De kanske till och med belönar dig med en virtuell high five!)"
     },
-    "about_placeholder_8": {
+    "text_about_placeholder_8": {
       "default": "Den här profilen ber om uppmärksamhet. Ge den lite kärlek och be användaren att fylla i den."
     },
-    "about_placeholder_9": {
+    "text_about_placeholder_9": {
       "default": "Var inte blyg! Uppmuntra den här användaren att dela med sig av sin historia. (Alla har en historia att berätta, även om det bara handlar om deras favoritserie.)"
     },
-    "about_placeholder_10": {
+    "text_about_placeholder_10": {
       "default": "Den här användaren är som en karaktär i en David Lynch-film: gåtfull, mystisk och möjligen en produkt av sin egen fantasi."
     },
-    "about_placeholder_11": {
+    "text_about_placeholder_11": {
       "default": "Den här profilen är lika tom som en Blockbuster-videobutik på en fredagskväll. (Kommer ni ihåg dem? Bra tider.)"
     },
-    "about_placeholder_12": {
+    "text_about_placeholder_12": {
       "default": "Den här användaren kanaliserar sin inre Tyler Durden: avvisar konsumism och omfamnar tomrummet. (Eller så har de bara inte tagit sig tid att fylla i detta ännu.)"
     },
-    "about_placeholder_13": {
+    "text_about_placeholder_13": {
       "default": "En stiliserad bild: En rolig illustration av en detektiv som kliar sig i huvudet av förvirring, eller en rullande tumbleweed över en tom profilsida."
     },
-    "about_placeholder_14": {
+    "text_about_placeholder_14": {
       "default": "Ett interaktivt element: En knapp som låter användare skicka en vänlig puff till profilägaren och uppmuntra dem att fylla i sin profil."
     },
-    "about_placeholder_15": {
+    "text_about_placeholder_15": {
       "default": "Ett personligt meddelande: Om du har någon information om användaren (t.ex. deras visningshistorik), kan du använda den för att generera en mer personlig platshållare, som 'Den här användaren älskar skräckfilmer men hatar att skriva bios. (Kanske gömmer de sig från zombies?)'"
     },
     "list_placeholder_watchlist_movies": {
@@ -469,10 +469,10 @@
         }
       }
     },
-    "details": {
+    "header_details": {
       "default": "Detaljer"
     },
-    "expand_category": {
+    "button_label_expand_category": {
       "default": "Expandera {category}",
       "variables": {
         "category": {
@@ -488,22 +488,22 @@
         }
       }
     },
-    "premiered": {
+    "header_premiered": {
       "default": "Premiär"
     },
-    "runtime": {
+    "header_runtime": {
       "default": "Längd"
     },
-    "country": {
+    "header_country": {
       "default": "Land"
     },
-    "language": {
+    "header_language": {
       "default": "Språk"
     },
-    "studio": {
+    "header_studio": {
       "default": "Studio"
     },
-    "genre": {
+    "header_genre": {
       "default": "Genre"
     },
     "button_text_browse_lists": {
@@ -529,7 +529,7 @@
         }
       }
     },
-    "streaming_service_logo": {
+    "image_alt_streaming_service_logo": {
       "default": "{service} logotyp",
       "variables": {
         "service": {
@@ -537,13 +537,13 @@
         }
       }
     },
-    "director": {
+    "header_director": {
       "default": "Regissör"
     },
-    "writer": {
+    "header_writer": {
       "default": "Manusförfattare"
     },
-    "creator": {
+    "header_creator": {
       "default": "Skapare"
     },
     "job_action_director": {
@@ -836,7 +836,7 @@
         }
       }
     },
-    "share_title": {
+    "button_label_share": {
       "default": "Dela {title}",
       "variables": {
         "title": {
@@ -844,7 +844,7 @@
         }
       }
     },
-    "status": {
+    "header_status": {
       "default": "Status"
     },
     "status_released": {
@@ -883,10 +883,10 @@
     "status_unknown": {
       "default": "Okänd"
     },
-    "expected_premiere": {
+    "header_expected_premiere": {
       "default": "Förväntad premiär"
     },
-    "person_headshot": {
+    "image_alt_person_headshot": {
       "default": "Huvudbild på {person}",
       "variables": {
         "person": {
@@ -905,10 +905,10 @@
         }
       }
     },
-    "view_all_trending_movies": {
+    "button_label_view_all_trending_movies": {
       "default": "Se alla trendiga filmer"
     },
-    "view_all_trending_shows": {
+    "button_label_view_all_trending_shows": {
       "default": "Se alla trendiga serier"
     },
     "list_title_trending_shows": {
@@ -931,16 +931,16 @@
         }
       }
     },
-    "view_all_recommended_movies": {
+    "button_label_view_all_recommended_movies": {
       "default": "Se alla rekommenderade filmer"
     },
-    "view_all_recommended_shows": {
+    "button_label_view_all_recommended_shows": {
       "default": "Se alla rekommenderade serier"
     },
-    "view_all_anticipated_movies": {
+    "button_label_view_all_anticipated_movies": {
       "default": "Se alla förväntade filmer"
     },
-    "view_all_anticipated_shows": {
+    "button_label_view_all_anticipated_shows": {
       "default": "Se alla förväntade serier"
     },
     "list_title_anticipated_movies": {
@@ -949,10 +949,10 @@
     "list_title_anticipated_shows": {
       "default": "Förväntade serier"
     },
-    "view_all_popular_movies": {
+    "button_label_view_all_popular_movies": {
       "default": "Se alla populära filmer"
     },
-    "view_all_popular_shows": {
+    "button_label_view_all_popular_shows": {
       "default": "Se alla populära serier"
     },
     "list_title_popular_movies": {
@@ -961,7 +961,7 @@
     "list_title_popular_shows": {
       "default": "Populära serier"
     },
-    "rate_now": {
+    "header_rate_now": {
       "default": "Betygsätt nu"
     },
     "button_text_add_to_favorites": {
@@ -1018,19 +1018,19 @@
     "list_title_your_watchlist_movies": {
       "default": "Dina to-watch-filmer"
     },
-    "view_all_watchlist_movies": {
+    "button_label_view_all_watchlist_movies": {
       "default": "Se alla to-watch-filmer"
     },
-    "view_all_watchlist_shows": {
+    "button_label_view_all_watchlist_shows": {
       "default": "Se alla to-watch-serier"
     },
-    "streaming": {
+    "header_streaming": {
       "default": "Streaming"
     },
-    "on_demand": {
+    "header_on_demand": {
       "default": "On Demand"
     },
-    "media_popup_label": {
+    "button_label_popup_media": {
       "default": "Popup-meny för {title}",
       "variables": {
         "title": {
@@ -1049,10 +1049,10 @@
         }
       }
     },
-    "by": {
+    "text_by": {
       "default": "av"
     },
-    "users_avatar": {
+    "image_alt_user_avatar": {
       "default": "{username}'s avatar",
       "variables": {
         "username": {
@@ -1060,7 +1060,7 @@
         }
       }
     },
-    "media_poster": {
+    "image_alt_media_poster": {
       "default": "{title} affisch",
       "variables": {
         "title": {
@@ -1071,19 +1071,19 @@
     "list_placeholder_comments": {
       "default": "Inga kommentarer än."
     },
-    "review_by": {
+    "text_review_by": {
       "default": "Recension av"
     },
-    "shout_by": {
+    "text_shout_by": {
       "default": "Rop av"
     },
-    "deleted_user": {
+    "text_deleted_username": {
       "default": "Raderad"
     },
     "list_title_social_activity": {
       "default": "Social aktivitet"
     },
-    "view_all_social_activity": {
+    "button_label_view_all_social_activity": {
       "default": "Se all social aktivitet"
     },
     "dropdown_label_person_position": {
@@ -1134,10 +1134,10 @@
     "list_title_personal_lists": {
       "default": "Personliga"
     },
-    "collaborative_lists": {
+    "list_title_collaborative_lists": {
       "default": "Samarbeten"
     },
-    "liked_lists": {
+    "list_title_liked_lists": {
       "default": "Gillade"
     },
     "share_movie": {
@@ -1184,16 +1184,16 @@
     "list_title_recently_watched": {
       "default": "Nyligen sett"
     },
-    "view_all_recently_watched": {
+    "button_label_view_all_recently_watched": {
       "default": "Se allt nyligen sett"
     },
     "list_title_available_now": {
       "default": "Tillgänglig nu"
     },
-    "view_all_released_movies": {
+    "button_label_view_all_released_movies": {
       "default": "Se alla filmer som är tillgängliga nu"
     },
-    "view_all_unreleased_movies": {
+    "button_label_view_all_unreleased_movies": {
       "default": "Se alla filmer som kommer snart"
     },
     "switch_to_og": {
@@ -1202,13 +1202,13 @@
     "tag_text_preview": {
       "default": "Förhandsgranska"
     },
-    "preview_description": {
+    "tooltip_text_preview_feature": {
       "default": "Den här funktionen håller fortfarande på att målas om, medborgare. Vi hamrar på UX och får den att sjunga som en kör av änglar (eller åtminstone fungera smidigt utan att framkalla existentiell ångest)."
     },
-    "airs": {
+    "header_airs": {
       "default": "Sänds"
     },
-    "aired": {
+    "header_aired": {
       "default": "Sändes"
     },
     "warning_prompt_drop_show": {
@@ -1233,13 +1233,13 @@
     "enable_up_next_nitro_label": {
       "default": "Aktivera Nästa Nitro, det snabbaste sättet att titta på dina serier"
     },
-    "lab_up_next_nitro_label": {
+    "switch_label_up_next_nitro": {
       "default": "Aktivera Nästa Nitro"
     },
-    "lab_up_next_nitro_message": {
+    "tooltip_text_up_next_nitro": {
       "default": "Det här experimentet är en prestandauppgradering som förbättrar upplevelsen för alla användare."
     },
-    "lab_up_next_nitro_hidden_message": {
+    "tooltip_text_up_next_nitro_hidden": {
       "default": "På grund av interna designförändringar kommer tidigare dolda serier nu att vara synliga i din lista med en svartvit miniatyrbild för att hjälpa dig att snabbt upptäcka dem, med möjlighet att antingen återskapa dem eller ta bort dem från listan."
     },
     "warning_prompt_restore_show": {
@@ -1399,7 +1399,7 @@
         }
       }
     },
-    "original_title": {
+    "header_original_title": {
       "default": "Originaltitel"
     },
     "view_all_comments": {
@@ -1534,10 +1534,10 @@
     "filters_title": {
       "default": "Filter"
     },
-    "ignore_watched": {
+    "header_ignore_watched": {
       "default": "Ignorera sett"
     },
-    "ignore_watchlisted": {
+    "header_ignore_watchlisted": {
       "default": "Ignorera att se"
     },
     "watchnow_filter_label": {
@@ -1552,10 +1552,10 @@
     "watchnow_streaming": {
       "default": "Streamar nu"
     },
-    "decade": {
+    "header_decade": {
       "default": "Årtionde"
     },
-    "ratings": {
+    "header_ratings": {
       "default": "Betyg"
     },
     "view_all_items_in": {
@@ -1693,10 +1693,10 @@
         }
       }
     },
-    "vip_upsell_title": {
+    "text_vip_upsell": {
       "default": "Lås upp VIP-funktioner för att förbättra din Trakt-upplevelse"
     },
-    "vip_upsell_description": {
+    "text_vip_upsell_description": {
       "default": "Vill du se din månads- och årsöversikt? Och få tillgång till många andra funktioner? Registrera dig för Trakt VIP."
     },
     "list_title_following": {
@@ -1708,7 +1708,7 @@
     "list_placeholder_followers": {
       "default": "Ingen här (än)."
     },
-    "read_more": {
+    "button_label_read_more": {
       "default": "Läs mer"
     },
     "button_text_add_comment": {
@@ -1717,10 +1717,10 @@
     "button_label_add_comment": {
       "default": "Lägg till kommentar"
     },
-    "rename_list": {
+    "button_text_rename_list": {
       "default": "Byt namn på din lista"
     },
-    "rename_list_label": {
+    "button_label_rename_list": {
       "default": "Byt namn på din lista {name}",
       "variables": {
         "name": {
@@ -1737,10 +1737,10 @@
     "list_title_hot_shows": {
       "default": "Populära serier denna månad"
     },
-    "view_all_hot_shows": {
+    "button_label_view_all_hot_shows": {
       "default": "Se alla populära serier"
     },
-    "view_all_hot_movies": {
+    "button_label_view_all_hot_movies": {
       "default": "Se alla populära filmer"
     },
     "list_title_extras": {
