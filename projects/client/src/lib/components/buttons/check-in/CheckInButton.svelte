@@ -12,7 +12,7 @@
     title,
     style,
     isCheckingIn,
-    isCheckedIn,
+    canCheckIn,
     checkin,
     ...props
   }: CheckInButtonProps = $props();
@@ -22,7 +22,7 @@
     color: "default",
     variant: "secondary",
     onclick: checkin,
-    disabled: isCheckingIn || isCheckedIn,
+    disabled: isCheckingIn || !canCheckIn,
   });
 </script>
 

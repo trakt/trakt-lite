@@ -1,15 +1,15 @@
+import { AnalyticsEvent } from '$lib/features/analytics/events/AnalyticsEvent.ts';
+import { useTrack } from '$lib/features/analytics/useTrack.ts';
+import type { EpisodeEntry } from '$lib/requests/models/EpisodeEntry.ts';
+import { InvalidateAction } from '$lib/requests/models/InvalidateAction.ts';
+import type { MovieEntry } from '$lib/requests/models/MovieEntry.ts';
+import type { ShowEntry } from '$lib/requests/models/ShowEntry.ts';
+import { checkinEpisodeRequest } from '$lib/requests/queries/checkin/checkinEpisodeRequest.ts';
+import { checkinMovieRequest } from '$lib/requests/queries/checkin/checkinMovieRequest.ts';
+import { useNowPlaying } from '$lib/sections/now-playing/useNowPlaying.ts';
+import { useInvalidator } from '$lib/stores/useInvalidator.ts';
 import type { MovieCheckinRequest, ShowCheckinRequest } from '@trakt/api';
 import { derived, writable } from 'svelte/store';
-import { AnalyticsEvent } from '../../../features/analytics/events/AnalyticsEvent.ts';
-import { useTrack } from '../../../features/analytics/useTrack.ts';
-import type { EpisodeEntry } from '../../../requests/models/EpisodeEntry.ts';
-import { InvalidateAction } from '../../../requests/models/InvalidateAction.ts';
-import type { MovieEntry } from '../../../requests/models/MovieEntry.ts';
-import type { ShowEntry } from '../../../requests/models/ShowEntry.ts';
-import { checkinEpisodeRequest } from '../../../requests/queries/checkin/checkinEpisodeRequest.ts';
-import { checkinMovieRequest } from '../../../requests/queries/checkin/checkinMovieRequest.ts';
-import { useInvalidator } from '../../../stores/useInvalidator.ts';
-import { useNowPlaying } from '../../now-playing/useNowPlaying.ts';
 
 type EpisodeProps = {
   type: 'episode';
@@ -21,6 +21,8 @@ type MovieProps = {
   type: 'movie';
   media: MovieEntry;
 };
+
+const NEW_CHECKIN_FACTOR = 0.8;
 
 export type UseCheckInProps = EpisodeProps | MovieProps;
 
@@ -84,14 +86,40 @@ export function useCheckIn(props: UseCheckInProps) {
     ? props.episode.airDate && props.episode.airDate <= new Date()
     : props.media.airDate && props.media.airDate <= new Date();
 
+  const isCheckedIn = derived(nowPlaying, ($nowPlaying) => {
+    if (!$nowPlaying) return false;
+
+    if (type === 'episode') {
+      return $nowPlaying.type === 'episode' &&
+        $nowPlaying.media.id === props.show.id &&
+        $nowPlaying.episode.season === props.episode.season &&
+        $nowPlaying.episode.number === props.episode.number;
+    }
+
+    return $nowPlaying.media.id === props.media.id;
+  });
+
   return {
     checkin,
     isCheckingIn,
-    /*
-      FIXME: when we can cancel a checkin, only return true if the
-      now playing item is the same as the one we are checking in
-    */
-    isCheckedIn: derived(nowPlaying, ($nowPlaying) => Boolean($nowPlaying)),
+    canCheckIn: derived(
+      [isCheckedIn, nowPlaying],
+      ([$isCheckedIn, $nowPlaying]) => {
+        // TODO reactive or poll
+        if ($isCheckedIn) return false;
+        if (!$nowPlaying) return true;
+
+        const expiresAt = $nowPlaying.expiresAt.getTime();
+        const startedAt = $nowPlaying.startedAt.getTime();
+
+        const totalDuration = expiresAt - startedAt;
+        const remaining = expiresAt - Date.now();
+
+        const progress = (totalDuration - remaining) / totalDuration;
+
+        return progress > NEW_CHECKIN_FACTOR;
+      },
+    ),
     isWatchable,
   };
 }

@@ -10,7 +10,7 @@
     ...target
   }: CheckInActionProps = $props();
 
-  const { isCheckingIn, isCheckedIn, checkin, isWatchable } = $derived(
+  const { isCheckingIn, canCheckIn, checkin, isWatchable } = $derived(
     useCheckIn(target),
   );
 </script>
@@ -20,8 +20,8 @@
     {style}
     {title}
     {size}
-    isCheckedIn={$isCheckedIn}
-    isCheckingIn={$isCheckingIn}
     {checkin}
+    canCheckIn={$canCheckIn}
+    isCheckingIn={$isCheckingIn}
   />
 {/if}
