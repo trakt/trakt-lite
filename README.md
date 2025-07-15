@@ -102,6 +102,18 @@ adb reverse tcp:5173 tcp:5173
 
 **Coming Soon!**
 
+### webOS Development
+
+- Install the developer mode app on your TV, see the
+  [documentation](https://webostv.developer.lge.com/develop/getting-started/developer-mode-app)
+  - Alternatively, use the
+    [simulator app](https://webostv.developer.lge.com/develop/tools/simulator-installation)
+- Install the
+  [webOS CLI](https://webostv.developer.lge.com/develop/tools/cli-installation).
+- Refer to the
+  [CLI dev guide](https://webostv.developer.lge.com/develop/tools/cli-dev-guide)
+  to see how to create an app, launch it on your TV, etc.
+
 ## Build Trakt Lite
 
 To build the Trakt Lite client, run:

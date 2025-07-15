@@ -124,6 +124,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (isDeviceAuth) {
     const response = await requestDeviceCode();
 
+    console.log('Device code response:', response);
     return new Response(JSON.stringify(response), {
       status: 200,
       headers: {
@@ -139,6 +140,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (isDeviceAuthPoll) {
     const { code } = await event.request.json() as { code: string };
     const response = await authorizeDeviceCode(code);
+    console.log('Device poll response:', response);
 
     if ('state' in response) {
       return new Response(JSON.stringify(response), {

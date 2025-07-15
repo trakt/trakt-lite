@@ -4,21 +4,54 @@
     <script type="text/javascript" src="webOSTVjs-1.2.10/webOSTV.js"></script>
   </head>
   <body>
-    <a href="netflix://www.netflix.com/watch/80013762"> NETFLIX TEST 2 </a>
+    <!-- 
+    Foundation s1x02
+    "link_webos": {
+                    "id": "com.apple.appletv",
+                    "params": {
+                        "contentTarget": "https://tv.apple.com/nl/episode/preparing-to-live/umc.cmc.12ibmbmz39qv1p882hca0qdah?showId=umc.cmc.5983fipzqbicvrve6jdfep4x3\u0026playableId=tvs.sbd.4000%3AVFOUN0560102"
+                    }
+                },
+
+    Reacher s2x05
+    "link_webos": {
+                    "id": "amazon",
+                    "params": {
+                        "contentTarget": "amzn1.dv.gti.fe649fbe-a127-4599-8efc-e7c6ff5f8a5c"
+                    }
+                },
+
+    Stranger things s3x07
+    "link_webos": {
+                    "id": "netflix",
+                    "params": {
+                        "contentTarget": "-Q m=http%3A%2F%2Fapi-global.netflix.com%2Fcatalog%2Ftitles%2Fmovies%2F80057281"
+                    }
+                },
+     -->
+    <!-- <a href="netflix://www.netflix.com/watch/80013762"> NETFLIX TEST 2 </a>
 
     <a href="https://www.netflix.com/watch/80013762"> NETFLIX TEST </a>
     <a href="https://www.youtube.com/watch?v=o-YBDTqX_ZU"> YOUTUBE TEST </a>
     <button onclick="testFunction()">CLICK ME</button>
+    <div style="color: white" id="debug">Debug:<br /></div> -->
+
+    <button onclick="testPrime()">PRIME</button>
+    <button onclick="testAppleTV()">APPLE TV</button>
+    <button onclick="testNetflix()">NETFLIX</button>
     <div style="color: white" id="debug">Debug:<br /></div>
 
     <script>
       // window.location.href = 'http://192.168.2.252:5173/';
 
       function log(message) {
+        if (document.getElementById('debug') === null) {
+          return;
+        }
         document.getElementById('debug').innerHTML += message + '<br/>';
       }
 
-      function streamOnWebOs(name, url) {
+      function streamOnWebOsTest(name, url) {
         log(`opening ${name} at ${url} <br/>`);
 
         webOS.service.request('luna://com.webos.applicationManager', {
@@ -38,10 +71,51 @@
         });
       }
 
+      function streamOnWebOs(id, contentTarget) {
+        log(`opening ${id} with ${contentTarget} <br/>`);
+
+        webOS.service.request('luna://com.webos.applicationManager', {
+          method: 'launch',
+          parameters: {
+            id,
+            params: {
+              contentTarget,
+            },
+          },
+          onSuccess: (res) => {
+            log('Open success. ', res);
+          },
+          onFailure: (res) => {
+            log('Open fail. ', res);
+          },
+        });
+      }
+
       function testFunction() {
-        streamOnWebOs(
+        streamOnWebOsTest(
           'netflix',
           'https://www.netflix.com/watch/80013762',
+        );
+      }
+
+      function testPrime() {
+        streamOnWebOs(
+          'amazon',
+          'amzn1.dv.gti.fe649fbe-a127-4599-8efc-e7c6ff5f8a5c',
+        );
+      }
+
+      function testAppleTV() {
+        streamOnWebOs(
+          'com.apple.appletv',
+          'https://tv.apple.com/nl/episode/preparing-to-live/umc.cmc.12ibmbmz39qv1p882hca0qdah?showId=umc.cmc.5983fipzqbicvrve6jdfep4x3\u0026playableId=tvs.sbd.4000%3AVFOUN0560102',
+        );
+      }
+
+      function testNetflix() {
+        streamOnWebOs(
+          'netflix',
+          '-Q m=http%3A%2F%2Fapi-global.netflix.com%2Fcatalog%2Ftitles%2Fmovies%2F80057281',
         );
       }
     </script>

@@ -1,10 +1,34 @@
 <script lang="ts">
   import "../style";
 
+  import { page } from "$app/state";
+  import CoverImage from "$lib/components/background/CoverImage.svelte";
+  import CoverProvider from "$lib/components/background/CoverProvider.svelte";
+  import ListScrollHistoryProvider from "$lib/components/lists/section-list/ListScrollHistoryProvider.svelte";
+  import AnalyticsProvider from "$lib/features/analytics/AnalyticsProvider.svelte";
+  import PageView from "$lib/features/analytics/PageView.svelte";
+  import AuthProvider from "$lib/features/auth/components/AuthProvider.svelte";
+  import AutoSigninProvider from "$lib/features/auto-signin/AutoSigninProvider.svelte";
+  import CookieConsentProvider from "$lib/features/cookie-consent/CookieConsentProvider.svelte";
   import { DeploymentEndpoint } from "$lib/features/deployment/DeploymentEndpoint.js";
+  import ErrorProvider from "$lib/features/errors/ErrorProvider.svelte";
+  import FilterProvider from "$lib/features/filters/FilterProvider.svelte";
+  import LocaleProvider from "$lib/features/i18n/components/LocaleProvider.svelte";
+  import NavigationProvider from "$lib/features/navigation/NavigationProvider.svelte";
+  import NowPlayingProvider from "$lib/features/now-playing/NowPlayingProvider.svelte";
+  import GlobalParameterProvider from "$lib/features/parameters/GlobalParameterProvider.svelte";
+  import QueryClientProvider from "$lib/features/query/QueryClientProvider.svelte";
+  import SearchProvider from "$lib/features/search/SearchProvider.svelte";
+  import ThemeProvider from "$lib/features/theme/components/ThemeProvider.svelte";
+  import RenderFor from "$lib/guards/RenderFor.svelte";
+  import Footer from "$lib/sections/footer/Footer.svelte";
+  import MobileNavbar from "$lib/sections/navbar/MobileNavbar.svelte";
+  import Navbar from "$lib/sections/navbar/Navbar.svelte";
+  import NowPlaying from "$lib/sections/now-playing/NowPlaying.svelte";
   import { isPWA } from "$lib/utils/devices/isPWA.ts";
   import { WorkerMessage } from "$worker/WorkerMessage";
   import { workerRequest } from "$worker/workerRequest";
+  import { SvelteQueryDevtools } from "@tanstack/svelte-query-devtools";
   import { onMount } from "svelte";
   import FirefoxBlurHack from "./_internal/FirefoxBlurHack.svelte";
 
@@ -86,13 +110,89 @@
   </style>
 </svelte:head>
 
-<a href="https://www.netflix.com/watch/80013762"> NETFLIX TEST </a>
+<!-- <a href="https://www.netflix.com/watch/80013762"> NETFLIX TEST </a>
 <a href="https://www.youtube.com/watch?v=o-YBDTqX_ZU"> YOUTUBE TEST </a>
 <button
   onclick={() =>
     streamOnWebOs("netflix", "https://www.netflix.com/watch/80013762")}
   >CLICKME</button
->
+> -->
+
+<ErrorProvider>
+  <QueryClientProvider client={data.queryClient} device={data.device}>
+    <GlobalParameterProvider>
+      <AuthProvider
+        isAuthorizedLegacy={data.auth.isAuthorized}
+        isAuthorized={data.oidcAuth.isAuthorized}
+      >
+        <CookieConsentProvider
+          hasConsent={data.hasConsent || data.device === "tv"}
+          device={data.device}
+        >
+          <AnalyticsProvider>
+            <AutoSigninProvider>
+              <NavigationProvider device={data.device}>
+                <LocaleProvider>
+                  <!-- TODO: coalesce this when we add support for people 'n stuff -->
+                  <SearchProvider type="show">
+                    <SearchProvider type="movie">
+                      <FilterProvider>
+                        <CoverProvider>
+                          <NowPlayingProvider>
+                            <CoverImage />
+
+                            <ThemeProvider theme={data.theme}>
+                              <ListScrollHistoryProvider>
+                                <div class="trakt-layout-wrapper">
+                                  <Navbar />
+                                  <div class="trakt-layout-content">
+                                    {@render children()}
+                                  </div>
+                                  <RenderFor
+                                    audience="all"
+                                    navigation="default"
+                                  >
+                                    <Footer />
+                                  </RenderFor>
+                                </div>
+                                <RenderFor
+                                  audience="all"
+                                  device={["mobile", "tablet-sm"]}
+                                  navigation="default"
+                                >
+                                  <MobileNavbar />
+                                </RenderFor>
+                                <RenderFor
+                                  audience="authenticated"
+                                  navigation="default"
+                                >
+                                  <NowPlaying />
+                                </RenderFor>
+                                <SvelteQueryDevtools
+                                  buttonPosition="bottom-right"
+                                  styleNonce="opacity: 0.5"
+                                />
+                                <FirefoxBlurHack />
+                              </ListScrollHistoryProvider>
+                            </ThemeProvider>
+                          </NowPlayingProvider>
+                        </CoverProvider>
+                      </FilterProvider>
+                    </SearchProvider>
+                  </SearchProvider>
+                </LocaleProvider>
+              </NavigationProvider>
+
+              {#key page.url.pathname}
+                <PageView />
+              {/key}
+            </AutoSigninProvider>
+          </AnalyticsProvider>
+        </CookieConsentProvider>
+      </AuthProvider>
+    </GlobalParameterProvider>
+  </QueryClientProvider>
+</ErrorProvider>
 
 <style lang="scss">
   @use "$style/scss/mixins/index" as *;

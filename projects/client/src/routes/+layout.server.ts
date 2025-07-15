@@ -43,6 +43,8 @@ export const load: LayoutServerLoad = (
     hasConsent: locals.hasConsent,
   };
 
+  console.log('Layout server load:', locals.auth, locals.oidcAuth);
+
   if (
     !defaultResponse.auth.isAuthorized || defaultResponse.oidcAuth.isAuthorized
   ) {
