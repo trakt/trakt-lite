@@ -1,8 +1,8 @@
 <script lang="ts">
   import * as m from "$lib/features/i18n/messages.ts";
   import RenderFor from "$lib/guards/RenderFor.svelte";
+  import AdvancedSettings from "./_internal/AdvancedSettings.svelte";
   import LogoutButton from "./_internal/LogoutButton.svelte";
-  import Spoilers from "./_internal/Spoilers.svelte";
 </script>
 
 <RenderFor audience="authenticated">
@@ -16,7 +16,8 @@
       </div>
     </div>
     <div class="trakt-settings-content">
-      <Spoilers />
+      <!-- <Spoilers /> -->
+      <AdvancedSettings />
     </div>
   </div>
 </RenderFor>
@@ -50,7 +51,7 @@
   .trakt-settings-sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     gap: var(--gap-s);
 

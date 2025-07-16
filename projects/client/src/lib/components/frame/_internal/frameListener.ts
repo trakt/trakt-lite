@@ -23,6 +23,7 @@ export function frameListener(element: HTMLIFrameElement, slug: string) {
     }
 
     if (event.data.type === 'embeddedHeight') {
+      console.log(event.data);
       const height = event.data.height;
       element.style.height = `${height}px`;
     }
