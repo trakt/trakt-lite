@@ -1,24 +1,26 @@
 <script lang="ts">
-  import * as m from "$lib/features/i18n/messages.ts";
+  import Link from "$lib/components/link/Link.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import LogoutButton from "./_internal/LogoutButton.svelte";
-  import Profile from "./_internal/Profile.svelte";
-  import Spoilers from "./_internal/Spoilers.svelte";
+
+  const { children }: ChildrenProps = $props();
 </script>
 
 <RenderFor audience="authenticated">
   <div class="trakt-settings">
     <div class="trakt-settings-sidebar">
-      <div class="trakt-settings-sidebar-content">
-        <h4>{m.header_settings()}</h4>
+      <div class="trakt-settings-sidebar-links">
+        <Link href="/settings"><h5 class="uppercase">General</h5></Link>
+        <Link href="/settings/advanced">
+          <h5 class="uppercase">Advanced</h5>
+        </Link>
       </div>
       <div class="trakt-settings-footer">
         <LogoutButton />
       </div>
     </div>
     <div class="trakt-settings-content">
-      <Profile />
-      <Spoilers />
+      {@render children()}
     </div>
   </div>
 </RenderFor>
@@ -45,11 +47,6 @@
 
     @include for-tablet-sm-and-below {
       grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
-
-      .trakt-settings-content {
-        padding: 0;
-      }
     }
   }
 
@@ -58,19 +55,52 @@
     flex-direction: column;
     justify-content: space-between;
 
+    gap: var(--gap-l);
+
+    min-height: calc(100dvh - 2 * (var(--gap-m) + env(safe-area-inset-bottom)));
+
+    @include for-tablet-sm-and-below {
+      flex-direction: row;
+      min-height: auto;
+
+      gap: var(--gap-s);
+    }
+  }
+
+  .trakt-settings-sidebar-links {
+    display: flex;
+    flex-direction: column;
     gap: var(--gap-s);
 
-    h4 {
+    h5 {
+      color: var(--color-text-secondary);
+      font-weight: 600;
       transition: font-size var(--transition-increment) ease-in-out;
+    }
+
+    :global(.trakt-link) {
+      text-decoration: none;
+    }
+
+    :global(.trakt-link.trakt-link-active) {
+      :global(h5) {
+        color: var(--color-text-primary);
+        font-size: var(--ni-40);
+      }
     }
 
     @include for-tablet-sm-and-below {
       flex-direction: row;
       align-items: center;
-      height: fit-content;
 
-      h4 {
-        font-size: var(--ni-24);
+      h5 {
+        font-size: var(--ni-18);
+      }
+
+      :global(.trakt-link.trakt-link-active) {
+        :global(h5) {
+          font-size: var(--ni-24);
+        }
       }
     }
   }
