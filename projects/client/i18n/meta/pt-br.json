@@ -75,6 +75,12 @@
     "button_text_watchlist": {
       "default": "Assistir"
     },
+    "button_text_add_to_watchlist": {
+      "default": "Adicionar à lista"
+    },
+    "button_text_remove_from_watchlist": {
+      "default": "Remover da lista"
+    },
     "button_text_mark_as_watched": {
       "default": "Marcar como Assistido"
     },
