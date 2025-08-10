@@ -118,7 +118,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
+    <!-- <script
+      src="https://unpkg.com/css-has-pseudo@7.0.2/dist/browser-global.js"
+    ></script>
+    <script>
+      cssHasPseudo(document);
+    </script> -->
     <style>
       /* To override the style that webOS inserts */
       * {

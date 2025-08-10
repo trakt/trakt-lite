@@ -13,6 +13,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
+import cssNested from 'postcss-nested';
+
 function findGitRoot(dir: string): string {
   if (fs.existsSync(path.join(dir, '.git'))) {
     return dir;
@@ -135,4 +137,24 @@ export default defineConfig(({ mode }) => ({
       conditions: ['browser'],
     }
     : undefined,
+
+  css: {
+    postcss: {
+      plugins: [
+        // TODO: only when needed. Separate build?
+        // cssHasPseudo(),
+        cssNested(),
+      ],
+    },
+  },
 }));
+
+/*
+  TODO:
+  - not all styles are applied? cssNested doesn't seem to work for webOS22?
+  ---card-footer-information width 100% is missing
+  ---native dropdowns
+  ---card footer tags icon sizes are not correct
+  ---card footer tags are not inline
+  ---card text overlay is missing
+*/

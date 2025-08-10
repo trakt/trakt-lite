@@ -49,6 +49,7 @@
     "@vite-pwa/sveltekit": "^1.0.0",
     "@vitest/coverage-istanbul": "3.2.1",
     "concurrently": "^9.1.2",
+    "css-has-pseudo": "^7.0.2",
     "eslint": "9.28.0",
     "eslint-plugin-svelte": "^3.9.1",
     "flowbite-svelte": "1.5.3",
