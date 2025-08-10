@@ -191,7 +191,9 @@
 
     width: var(--navbar-width);
     height: calc(
-      100dvh - var(--navbar-margin-top) - var(--navbar-margin-bottom)
+      var(--dynamic-viewport-height) - var(--navbar-margin-top) - var(
+          --navbar-margin-bottom
+        )
     );
 
     background-color: var(--color-background-navbar);

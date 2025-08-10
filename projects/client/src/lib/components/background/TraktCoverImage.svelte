@@ -19,7 +19,9 @@
   .trakt-cover-image {
     --max-image-height: var(--ni-300);
 
-    width: calc(100dvw - 2 * var(--layout-distance-side));
+    width: calc(
+      var(--dynamic-viewport-width) - 2 * var(--layout-distance-side)
+    );
     height: var(--max-image-height);
     overflow: hidden;
     position: absolute;

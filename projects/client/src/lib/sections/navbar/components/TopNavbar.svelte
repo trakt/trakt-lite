@@ -84,7 +84,7 @@
 
     box-sizing: border-box;
     display: flex;
-    width: 100dvw;
+    width: var(--dynamic-viewport-width);
     height: var(--navbar-height);
 
     margin-top: env(safe-area-inset-top);
@@ -140,7 +140,9 @@
     @include backdrop-filter-blur(8px);
 
     &.trakt-navbar {
-      width: calc(100dvw - 2 * var(--layout-distance-side));
+      width: calc(
+        var(--dynamic-viewport-width) - 2 * var(--layout-distance-side)
+      );
 
       @include navbar-spacing(var(--layout-distance-side));
     }

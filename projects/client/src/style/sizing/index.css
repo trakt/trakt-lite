@@ -22,5 +22,13 @@
   --gap-xxs: var(--ni-4);
   --gap-micro: var(--ni-2);
 
-  --dialog-height: 100dvh;
+  --dynamic-viewport-height: 100dvh;
+  --dynamic-viewport-width: 100dvw;
+
+  --dialog-height: var(--dynamic-viewport-height);
+
+  @supports not (height: 100dvh) {
+    --dynamic-viewport-height: 100vh;
+    --dynamic-viewport-width: 100vw;
+  }
 }

@@ -28,7 +28,7 @@
 <style>
   iframe {
     width: 100%;
-    height: 100dvh;
+    height: var(--dynamic-viewport-height);
     border: none;
     overflow: hidden;
   }

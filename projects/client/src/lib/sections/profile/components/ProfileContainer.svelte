@@ -29,7 +29,7 @@
     margin: 0 var(--layout-distance-side);
 
     @include for-desktop {
-      max-width: 75dvw;
+      max-width: calc(var(--dynamic-viewport-width) * 0.75);
     }
 
     @include for-tablet-sm-and-below {

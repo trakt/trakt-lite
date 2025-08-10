@@ -113,8 +113,8 @@
   :global(.trakt-navbar-scroll:not(.trakt-navbar-pwa)) {
     .trakt-search {
       --mobile-search-focus-width: calc(
-        100dvw - var(--layout-distance-side) * 2 - var(--navbar-side-padding) *
-          2
+        var(--dynamic-viewport-width) - var(--layout-distance-side) *
+          2 - var(--navbar-side-padding) * 2
       );
 
       .trakt-search-input {
@@ -133,7 +133,9 @@
   .trakt-search {
     --search-input-width: clamp(var(--ni-80), 100%, var(--ni-480));
     --search-input-height: var(--ni-48);
-    --mobile-search-focus-width: calc(100dvw - var(--layout-distance-side) * 2);
+    --mobile-search-focus-width: calc(
+      var(--dynamic-viewport-width) - var(--layout-distance-side) * 2
+    );
     --search-icon-size: var(--ni-24);
     --search-icon-offset: calc(var(--search-icon-size) / 2);
 

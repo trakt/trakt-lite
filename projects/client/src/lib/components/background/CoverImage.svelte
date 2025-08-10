@@ -61,7 +61,7 @@
   .trakt-background-cover-image {
     z-index: var(--layer-background);
     position: absolute;
-    max-height: 100dvh;
+    max-height: var(--dynamic-viewport-height);
     overflow: hidden;
 
     width: 100%;

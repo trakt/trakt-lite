@@ -88,7 +88,7 @@
     padding: var(--now-playing-padding);
 
     height: var(--now-playing-height);
-    width: min(var(--ni-480), 90dvw);
+    width: min(var(--ni-480), calc(var(--dynamic-viewport-width) * 0.9));
 
     bottom: max(
       var(--now-playing-bottom-distance),

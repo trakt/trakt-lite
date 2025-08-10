@@ -45,7 +45,7 @@
 
 <style>
   .trakt-authorization-container {
-    height: calc(100dvh - var(--content-gap));
+    height: calc(var(--dynamic-viewport-height) - var(--content-gap));
     display: flex;
     justify-content: center;
   }

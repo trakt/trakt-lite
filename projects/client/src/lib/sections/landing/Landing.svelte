@@ -21,7 +21,8 @@
 
   .trakt-landing-container {
     width: calc(
-      100dvw - 2 * var(--layout-distance-side) - var(--layout-sidebar-distance)
+      var(--dynamic-viewport-width) - 2 *
+        var(--layout-distance-side) - var(--layout-sidebar-distance)
     );
     position: relative;
     margin-left: var(--layout-distance-side);

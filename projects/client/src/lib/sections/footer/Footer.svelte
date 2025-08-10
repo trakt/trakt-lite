@@ -23,7 +23,7 @@
 
     :global(.trakt-cover-image) {
       width: calc(
-        100dvw - 2 *
+        var(--dynamic-viewport-width) - 2 *
           var(--layout-distance-side) - var(--layout-sidebar-distance)
       );
     }
