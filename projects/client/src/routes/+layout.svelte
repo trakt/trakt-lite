@@ -17,6 +17,7 @@
   import LocaleProvider from "$lib/features/i18n/components/LocaleProvider.svelte";
   import NavigationProvider from "$lib/features/navigation/NavigationProvider.svelte";
   import NowPlayingProvider from "$lib/features/now-playing/NowPlayingProvider.svelte";
+  import OfflineBanner from "$lib/features/offline/OfflineBanner.svelte";
   import GlobalParameterProvider from "$lib/features/parameters/GlobalParameterProvider.svelte";
   import QueryClientProvider from "$lib/features/query/QueryClientProvider.svelte";
   import SearchProvider from "$lib/features/search/SearchProvider.svelte";
@@ -147,6 +148,7 @@
                             <CoverImage />
 
                             <ThemeProvider theme={data.theme}>
+                              <OfflineBanner />
                               <ListScrollHistoryProvider>
                                 <div class="trakt-layout-wrapper">
                                   <Navbar />

@@ -58,7 +58,51 @@ registerRoute(
       return Response.redirect(url.toString(), 302);
     }
 
-    return await navigationHandler.handle(context);
+    try {
+      const response = await navigationHandler.handle(context);
+
+      // If we got a valid response, check if we're offline
+      if (response) {
+        // Try a quick network check to see if we're truly offline
+        try {
+          await fetch(new URL('/', url.origin), {
+            method: 'HEAD',
+            cache: 'no-cache',
+            signal: AbortSignal.timeout(1000), // 1 second timeout
+          });
+          // Network is available, return the cached response as-is
+          return response;
+        } catch (networkError) {
+          // Network is unavailable, we're offline
+          console.log(
+            'Network check failed, we appear to be offline:',
+            networkError,
+          );
+
+          // If we're not already on the offline URL, redirect with offline param
+          if (!url.searchParams.has('offline')) {
+            const offlineUrl = new URL(url.href);
+            offlineUrl.searchParams.set('offline', 'true');
+            return Response.redirect(offlineUrl.toString(), 302);
+          }
+
+          // Return the cached response since we're already on the offline URL
+          return response;
+        }
+      }
+
+      // If navigationHandler succeeded but returned falsy response,
+      // we're likely offline or the cache is empty
+      console.log(
+        'Navigation handler returned falsy response, treating as offline',
+      );
+    } catch (error) {
+      // Network failed, we're offline
+      console.log(
+        'Network request failed, redirecting to offline mode:',
+        error,
+      );
+    }
   }),
 );
 
@@ -79,9 +123,9 @@ registerRoute(
 registerRoute(
   ({ url }) => {
     // Skip caching for localhost
-    if (url.hostname === 'localhost') {
-      return false;
-    }
+    // if (url.hostname === 'localhost') {
+    //   return false;
+    // }
     return AssetPattern.static.test(url.pathname) ||
       AssetPattern.media.test(url.pathname) ||
       AssetPattern.documents.test(url.pathname);
@@ -130,8 +174,5 @@ registerRoute(
         maxAgeSeconds: time.days(30) / time.seconds(1),
       }),
     ],
-    fetchOptions: {
-      mode: 'no-cors',
-    },
   }),
 );
