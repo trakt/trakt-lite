@@ -21,6 +21,7 @@
   import QueryClientProvider from "$lib/features/query/QueryClientProvider.svelte";
   import SearchProvider from "$lib/features/search/SearchProvider.svelte";
   import ThemeProvider from "$lib/features/theme/components/ThemeProvider.svelte";
+  import WebSocketProvider from "$lib/features/websocket/WebSocketProvider.svelte";
   import RenderFor from "$lib/guards/RenderFor.svelte";
   import Footer from "$lib/sections/footer/Footer.svelte";
   import MobileNavbar from "$lib/sections/navbar/MobileNavbar.svelte";
@@ -131,69 +132,71 @@
         isAuthorizedLegacy={data.auth.isAuthorized}
         isAuthorized={data.oidcAuth.isAuthorized}
       >
-        <CookieConsentProvider
-          hasConsent={data.hasConsent || data.device === "tv"}
-          device={data.device}
-        >
-          <AnalyticsProvider>
-            <AutoSigninProvider>
-              <NavigationProvider device={data.device}>
-                <LocaleProvider>
-                  <SearchProvider>
-                    <FilterProvider>
-                      <FeatureFlagProvider>
-                        <CoverProvider>
-                          <NowPlayingProvider>
-                            <CoverImage />
+        <WebSocketProvider>
+          <CookieConsentProvider
+            hasConsent={data.hasConsent || data.device === "tv"}
+            device={data.device}
+          >
+            <AnalyticsProvider>
+              <AutoSigninProvider>
+                <NavigationProvider device={data.device}>
+                  <LocaleProvider>
+                    <SearchProvider>
+                      <FilterProvider>
+                        <FeatureFlagProvider>
+                          <CoverProvider>
+                            <NowPlayingProvider>
+                              <CoverImage />
 
-                            <ThemeProvider theme={data.theme}>
-                              <ListScrollHistoryProvider>
-                                <div class="trakt-layout-wrapper">
-                                  <Navbar />
-                                  <div class="trakt-layout-content">
-                                    {@render children()}
+                              <ThemeProvider theme={data.theme}>
+                                <ListScrollHistoryProvider>
+                                  <div class="trakt-layout-wrapper">
+                                    <Navbar />
+                                    <div class="trakt-layout-content">
+                                      {@render children()}
+                                    </div>
+                                    <RenderFor
+                                      audience="all"
+                                      navigation="default"
+                                    >
+                                      <Footer />
+                                    </RenderFor>
                                   </div>
                                   <RenderFor
                                     audience="all"
+                                    device={["mobile", "tablet-sm"]}
                                     navigation="default"
                                   >
-                                    <Footer />
+                                    <MobileNavbar />
                                   </RenderFor>
-                                </div>
-                                <RenderFor
-                                  audience="all"
-                                  device={["mobile", "tablet-sm"]}
-                                  navigation="default"
-                                >
-                                  <MobileNavbar />
-                                </RenderFor>
-                                <RenderFor
-                                  audience="authenticated"
-                                  navigation="default"
-                                >
-                                  <NowPlaying />
-                                </RenderFor>
-                                <SvelteQueryDevtools
-                                  buttonPosition="bottom-right"
-                                  styleNonce="opacity: 0.5"
-                                />
-                                <FirefoxBlurHack />
-                              </ListScrollHistoryProvider>
-                            </ThemeProvider>
-                          </NowPlayingProvider>
-                        </CoverProvider>
-                      </FeatureFlagProvider>
-                    </FilterProvider>
-                  </SearchProvider>
-                </LocaleProvider>
-              </NavigationProvider>
+                                  <RenderFor
+                                    audience="authenticated"
+                                    navigation="default"
+                                  >
+                                    <NowPlaying />
+                                  </RenderFor>
+                                  <SvelteQueryDevtools
+                                    buttonPosition="bottom-right"
+                                    styleNonce="opacity: 0.5"
+                                  />
+                                  <FirefoxBlurHack />
+                                </ListScrollHistoryProvider>
+                              </ThemeProvider>
+                            </NowPlayingProvider>
+                          </CoverProvider>
+                        </FeatureFlagProvider>
+                      </FilterProvider>
+                    </SearchProvider>
+                  </LocaleProvider>
+                </NavigationProvider>
 
-              {#key page.url.pathname}
-                <PageView />
-              {/key}
-            </AutoSigninProvider>
-          </AnalyticsProvider>
-        </CookieConsentProvider>
+                {#key page.url.pathname}
+                  <PageView />
+                {/key}
+              </AutoSigninProvider>
+            </AnalyticsProvider>
+          </CookieConsentProvider>
+        </WebSocketProvider>
       </AuthProvider>
     </GlobalParameterProvider>
   </QueryClientProvider>
