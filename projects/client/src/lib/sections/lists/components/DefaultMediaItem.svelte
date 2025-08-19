@@ -7,6 +7,8 @@
   import type { MediaInputDefault } from "$lib/models/MediaInput";
   import CheckInAction from "$lib/sections/media-actions/check-in/CheckInAction.svelte";
   import MarkAsWatchedAction from "$lib/sections/media-actions/mark-as-watched/MarkAsWatchedAction.svelte";
+  import { useIsWatched } from "$lib/sections/media-actions/mark-as-watched/useIsWatched";
+  import { useIsWatchlisted } from "$lib/sections/media-actions/watchlist/useIsWatchlisted";
   import WatchlistAction from "$lib/sections/media-actions/watchlist/WatchlistAction.svelte";
   import type { MediaCardProps } from "../components/MediaCardProps";
   import MediaItem from "./MediaItem.svelte";
@@ -17,8 +19,17 @@
     media,
     style,
     tag,
+    canDeemphasize,
     ...rest
-  }: MediaCardProps<MediaInputDefault> = $props();
+  }: MediaCardProps<MediaInputDefault> & { canDeemphasize?: boolean } =
+    $props();
+
+  const { isWatched } = $derived(useIsWatched({ type, media }));
+  const { isWatchlisted } = $derived(useIsWatchlisted({ type, media }));
+
+  const isDeemphasized = $derived(
+    canDeemphasize && ($isWatched || $isWatchlisted),
+  );
 </script>
 
 {#snippet defaultTag()}
@@ -62,12 +73,27 @@
 {/snippet}
 
 <MediaSwipe {type} {media} {style}>
-  <MediaItem
-    {type}
-    {media}
-    {style}
-    tag={tag ?? defaultTag}
-    {...rest}
-    {popupActions}
-  />
+  <trakt-default-media-item class:is-deemphasized={isDeemphasized}>
+    <MediaItem
+      {type}
+      {media}
+      {style}
+      tag={tag ?? defaultTag}
+      {...rest}
+      {popupActions}
+    />
+  </trakt-default-media-item>
 </MediaSwipe>
+
+<style>
+  trakt-default-media-item {
+    :global(.trakt-card-cover) {
+      transition: var(--transition-increment) ease-in-out;
+      transition-property: filter;
+    }
+
+    &.is-deemphasized {
+      filter: saturate(0) contrast(1.2);
+    }
+  }
+</style>
